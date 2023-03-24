@@ -2,6 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native'
 import Navigation from './src/navigation';
 import { useFonts } from 'expo-font';
+import { QueryClientProvider, QueryClient } from 'react-query'
+
+const queryClient = new QueryClient();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -9,9 +12,14 @@ export default function App() {
     'PoppinsRegular': require('./assets/fonts/Poppins-Regular.ttf'),
     'Heebo': require('./assets/fonts/Heebo.ttf'),
   });
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
    <NavigationContainer>
-     <Navigation />
+     <QueryClientProvider client={queryClient}>
+      <Navigation />
+     </QueryClientProvider>
    </NavigationContainer>
   );
 }
