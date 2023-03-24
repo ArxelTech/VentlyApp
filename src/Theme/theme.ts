@@ -22,6 +22,7 @@ const theme = createTheme({
         backgroundColor: colorPallette.white,
         accentColor: colorPallette.whiteAccentColor,
         deactivatedColor: colorPallette.deactivatedColor,
+        textColor: colorPallette.black,
     },
     spacing: {
         s: 8,
@@ -75,6 +76,7 @@ export const darkTheme: Theme = {
         backgroundColor: colorPallette.black,
         accentColor: colorPallette.blackAccentColor,
         deactivatedColor: colorPallette.deactivatedColor,
+        textColor: colorPallette.white,
     },
     textVariants: {
         header: {
