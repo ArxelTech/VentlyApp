@@ -1,20 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native'
+import Navigation from './src/navigation';
+import { useFonts } from 'expo-font';
+import { QueryClientProvider, QueryClient } from 'react-query'
+
+const queryClient = new QueryClient();
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    'PoppinsBold': require('./assets/fonts/Poppins-Bold.ttf'),
+    'PoppinsRegular': require('./assets/fonts/Poppins-Regular.ttf'),
+    'Heebo': require('./assets/fonts/Heebo.ttf'),
+  });
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+   <NavigationContainer>
+     <QueryClientProvider client={queryClient}>
+      <Navigation />
+     </QueryClientProvider>
+   </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
