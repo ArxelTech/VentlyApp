@@ -1,14 +1,29 @@
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet, } from 'react-native'
 import React from 'react'
-import { Modal } from '../../../components'
+import Slider from '../../../components/slider/Slider'
+// import { Modal } from '../../../components'
 
 const Onboarding = () => {
   return (
-    <View>
-      <Text>Onboarding</Text>
-      <Modal />
+    <View style={styles.container}>
+    <Slider/>
+      {/* <Modal /> */}
     </View>
   )
 }
 
-export default Onboarding
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#00ffff'
+  },
+  // greeting: {
+  //   fontSize: 20,
+  //   fontWeight: 'bold',
+  //   margin: 16,
+  // },
+});
+
+export default Onboarding;

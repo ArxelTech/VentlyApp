@@ -5,13 +5,13 @@ import {z} from 'zod'
 
 interface IProps {
     defaultValues: any;
-    validationSchema?: z.ZodObject<any>;
+    validationSchema?: any;
 }
 
 const useForm = ({ validationSchema, defaultValues}: IProps) => {
     const methods = useHookForm({
         defaultValues: defaultValues,
-        resolver: validationSchema ? zodResolver(validationSchema as z.ZodObject<any>) : undefined,
+        resolver: validationSchema ? zodResolver(validationSchema as any) : undefined,
         shouldUnregister: true,
         shouldFocusError: true,
     });
