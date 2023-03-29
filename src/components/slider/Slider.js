@@ -1,4 +1,4 @@
-import {FlatList, StyleSheet, Text, View } from 'react-native'
+import {FlatList, StyleSheet, Text, View , Animated} from 'react-native'
 import React, {useRef} from 'react';
 import SLideitem from './SLideitem';
 import Slides from '../../../assets/data/SlideData';
@@ -22,7 +22,11 @@ const slider = () => {
                 useNativeDriver: false,
             },
         )(event);
-    }
+    };
+
+    const handleOnviewableItemsChanged = useRef(({viewableItems}) => {
+        console.log('viewableItems', viewableItems);
+    }).current;
   return (
     <View>
       <FlatList 
@@ -35,6 +39,8 @@ const slider = () => {
         snapToAlignment='center'
         showsHorizontalScrollIndicator={false}
         onscroll={handleOnScroll}
+        onViewableItemsChanged={handleOnviewableItemsChanged}
+        
          
         />
        <Pagination data={Slides} scrollX={scrollX}/>

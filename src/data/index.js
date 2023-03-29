@@ -26,6 +26,4 @@ export default [
     img: require('../assets/V1.png'),
     title: 'Live Event Analytics And Statistics On The Go',
   },
-  
-
-]
+];

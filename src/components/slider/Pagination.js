@@ -1,26 +1,31 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import {Animated, StyleSheet, Text, View, Dimensions} from 'react-native'
+import React from 'react';
+
+const {width} = Dimensions.get('screen')
 
 const Pagination = ({data, scrollX}) => {
   return (
     <View style={styles.container}>
-     {data.map((_, idx) => {
-       const inputRange = [(idx - 1) * width, idx * width, (idx + 1)* width];
-
-       const dotwidth = scrollX.interpolate({
-        inputRange,
-        outputRange: [12, 30, 12],
-        extreapolate: 'clamp',
-       })
-      return (
-      <View key={idx.toString()}
-      style={[styles.dot, {width: dotwidth}]} />)
-     })}
+    {
+      data.map((_, idx) =>{
+        const inputRange = [(idx - 1)*width, idx * width, (idx + 1)*width ];
+        const dotWidth = scrollX.interpolate({
+          inputRange,
+          outputRange: [12, 30, 12],
+          extrapolate: 'clamp',    
+        });
+        return(
+           <Animated.View Key={idx.toString()} 
+        style={[styles.dot, {width: dotWidth}]}/>
+        );
+      })
+    }
+    
     </View>
   )
 }
 
-export default Pagination
+export default Pagination;
 
 const styles = StyleSheet.create({
 
