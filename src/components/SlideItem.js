@@ -39,8 +39,7 @@ const SlideItem = ({item}) => {
       />
 
       <View style={styles.content}>
-        <Text style={styles.title}>{item.title}</Text>
-        
+        <Text style={styles.title}>{item.title}</Text>    
       </View>
     </View>
   );

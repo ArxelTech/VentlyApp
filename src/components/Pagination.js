@@ -32,7 +32,7 @@ const Pagination = ({data, scrollX, index}) => {
             key={idx.toString()}
             style={[
               styles.dot,
-              {width: dotWidth, backgroundColor},
+              {width: dotWidth, backgroundColor,},
               // idx === index && styles.dotActive,
             ]}
           />
@@ -54,17 +54,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   dot: {
-    width: 4,
+    width: 5,
     height: 10,
-    borderRadius: 6,
+    borderRadius: 14,
     marginHorizontal: 2,
     backgroundColor: '#FF406E',
   },
-  // dotActive: {
-  //   width: 12,
-  //   height: 12,
-  //   borderRadius: 6,
-  //   marginHorizontal: 3,
-  //   backgroundColor: '#000',
-  // },
+  dotActive: {
+    width: 12,
+    height: 12,
+    borderRadius: 6,
+    marginHorizontal: 3,
+    backgroundColor: '#ccc',
+  },
 });

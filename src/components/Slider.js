@@ -42,7 +42,8 @@ const Slider = (button) => {
         <View style={styles.header}>
             <Image style={[styles.img ]}
               source={logo}
-              resizeMode="contain"/>
+              resizeMode="contain"
+            />
         </View>
         <View style={styles.middle}>
           <FlatList
@@ -75,14 +76,20 @@ export default Slider;
 
 const styles = StyleSheet.create({
   container: {
+    display: 'flex',
     width: '100%',
     height: '100%',
     // alignItems: 'center',
+    // backgroundColor: '#ffcc00'
+    borderStyle: 'solid',
+    borderColor: '#ccc',
+    borderWidth: 0.1,
   },
   header: {
     display: 'flex',
+    flexDirection: 'row',
     width: '100%',
-    height: '10%',
+    height: '15%',
     alignItems: 'center',
     justifyContent: 'center',
     // backgroundColor: '#ffcccc',
@@ -90,7 +97,7 @@ const styles = StyleSheet.create({
   },
   middle: {
     width: '100%',
-    height: '80%',
+    height: '70%',
     // backgroundColor: '#0040ff'
   },
   bottom: {
@@ -98,8 +105,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     // justifyContent: 'center',
     justifyContent: 'space-evenly',
+    alignItems: 'center',
     width: '100%',
-    height: '10%',
+    height: '15%',
     // backgroundColor: '#ffb3b3',
     padding: '2%'
   },
@@ -112,8 +120,7 @@ const styles = StyleSheet.create({
     elevation: 3,
     backgroundColor: '#E61648',
     width: '45%',
-    // height: '90%'
-
+    height: '70%'
   },
   text: {
     fontSize: 16,
@@ -124,5 +131,6 @@ const styles = StyleSheet.create({
   },
   img: {
     width: 80,
+    top: 10,
   }
 });

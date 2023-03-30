@@ -7,7 +7,7 @@ export default [
   },
   {
     id: 2,
-    img: require('../assets/V42x.png'),
+    img: require('../assets/V6.png'),
     title: 'Digital Tickets Made For Everyone',
   
   },
