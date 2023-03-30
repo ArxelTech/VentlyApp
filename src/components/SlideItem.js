@@ -56,24 +56,22 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 0.6,
-    width: '100%',
+    width: '55%',
+    // height: '20%'
+    bottom: 20,
   },
   content: {
     flex: 0.4,
     alignItems: 'center',
+    // justifyContent: 'center',
+    width:'80%'
   },
   title: {
-    fontSize: 24,
-    fontWeight: 'bold',
+    fontSize: 20,
+    fontWeight: '350',
     color: '#333',
+    textAlign: 'center',
+    bottom: '6%' 
   },
-  description: {
-    fontSize: 18,
-    marginVertical: 12,
-    color: '#333',
-  },
-  price: {
-    fontSize: 32,
-    fontWeight: 'bold',
-  },
+ 
 });

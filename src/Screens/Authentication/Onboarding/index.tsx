@@ -2,12 +2,14 @@ import { View, Text, StyleSheet, } from 'react-native'
 import React from 'react'
 // import Slider from '../../../components/slider/Slider'
 import Slider from '../../../components/Slider'
+import Login from './Login/Login'
 // import { Modal } from '../../../components'
 
 const Onboarding = () => {
   return (
     <View style={styles.container}>
-    <Slider/>
+    {/* <Slider/> */}
+    <Login/>
       {/* <Modal /> */}
     </View>
   )
@@ -20,7 +22,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#00ffff'
+    // backgroundColor: '#00ffff'
   },
   // greeting: {
   //   fontSize: 20,

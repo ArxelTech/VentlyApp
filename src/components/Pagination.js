@@ -7,7 +7,7 @@ const Pagination = ({data, scrollX, index}) => {
   return (
     <View style={styles.container}>
       {data.map((_, idx) => {
-        const inputRange = [(idx - 1) * width, idx * width, (idx + 1) * width];
+        const inputRange = [(idx - 0) * width, idx * width, (idx + 0.5) * width];
 
         const dotWidth = scrollX.interpolate({
           inputRange,
@@ -47,17 +47,17 @@ export default Pagination;
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    bottom: 35,
+    bottom: '13%',
     flexDirection: 'row',
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
   },
   dot: {
-    width: 12,
-    height: 12,
+    width: 4,
+    height: 10,
     borderRadius: 6,
-    marginHorizontal: 3,
+    marginHorizontal: 2,
     backgroundColor: '#FF406E',
   },
   // dotActive: {

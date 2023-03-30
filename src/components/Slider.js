@@ -40,7 +40,7 @@ const Slider = (button) => {
   return (
     <View style={styles.container}>
         <View style={styles.header}>
-            <Image
+            <Image style={[styles.img ]}
               source={logo}
               resizeMode="contain"/>
         </View>
@@ -85,20 +85,22 @@ const styles = StyleSheet.create({
     height: '10%',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#ffcccc'
+    // backgroundColor: '#ffcccc',
+    
   },
   middle: {
     width: '100%',
     height: '80%',
-    backgroundColor: '#0040ff'
+    // backgroundColor: '#0040ff'
   },
   bottom: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'center',
+    // justifyContent: 'center',
+    justifyContent: 'space-evenly',
     width: '100%',
     height: '10%',
-    backgroundColor: '#ffb3b3',
+    // backgroundColor: '#ffb3b3',
     padding: '2%'
   },
   button: {
@@ -106,12 +108,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 12,
     paddingHorizontal: 32,
-    borderRadius: 4,
+    borderRadius: 8,
     elevation: 3,
     backgroundColor: '#E61648',
-    
+    width: '45%',
+    // height: '90%'
 
-    
   },
   text: {
     fontSize: 16,
@@ -120,4 +122,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0.25,
     color: 'white',
   },
+  img: {
+    width: 80,
+  }
 });
