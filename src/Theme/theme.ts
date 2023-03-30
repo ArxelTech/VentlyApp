@@ -40,31 +40,37 @@ const theme = createTheme({
     largeTablet: 1024,
   },
   textVariants: {
+    default: {
+      fontFamily: 'Heebo',
+      fontSize: 18,
+      lineHeight: 24,
+      color: 'black'
+    },
     header: {
       fontFamily: 'PoppinsBold',
       fontWeight: 'bold',
       fontSize: 34,
       lineHeight: 42.5,
-      color: colorPallette.black,
+      color: 'black',
     },
     subheader: {
       fontFamily: 'PoppinsRegular',
       fontWeight: '600',
       fontSize: 22,
       lineHeight: 36,
-      color: colorPallette.black,
+      color: 'black',
     },
     body: {
       fontFamily: 'Heebo',
       fontSize: 18,
       lineHeight: 24,
-      color: colorPallette.black,
+      color: 'black',
     },
     xs: {
         fontFamily: 'Heebo',
         fontSize: 14,
         lineHeight: 24,
-        color: colorPallette.black,
+        color: 'black',
       },
   },
 })
@@ -79,31 +85,37 @@ export const darkTheme: Theme = {
         textColor: colorPallette.white,
     },
     textVariants: {
+      default: {
+        fontFamily: 'Heebo',
+        fontSize: 18,
+        lineHeight: 24,
+        color: 'white',
+      },
         header: {
         fontFamily: 'PoppinsBold',
         fontWeight: 'bold',
         fontSize: 34,
         lineHeight: 42.5,
-        color: colorPallette.white,
+        color: 'white',
         },
         subheader: {
         fontFamily: 'PoppinsRegular',
         fontWeight: '600',
         fontSize: 22,
         lineHeight: 36,
-        color: colorPallette.white,
+        color: 'white',
         },
         body: {
         fontFamily: 'Heebo',
         fontSize: 18,
         lineHeight: 24,
-        color: colorPallette.white,
+        color: 'white',
         },
         xs: {
             fontFamily: 'Heebo',
             fontSize: 14,
             lineHeight: 24,
-            color: colorPallette.white,
+            color: 'white',
         },
   },
 }

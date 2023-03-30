@@ -1,4 +1,3 @@
-import { View, Text } from 'react-native'
 import React from 'react'
 import Authentication from './Authentication'
 import Dashboard from './Dashboard';
