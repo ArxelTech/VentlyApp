@@ -9,6 +9,7 @@ export const colorPallette = {
     textInputBackgroundColor: '#F5F5F5',
     darkGrey: '#707070',
     deactivatedColor: '#E61648',
+    inputBackground: '#F5F5F5',
 }
 
 const theme = createTheme({
@@ -17,7 +18,7 @@ const theme = createTheme({
         whiteAccentColor: colorPallette.whiteAccentColor,
         white: colorPallette.white,
         black: colorPallette.black,
-        textInputBackground: colorPallette.textInputBackgroundColor,
+        textInputBackground: colorPallette.inputBackground,
         darkGrey: colorPallette.darkGrey,
         backgroundColor: colorPallette.white,
         accentColor: colorPallette.whiteAccentColor,

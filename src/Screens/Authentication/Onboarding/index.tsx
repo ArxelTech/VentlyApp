@@ -6,8 +6,13 @@ import PagerView from 'react-native-pager-view';
 import data from '../../../data'
 import { useTheme } from '@shopify/restyle';
 import { Theme } from '../../../Theme/theme';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-const Onboarding = () => {
+interface IProps {
+  navigation?: NativeStackNavigationProp<any>;
+}
+
+const Onboarding = ({ navigation }: IProps) => {
   const [index, setIndex] = React.useState(0);
 
   // global theme
@@ -49,11 +54,11 @@ const Onboarding = () => {
       {/* BOTTON CONTAINER */}
       <View style={Styles.buttonContainer} paddingHorizontal='m'>
         <View style={{ flex: 1, height: 60, marginRight: 20 }}>
-          <CustomButton label='Login' onPress={() => {}} color='white' borderRadius={10} />
+          <CustomButton label='Login' onPress={() => navigation?.navigate('method', {type: 'login'})} color='white' borderRadius={10} />
         </View>
 
         <View style={{ flex: 1, height: 60 }}>
-          <CustomButton label='Get Started' onPress={() => {}} color='black' borderRadius={10} backgroundColor='#EEEEEE' />
+          <CustomButton label='Get Started' onPress={() => navigation?.navigate('method', {type: 'signup'})} color='black' borderRadius={10} backgroundColor='#EEEEEE' />
         </View>
       </View>
     </View>
