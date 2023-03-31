@@ -35,7 +35,7 @@ export const CustomButton = ({
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-        {!isLoading && <Text variant='body' style={{ color }}>{label}</Text>}
+        {!isLoading && <Text variant='xs' style={{ color }}>{label}</Text>}
         {isLoading && <ActivityIndicator size='large' color={theme.colors.brandColor} />}
       </Pressable>
   );

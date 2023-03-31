@@ -37,7 +37,7 @@ const Onboarding = () => {
       {/* INDICATORS */}
       <View style={Styles.indicatorContainer}>
         {data.map((item, indx) => (
-          <View style={{...Styles.indicator, backgroundColor: indx === index ? theme.colors.brandColor:'#FF406E', opacity: indx === index ? 1: 0.2 }} />
+          <View key={indx} style={{...Styles.indicator, backgroundColor: indx === index ? theme.colors.brandColor:'#FF406E', opacity: indx === index ? 1: 0.2 }} />
         ))}
       </View>
 
