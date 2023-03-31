@@ -9,6 +9,7 @@ export const Styles = StyleSheet.create({
         height: '15%',
         justifyContent: 'center',
         alignItems: 'center',
+        marginTop: 20,
     },
     sliderConatainer: {
         width: '100%',
@@ -16,7 +17,7 @@ export const Styles = StyleSheet.create({
     },
     indicatorContainer: {
         width: '100%',
-        height: 30,
+        height: 50,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
