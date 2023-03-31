@@ -11,33 +11,38 @@ interface IProps {
     leftIcon?: JSX.Element;
     isPassword?: boolean;
     rightIcon?: JSX.Element;
+    label: string;
 }
 
-export const TextInput = ({ name, leftIcon, isPassword = false, rightIcon }: IProps) => {
+export const TextInput = ({ name, leftIcon, isPassword = false, rightIcon, label }: IProps) => {
     const theme = useTheme<Theme>();
-    const { control } = useFormContext()
+    const { control, formState: {errors} } = useFormContext()
   return (
-    <View paddingVertical='s' backgroundColor='textInputBackground' style={{...Style.parent, borderColor: theme.colors.darkGrey }}>
+    <>
+      <Text variant='xs'>{label}</Text>
+      <View paddingVertical='s' paddingHorizontal='m' backgroundColor='textInputBackground' style={{...Style.parent, borderColor: '#ECECEC' }}>
         {leftIcon && leftIcon}
-      <Controller 
-        control={control}
-        rules={{
-            required: false,
-        }}
-        name={name}
-        render={({ field: { onChange, onBlur, value }}) => (
-            <Input onChangeText={onChange} onBlur={onBlur} value={value} />
-        )}
-      />
-      {rightIcon && rightIcon}
-    </View>
+        <Controller 
+          control={control}
+          rules={{
+              required: false,
+          }}
+          name={name}
+          render={({ field: { onChange, onBlur, value }}) => (
+              <Input onChangeText={onChange} onBlur={onBlur} value={value} secureTextEntry={isPassword} style={{ flex: 1, paddingHorizontal: 10 }} />
+          )}
+        />
+        {rightIcon && rightIcon}
+      </View>
+      {errors[name] && <Text variant='xs' color='brandColor'>{errors[name]?.message as string}</Text>}
+    </>
   )
 }
 
 const Style = StyleSheet.create({
     parent: {
         width: '100%',
-        borderWidth: 2,
+        borderWidth: 1,
         borderRadius: 5,
         height: 55,
         flexDirection: 'row',

@@ -1,15 +1,14 @@
 import { useTheme } from "@shopify/restyle";
 import React from "react";
-import { Button } from "react-native-ui-lib";
 import { Theme } from "../../Theme/theme";
 import { useFormContext } from "react-hook-form";
+import { ActivityIndicator, Pressable } from "react-native";
+import { Text } from '../'
 
 interface IProps {
   label: string;
-  disabled?: boolean;
   isLoading?: boolean;
   backgroundColor?: string;
-  size?: "large" | "mediumn" | "small" | "xSmall";
   borderRadius?: number;
   color?: string;
   onPress: (data: any) => void;
@@ -17,10 +16,8 @@ interface IProps {
 
 export const SubmitButton = ({
   label,
-  disabled = false,
   isLoading = false,
   backgroundColor,
-  size = "large",
   borderRadius = 5,
   color,
   onPress,
@@ -28,14 +25,19 @@ export const SubmitButton = ({
   const theme = useTheme<Theme>();
   const { handleSubmit } = useFormContext();
   return (
-    <Button
+    <Pressable 
       onPress={handleSubmit(onPress)}
-      label={isLoading ? "submitting" : label}
-      size={size}
-      color={color || theme.colors.textColor}
-      borderRadius={borderRadius}
-      backgroundColor={backgroundColor || theme.colors.brandColor}
-      disabled={disabled}
-    />
+      style={{
+        width: '100%',
+        height: 55,
+        backgroundColor: backgroundColor || theme.colors.brandColor,
+        borderRadius: borderRadius,
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
+        {!isLoading && <Text variant='xs' style={{ color }}>{label}</Text>}
+        {isLoading && <ActivityIndicator size='large' color={theme.colors.brandColor} />}
+      </Pressable>
+ 
   );
 };

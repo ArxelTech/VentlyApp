@@ -12,7 +12,7 @@ interface IProps {
   size?: "large" | "mediumn" | "small" | "xSmall";
   borderRadius?: number;
   color?: string;
-  onPress: (data: any) => void;
+  onPress: () => void;
 }
 
 export const CustomButton = ({
@@ -26,7 +26,7 @@ export const CustomButton = ({
   const theme = useTheme<Theme>();
   return (
       <Pressable 
-      onPress={onPress}
+      onPress={() => onPress()}
       style={{
         width: '100%',
         height: '100%',
