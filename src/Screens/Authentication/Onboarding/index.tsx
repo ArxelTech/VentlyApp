@@ -2,8 +2,9 @@ import React from 'react'
 import { Styles } from './style'
 import { CustomButton, Text, View } from '../../../components'
 import { Image } from 'react-native';
-import PagerView from 'react-native-pager-view';
-import data from '../../../data'
+// import PagerView from 'react-native-pager-view';
+import Slider  from 'react-native';
+import data from '../../../data';
 import { useTheme } from '@shopify/restyle';
 import { Theme } from '../../../Theme/theme';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -24,20 +25,20 @@ const Onboarding = ({ navigation }: IProps) => {
   return (
     <View style={Styles.parent}>
       <View style={Styles.iconBox}>
-        <Image source={require('../../../../assets/images/ventlyLogo.png')} style={{ width: '100%', height: 50 }} resizeMode='contain' />
+        <Image source={require('../../../../assets/images/Logo/ventlyLogo.png')} style={{ width: '100%', height: 50 }} resizeMode='contain' />
       </View>
 
       {/* SCROLL CONTAINER */}
 
-      <View style={Styles.sliderConatainer}>
-        <PagerView style={{ flex: 1 }} onPageScroll={(e) => handleScroll(e.nativeEvent.position)}>
+      {/* <View style={Styles.sliderConatainer}>
+        <Slider style={{ flex: 1 }} onPageScroll={(e) => handleScroll(e.nativeEvent.position)}>
           {data.map((item, index) => (
             <View key={index.toString()}>
               <Image  source={item.img} style={{ width: '100%', height: '100%'}} resizeMode='contain'/>
             </View>
           ))}
-        </PagerView>
-      </View>
+        </Slider>
+      </View> */}
 
       {/* INDICATORS */}
       <View style={Styles.indicatorContainer}>

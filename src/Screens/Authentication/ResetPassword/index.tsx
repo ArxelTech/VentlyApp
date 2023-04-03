@@ -9,10 +9,9 @@ import { Ionicons } from '@expo/vector-icons'
 
 const { height } = Dimensions.get('screen');
 
-const Signup = () => {
+const Login = () => {
   const {  renderForm } = useForm({
     defaultValues: {
-      fullname: '',
       email: '',
       password: ''
     },
@@ -26,40 +25,19 @@ const Signup = () => {
             <Image source={require('../../../../assets/images/Logo/ventlyLogo.png')} resizeMode='contain' style={{ width: '100%', height: 50 }} />
           </View>
           <View>
-            <Text variant='subheader'>Get Started</Text>
-            <Text variant='xs'>We're glad to have you aboard signing up is easy</Text>
+            <Text variant='subheader'>Forgot Password</Text>
+            <Text variant='xs'>Please enter the email address associated with your account</Text>
           </View>
-          <View style={{ marginTop: 20 }}>
-            <TextInput name='fullname' label='Full Name' leftIcon={<Ionicons name='person-outline' size={25} color='lightgrey' />}  />
-          </View>
-
           <View style={{ marginTop: 20 }}>
             <TextInput name='email' label='Email Address' leftIcon={<Ionicons name='mail' size={25} color='lightgrey' />}  />
           </View>
 
-          <View style={{ marginTop: 10 }}>
-            <TextInput name='password' label='Password' isPassword leftIcon={<Ionicons name='lock-closed' size={25} color='lightgrey' />}  />
-          </View>
-
-          <View style={Styles.terms}>
-            <View style={Styles.icon}>
-              <Ionicons name='checkbox' size={20} color='#FF4471' />
-            </View>
-            <View style={Styles.text}>
-            <Text variant='xs' marginTop='m' textAlign='left'>By signing up you agree with our <Text variant='xs' style={Styles.meta} >Terms & Conditions</Text> </Text>
-            </View>
-          </View>
-
           <View style={{ marginTop: 20 }}>
-            <SubmitButton label='Sign up' onPress={(data) => console.log(data)} color='white' />
-          </View>
-
-          <View style={{ marginTop: 30 }}>
-          <Text variant='xs' marginTop='m' textAlign='center'>Already have an account ? Sign in</Text>
+            <SubmitButton label='Reset Password' onPress={(data) => console.log(data)} color='white' />
           </View>
        </ScrollView>
       </View>
   )
 }
 
-export default Signup;
+export default Login;

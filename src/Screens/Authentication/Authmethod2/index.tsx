@@ -16,7 +16,7 @@ interface IText {
     buttonText: string;
     actionText: string;
     action: string;
-    link: string;
+    link: string; 
     authroute: string;
 }
 
@@ -34,9 +34,7 @@ const AuthMethod = ({navigation}: { navigation: NativeStackNavigationProp<any> }
                 buttonText: 'Login with email',
                 actionText: 'Dont have an account? ',
                 action: 'Sign up',
-                // link: 'resetPassword',
-                link: 'resetSuccess',
-                // link: 'signup',
+                link: 'method2',
                 authroute: 'login',
             },
             'signup': {

@@ -22,7 +22,7 @@ const Login = () => {
         <StatusBar barStyle='dark-content' />
        <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1 }} contentContainerStyle={{ flex: 1, minHeight: height, paddingHorizontal: 20 }}>
         <View style={Styles.iconContainer}>
-            <Image source={require('../../../../assets/images/ventlyLogo.png')} resizeMode='contain' style={{ width: '100%', height: 50 }} />
+            <Image source={require('../../../../assets/images/Logo/ventlyLogo.png')} resizeMode='contain' style={{ width: '100%', height: 50 }} />
           </View>
           <View>
             <Text variant='subheader'>Welcome Back</Text>
@@ -50,4 +50,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Login;
