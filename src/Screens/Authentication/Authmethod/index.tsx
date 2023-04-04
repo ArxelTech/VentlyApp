@@ -35,8 +35,8 @@ const AuthMethod = ({navigation}: { navigation: NativeStackNavigationProp<any> }
                 actionText: 'Dont have an account? ',
                 action: 'Sign up',
                 // link: 'resetPassword',
-                link: 'resetSuccess',
-                // link: 'signup',
+                // link: 'resetSuccess',
+                link: 'signup',
                 authroute: 'login',
             },
             'signup': {

@@ -8,7 +8,6 @@ import Signup from '../Screens/Authentication/Signup';
 import resetPassword from '../Screens/Authentication/ResetPassword';
 import resetSuccess from '../Screens/Authentication/ResetSuccess'
 
-
 const Navigator = createNativeStackNavigator();
 
 const Authentication = () => {

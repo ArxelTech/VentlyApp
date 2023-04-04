@@ -5,11 +5,15 @@ import { Text, View } from '../../../components'
 import useForm from '../../../hooks/useForm'
 import { loginSchema } from '../../../Services/validation'
 import { SubmitButton, TextInput } from '../../../components/FormComponents'
-import { Ionicons } from '@expo/vector-icons'
-
+import { Ionicons } from '@expo/vector-icons';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 const { height } = Dimensions.get('screen');
 
-const Login = () => {
+interface IProps {
+  navigation?: NativeStackNavigationProp<any>
+}
+
+const Login = ({navigation}: IProps) => {
   const {  renderForm } = useForm({
     defaultValues: {
       email: '',
@@ -36,12 +40,8 @@ const Login = () => {
             <TextInput name='password' label='Password' isPassword leftIcon={<Ionicons name='lock-closed' size={25} color='lightgrey' />}  />
           </View>
 
-          <Text variant='xs' marginTop='m' textAlign='right'>Forgot Password ?</Text>
-
-          <View style={{ marginTop: 20 }}>
-            <SubmitButton label='Login in' onPress={(data) => console.log(data)} color='white' />
-          </View>
-
+          <Text variant='xs' marginTop='m' onPress={() => navigation?.navigate('resetPassword') } textAlign='right'>Forgot Password ?</Text>
+          
           <View style={{ marginTop: 30 }}>
           <Text variant='xs' marginTop='m' textAlign='center'>Dont have an account ? Signup</Text>
           </View>
