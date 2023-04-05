@@ -1,15 +1,14 @@
-import React from 'react'
-import { View, Text } from '../../../components'
-import { Styles } from './style'
-import { Image, ImageBackground, ScrollView, StyleSheet } from 'react-native'
-import { useRoute } from '@react-navigation/native'
-import AuthButton from '../../../components/Authentication/AuthButton'
-import { useTheme } from '@shopify/restyle'
-import { Theme } from '../../../Theme/theme'
-import { Ionicons } from '@expo/vector-icons'
-import { StatusBar } from 'react-native'
-import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-
+import React from 'react';
+import { View, Text } from '../../../components';
+import { Styles } from './style';
+import { Image, ImageBackground, ScrollView, StyleSheet } from 'react-native';
+import { useRoute } from '@react-navigation/native';
+import AuthButton from '../../../components/Authentication/AuthButton';
+import { useTheme } from '@shopify/restyle';
+import { Theme } from '../../../Theme/theme';
+import { Ionicons } from '@expo/vector-icons';
+import { StatusBar } from 'react-native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 interface IText {
     header: string;
     body: string;

@@ -19,8 +19,13 @@ export const Styles = StyleSheet.create({
     },
     iconContainer: {
         width: '100%',
-        height: '20%',
+        height: '5%',
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: 'red'
+    },
+    interests: {
+        backgroundColor: 'blue',
+        height: '45%'
     }
 });

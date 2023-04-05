@@ -9,11 +9,10 @@ import { Ionicons } from '@expo/vector-icons'
 
 const { height } = Dimensions.get('screen');
 
-const ResetPassword = () => {
+const VerifyEmail = () => {
   const {  renderForm } = useForm({
     defaultValues: {
-      email: '',
-      password: ''
+      Code: 1234,
     },
     validationSchema: loginSchema,
   });
@@ -26,15 +25,17 @@ const ResetPassword = () => {
               <Image source={require('../../../../assets/images/Logo/ventlyLogo.png')} resizeMode='contain' style={{ width: '100%', height: 50 }} />
             </View>
             <View>
-              <Text variant='subheader'>Forgot Password</Text>
-              <Text variant='xs'>Please enter the email address associated with your account</Text>
+              <Text variant='subheader'>Verify Your Email</Text>
+              <Text variant='xs'>We sent a verification code to your email address Please enter the code to verify your Vently Account</Text>
             </View>
             <View style={{ marginTop: 20 }}>
-              <TextInput name='email' label='Email Address' leftIcon={<Ionicons name='mail' size={25} color='lightgrey' />}  />
+              <TextInput name='Code' label='Verification Code' leftIcon={<Ionicons size={25} color='lightgrey' />}  />
             </View>
 
+            <Text variant='xs' marginTop='m' onPress={() => console.log('press') } textAlign='right'>Resend Code</Text>
+
             <View style={{ marginTop: 20 }}>
-              <SubmitButton label='Reset Password' onPress={(data) => console.log(data)} color='white' />
+              <SubmitButton label='Verify Email Address' onPress={(data) => console.log(data)} color='white' />
             </View>
           </View>
        {/* </ScrollView> */}
@@ -42,4 +43,4 @@ const ResetPassword = () => {
   )
 }
 
-export default ResetPassword;
+export default VerifyEmail;
