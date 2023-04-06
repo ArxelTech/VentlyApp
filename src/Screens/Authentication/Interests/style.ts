@@ -27,5 +27,9 @@ export const Styles = StyleSheet.create({
     interests: {
         backgroundColor: 'blue',
         height: '45%'
+    },
+    btn: {
+        width:'40%',
+        height: 20
     }
 });
