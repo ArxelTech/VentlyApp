@@ -22,14 +22,114 @@ export const Styles = StyleSheet.create({
         height: '5%',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'red'
+        // backgroundColor: 'red'
     },
     interests: {
-        backgroundColor: 'blue',
+        // backgroundColor: 'blue',
         height: '45%'
     },
-    btn: {
-        width:'40%',
-        height: 20
+    childContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        marginTop: 30
+    },
+    childContainer_B: {
+        display: 'flex',
+        flexDirection: 'row',
+        marginTop: 10
+        // justifyContent: 'space-evenly'
+    },
+    childContainer_C: {
+        display: 'flex',
+        flexDirection: 'row',
+        marginTop: 10
+        // justifyContent: 'space-evenly'
+    },
+    btn_X: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '40%',
+        height: 40,
+        backgroundColor: '#FF406E',
+        color: 'white',
+        borderRadius: 6,
+    },
+    btn_Y: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '40%',
+        height: 40,
+        backgroundColor: '#ccc',
+        color: 'black',
+        borderRadius: 6,
+        marginLeft: '5%'
+    },
+    btn_A: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '20%',
+        height: 40,
+        backgroundColor: '#ccc',
+        color: 'black',
+        borderRadius: 6,
+    },
+    btn_B: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '50%',
+        height: 40,
+        backgroundColor: '#ccc',
+        color: 'black',
+        borderRadius: 6,
+        marginLeft: '5%'
+    },
+    btn_C: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '20%',
+        height: 40,
+        backgroundColor: '#ccc',
+        color: 'black',
+        borderRadius: 6,
+        marginLeft: '5%'
+    },
+    btn_D: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '50%',
+        height: 40,
+        backgroundColor: '#ccc',
+        color: 'black',
+        borderRadius: 6,
+    },
+    btn_E: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '20%',
+        height: 40,
+        backgroundColor: '#ccc',
+        color: 'black',
+        borderRadius: 6,
+        marginLeft: '5%'
+    },
+    btn_F: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '20%',
+        height: 40,
+        backgroundColor: '#ccc',
+        color: 'black',
+        borderRadius: 6,
+        marginLeft: '5%'
     }
+
 });

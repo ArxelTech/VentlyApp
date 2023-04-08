@@ -9,7 +9,6 @@ import { Ionicons } from '@expo/vector-icons';
 import { CustomButton } from '../../../components';
 import { any } from 'zod';
 import theme from '../../../Theme/theme';
-import AuthButton from '../../../components/Authentication/AuthButton';
 
 const { height } = Dimensions.get('screen');
 const Theme = theme;
@@ -34,11 +33,33 @@ const Interests = () => {
               <Text variant='xs'>We've Suggested a couple of users and event categories you might be interested in following. Please follow at least 3 interest categories</Text>    
           </View>
           <View style={Styles.interests}>
-          <AuthButton label='Animals & Pets' icon={<Ionicons size={30} color='white' style={{ width: '20%', height: 40 }} />} action={() => console.log('logged')} backgroundColor={theme.colors.brandColor} borderWidth={0} color='white' />
-          <AuthButton label='Animals & Pets' icon={<Ionicons size={30} color='white' style={{ width: '20%', height: 40 }} />} action={() => console.log('logged')} backgroundColor={theme.colors.brandColor} borderWidth={0} color='white' />
+            <View style={Styles.childContainer}>
+              <Pressable style={Styles.btn_X} >Animal & Pets</Pressable>
+              <Pressable style={Styles.btn_Y} >Arts & Humanities</Pressable>
+            </View>
+            <View style={Styles.childContainer_B}>
+              <Pressable style={Styles.btn_A} >Autos</Pressable>
+              <Pressable style={Styles.btn_B} >Books & literature</Pressable>
+              <Pressable style={Styles.btn_C} >Beauty</Pressable>
+            </View>
+            <View style={Styles.childContainer_B}>
+              <Pressable style={Styles.btn_A} >Autos</Pressable>
+              <Pressable style={Styles.btn_B} >Books & literature</Pressable>
+              <Pressable style={Styles.btn_C} >Beauty</Pressable>
+            </View>
+            <View style={Styles.childContainer_B}>
+              <Pressable style={Styles.btn_A} >Autos</Pressable>
+              <Pressable style={Styles.btn_B} >Books & literature</Pressable>
+              <Pressable style={Styles.btn_C} >Beauty</Pressable>
+            </View>
+            <View style={Styles.childContainer_C}>
+              <Pressable style={Styles.btn_D} >Books & Literature</Pressable>
+              <Pressable style={Styles.btn_E} >Beauty</Pressable>
+              <Pressable style={Styles.btn_F} >Beauty</Pressable>
+            </View>
           </View>
             <View style={{ marginTop: 100 }}>
-              <SubmitButton label='Save' onPress={(data) => console.log(data)} color='white'  />
+              <SubmitButton label='Save' onPress={(data) => console.log(data)} color='white' />
             </View>
           </View>
        {/* </ScrollView> */}
