@@ -16,30 +16,20 @@ export const Styles = StyleSheet.create({
         marginTop: 40,
         height: '30%'
     },
-    imgUpload: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        // backgroundColor: '#fff000',
-        height: '60%',
-    },
-    bottom: {
-        
-    },
-    profileImg: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: 100,
-        height: 100,
-        borderRadius: 100,
-        backgroundColor: 'grey'
-    },
     child: {
         height: '100%',
         width: '90%',
         marginTop: '30%'
         // backgroundColor: '#ccc'
+    },
+    buttonContainer: {
+        display: 'flex',
+        width: '100%',
+        height: '50%',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'flex-end',
+        // backgroundColor: '#ffff00'
     },
 
 });

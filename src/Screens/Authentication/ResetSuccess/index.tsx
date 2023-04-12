@@ -11,12 +11,12 @@ const ResetSuccess = () => {
   return (
     <View style={Styles.parent}>
         <View style={Styles.header}>
-          <Image source={require('../../../../assets/images/Logo/ventlyLogo.png')} style={{ width: '100%', height: 50 }} resizeMode='contain' />
+          <Image source={require('../../../../assets/images/ventlySvg.svg')} style={{ width: '100%', height: 30 }} resizeMode='contain' />
         </View>
         <View style={Styles.middle}>
             <Text style={Styles.h2}>Forgot Password</Text>
             <View style={Styles.lockImg}>
-               <Image source={require('../../../../assets/images/Logo/ventlyLogo.png')} style={{ width: '100%', height: 50 }} resizeMode='contain' />
+               <Image source={require('../../../../assets/images/lock.svg')} style={{ width: '100%', height: 100 }} resizeMode='contain' />
             </View>
             <View style={Styles.text}>
                <Text style={Styles.p}>We just sent a password reset email to {resetMail}</Text>
