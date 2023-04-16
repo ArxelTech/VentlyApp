@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
 export const Styles = StyleSheet.create({
     parent: {
@@ -41,5 +41,29 @@ export const Styles = StyleSheet.create({
         marginTop: '30%'
         // backgroundColor: '#ccc'
     },
+    dropdown: {
+        // position: 'absolute',
+        // backgroundColor: 'red',
+        // color: 'pink',
+        borderColor: 'grey',
+        borderStyle: 'solid',
+        borderWidth: '1px',
+        height: '30%',
+        width: '100%'
+        // top: 50,
+    },
+    listItem: {
+        display: 'flex',
+        alignItems: 'flex-start',
+        justifyContent: 'center',
+        width: '100%',
+        height: 72,
+        fontSize: 20,
+        // backgroundColor: 'blue',
+        borderColor: 'grey',
+        borderStyle: 'solid',
+        borderWidth: '1px',
+        padding: 10
+    }
 
 });

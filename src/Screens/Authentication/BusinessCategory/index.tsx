@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Image, ScrollView, StatusBar, Dimensions, Pressable } from 'react-native';
 import { Styles } from './style';
 import { Text, View } from '../../../components';
@@ -10,9 +10,12 @@ import { CustomButton } from '../../../components';
 import { any } from 'zod';
 import theme from '../../../Theme/theme';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
 interface IProps {
   navigation?:  NativeStackNavigationProp<any>
 }
+
+
 
 const { height } = Dimensions.get('screen');
 const Theme = theme;

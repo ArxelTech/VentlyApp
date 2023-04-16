@@ -2,8 +2,8 @@ import React from 'react'
 import { Styles } from './style'
 import { CustomButton, Text, View } from '../../../components'
 import { Image } from 'react-native';
-// import PagerView from 'react-native-pager-view';
-import Slider  from 'react-native';
+import PagerView from 'react-native-pager-view';
+// import Slider  from 'react-native';
 import data from '../../../data';
 import { useTheme } from '@shopify/restyle';
 import { Theme } from '../../../Theme/theme';
@@ -30,15 +30,15 @@ const Onboarding = ({ navigation }: IProps) => {
 
       {/* SCROLL CONTAINER */}
 
-      {/* <View style={Styles.sliderConatainer}>
-        <Slider style={{ flex: 1 }} onPageScroll={(e) => handleScroll(e.nativeEvent.position)}>
+      <View style={Styles.sliderConatainer}>
+         {/* <PagerView style={{ flex: 1 }} onPageScroll={(e) => handleScroll(e.nativeEvent.position)}> */}
           {data.map((item, index) => (
             <View key={index.toString()}>
               <Image  source={item.img} style={{ width: '100%', height: '100%'}} resizeMode='contain'/>
             </View>
           ))}
-        </Slider>
-      </View> */}
+        {/* </PagerView>  */}
+      </View>
 
       {/* INDICATORS */}
       <View style={Styles.indicatorContainer}>

@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import { Image, ScrollView, StatusBar, Dimensions, Pressable } from 'react-native';
+import React, {FC, useState, useEffect} from 'react';
+import { Image, ScrollView, StatusBar, Dimensions, Pressable, TouchableOpacity, FlatList } from 'react-native';
 import { Styles } from './style';
 import { Text, View } from '../../../components';
 import useForm from '../../../hooks/useForm';
@@ -10,10 +10,76 @@ import { CustomButton } from '../../../components';
 import { any } from 'zod';
 import theme from '../../../Theme/theme';
 
+interface Iprops{
+  label: string;
+}
+
+// Dropdown function
+
+const data = [
+  {
+   id: 1,
+   category: 'Personal',
+  },
+  {
+   id: 2,
+   category: 'Business',
+  },
+]
+
 const { height } = Dimensions.get('screen');
 const Theme = theme;
 
-const Accounts = () => {
+const Accounts: FC<props> = () => {
+
+const [visible, setVisible] = useState(false);
+const [list, setList] = useState([]);
+
+useEffect(() => {
+  setList(data);
+
+  return () => {
+    setList([])
+  }
+}, [])
+
+const toggleDropdown = () => {
+  setVisible(!visible);
+};
+
+const renderDropdown = () => {
+  if (visible) {
+    return (
+      <View style={Styles.dropdown}>
+        
+          <FlatList
+             data={list}
+             renderItem={({item}) => 
+            //  <View>
+              <View style={Styles.listItem} variant='xs'>{item.category}</View>
+            //  </View>
+              }
+             keyExtractor={item => item.id}
+            />
+        
+      </View>
+    );
+  }
+}
+
+const unrenderMessage = () => {
+  if(!visible) {
+    return (
+      <View>
+        <Text variant='xs' marginTop='m' textAlign='left' fontWeight={'500'}>
+              Use this account type if you will just be using Vent.ly for personal use. 
+              You can always switch accounts later
+          </Text>
+      </View>
+    )
+  }
+}
+
   const {  renderForm } = useForm({
     defaultValues: {
       username: '',
@@ -39,13 +105,16 @@ const Accounts = () => {
             <Text variant='xs' marginTop='m' textAlign='center' fontWeight={'500'}>Create Username</Text>
             <TextInput name='username' label='' leftIcon={<Ionicons size={25} color='lightgrey' />}  />
             <Text variant='xs' marginTop='m' textAlign='center' fontWeight={'500'}>Select an Account Type</Text>
-            <TextInput name='accountType' label='' leftIcon={<Ionicons size={25} color='lightgrey' />}  />
-            <Text variant='xs' marginTop='m' textAlign='left' fontWeight={'500'}>Use this account type if you will just be using Vent.ly for personal use. You can always switch accounts later</Text>
-          </View>
+            <TextInput name='accountType' label='' rightIcon={<Ionicons name='caret-down' onPress={toggleDropdown} size={20} color='black'  />}  /> 
+            {/* Dropdown */}
+              {renderDropdown()}
+            {/* Message tip */}
+                {unrenderMessage()}
             <View style={{ marginTop: 100 }}>
               <SubmitButton label='Continue' onPress={(data) => console.log(data)} color='white' />
             </View>
           </View>
+        </View>
        {/* </ScrollView> */}
       </View>
   )
