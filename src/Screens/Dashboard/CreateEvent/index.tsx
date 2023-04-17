@@ -34,13 +34,26 @@ const Interests = () => {
               </View>    
           </View>
           <View style={Styles.subheader}>
-            <Text variant='xs'>Let's help you get your event ready, What kind of event do you want to create?</Text>
-          </View>
-          <View>
+            <View style={{width:'80%'}}>
+              <Text variant='xs' textAlign='center'>Let's help you get your event ready, What kind of event do you want to create?</Text>
             </View>
-            {/* <View style={{ marginTop: 100 }}>
+          </View>
+          <View style={Styles.image}>
+            <Image source={require('../../../../assets/images/husky.png')} resizeMode='contain' style={{ width: '100%', height: 250 }} />
+          </View>
+          <View style={Styles.dropdown}>
+            <Text variant='subheader'>Event Type</Text>
+            <View style={{width:'100%', marginTop: 10}}>
+             <TextInput name='accountType' label='' rightIcon={<Ionicons name='caret-down' size={20} color='black'  />}  />
+            </View>
+          
+            <View style={{marginTop: 10}}>
+              <Text variant='xs' textAlign='center'>These kind of events usually hold for just one day</Text>
+            </View>
+            <View style={{ marginTop: 10 }}>
               <SubmitButton label='Continue' onPress={(data) => console.log(data)} color='white' />
-            </View> */}
+            </View>
+          </View>
           </View>
        {/* </ScrollView> */}
       </View>

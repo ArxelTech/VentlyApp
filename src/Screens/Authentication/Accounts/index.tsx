@@ -10,34 +10,24 @@ import { CustomButton } from '../../../components';
 import { any } from 'zod';
 import theme from '../../../Theme/theme';
 
+const data = require('../../../../assets/data/dropdown.json');
+
 interface Iprops{
   label: string;
 }
 
 // Dropdown function
 
-const data = [
-  {
-   id: 1,
-   category: 'Personal',
-  },
-  {
-   id: 2,
-   category: 'Business',
-  },
-]
-
 const { height } = Dimensions.get('screen');
 const Theme = theme;
 
-const Accounts: FC<props> = () => {
+const Accounts = () => {
 
 const [visible, setVisible] = useState(false);
 const [list, setList] = useState([]);
 
 useEffect(() => {
-  setList(data);
-
+  setList(list);
   return () => {
     setList([])
   }
@@ -53,15 +43,13 @@ const renderDropdown = () => {
       <View style={Styles.dropdown}>
         
           <FlatList
-             data={list}
+             data={data}
              renderItem={({item}) => 
-            //  <View>
-              <View style={Styles.listItem} variant='xs'>{item.category}</View>
-            //  </View>
+              <View style={Styles.listItem}>{item.category}</View>
               }
              keyExtractor={item => item.id}
             />
-        
+  
       </View>
     );
   }
