@@ -47,7 +47,7 @@ export const Styles = StyleSheet.create({
         // color: 'pink',
         borderColor: 'grey',
         borderStyle: 'solid',
-        borderWidth: '1px',
+        borderWidth: 1,
         height: '30%',
         width: '100%'
         // top: 50,
@@ -62,7 +62,7 @@ export const Styles = StyleSheet.create({
         // backgroundColor: 'blue',
         borderColor: 'grey',
         borderStyle: 'solid',
-        borderWidth: '1px',
+        borderWidth: 1,
         padding: 10
     }
 
