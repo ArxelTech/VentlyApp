@@ -1,4 +1,3 @@
-import { backgroundColor } from '@shopify/restyle';
 import { StyleSheet } from 'react-native'
 
 export const Styles = StyleSheet.create({

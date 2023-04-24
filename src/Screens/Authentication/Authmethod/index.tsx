@@ -1,15 +1,14 @@
-import React from 'react'
-import { View, Text } from '../../../components'
-import { Styles } from './style'
-import { Image, ImageBackground, ScrollView, StyleSheet } from 'react-native'
-import { useRoute } from '@react-navigation/native'
-import AuthButton from '../../../components/Authentication/AuthButton'
-import { useTheme } from '@shopify/restyle'
-import { Theme } from '../../../Theme/theme'
-import { Ionicons } from '@expo/vector-icons'
-import { StatusBar } from 'react-native'
-import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-
+import React from 'react';
+import { View, Text } from '../../../components';
+import { Styles } from './style';
+import { Image, ImageBackground, ScrollView, StyleSheet } from 'react-native';
+import { useRoute } from '@react-navigation/native';
+import AuthButton from '../../../components/Authentication/AuthButton';
+import { useTheme } from '@shopify/restyle';
+import { Theme } from '../../../Theme/theme';
+import { Ionicons } from '@expo/vector-icons';
+import { StatusBar } from 'react-native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 interface IText {
     header: string;
     body: string;
@@ -34,6 +33,8 @@ const AuthMethod = ({navigation}: { navigation: NativeStackNavigationProp<any> }
                 buttonText: 'Login with email',
                 actionText: 'Dont have an account? ',
                 action: 'Sign up',
+                // link: 'resetPassword',
+                // link: 'resetSuccess',
                 link: 'signup',
                 authroute: 'login',
             },
@@ -66,7 +67,7 @@ const AuthMethod = ({navigation}: { navigation: NativeStackNavigationProp<any> }
             <ImageBackground source={require('../../../../assets/images/signinBG.png')} resizeMode='cover' style={StyleSheet.absoluteFillObject}>
                 <View style={Styles.mask}>
                     <View style={Styles.iconContainer}>
-                        <Image source={require('../../../../assets/images/whitelogo.png')} resizeMode='contain' style={{ width: '100%', height: 30}} />
+                        <Image source={require('../../../../assets/images/Logo/whitelogo.png')} resizeMode='contain' style={{ width: '100%', height: 30}} />
                     </View>
                 </View>
             </ImageBackground>
@@ -94,4 +95,4 @@ const AuthMethod = ({navigation}: { navigation: NativeStackNavigationProp<any> }
   )
 }
 
-export default AuthMethod
+export default AuthMethod;
