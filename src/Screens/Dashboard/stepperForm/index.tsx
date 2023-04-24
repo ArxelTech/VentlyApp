@@ -10,7 +10,7 @@ import { loginSchema } from '../../../Services/validation';
 
 const event = ['Single Day Event'] 
 
-const index = () => {
+const StepperForm = () => {
 	const { renderForm } = useForm({
 		defaultValues: {
 			eventName: '',
@@ -377,4 +377,4 @@ const index = () => {
   )
 };
 
-export default index;
+export default StepperForm;
