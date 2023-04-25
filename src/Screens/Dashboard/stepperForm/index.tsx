@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, Image, TouchableOpacity, Pressable, ScrollView } from 'react-native';
+import { StyleSheet, Image, TouchableOpacity, Pressable, ScrollView, Dimensions } from 'react-native';
 import {Text, View } from '../../../components';
 import { Ionicons } from '@expo/vector-icons';
 import { Styles } from './style';
@@ -8,9 +8,11 @@ import { TextInput } from '../../../components/FormComponents'
 import useForm from '../../../hooks/useForm'
 import { loginSchema } from '../../../Services/validation';
 
+const { height } = Dimensions.get('screen');
+
 const event = ['Single Day Event'] 
 
-const index = () => {
+const Index = () => {
 	const { renderForm } = useForm({
 		defaultValues: {
 			eventName: '',
@@ -33,7 +35,7 @@ const index = () => {
 							  <Ionicons name="arrow-back" size={30} color="#000" />
 						</TouchableOpacity>
 					</View>
-					
+			
 					<View style={[Styles.centerElement, {height: 50}, {marginTop: 20}, {display:'flex'},{flex:5}, {alignItems:'flex-start'},{justifyContent: 'flex-start'}]}>
 						{/* HEADER  */}
 						<View style={{width:'100%'}}>
@@ -58,7 +60,9 @@ const index = () => {
 										({currentStep: currentStep + 1});
 										}
 									}}>
-										<Pressable onPress={() => setCurrentStep(currentStep + 1)}>Skip</Pressable>
+										<Pressable onPress={() => setCurrentStep(currentStep + 1)}>
+											<Text variant='xs'>Skip</Text>
+										</Pressable>
 									</TouchableOpacity>
 									</View>	
 								</View>	
@@ -79,7 +83,8 @@ const index = () => {
 										({currentStep: currentStep + 1});
 										}
 									}}>
-										<Pressable onPress={() => setCurrentStep(currentStep + 1)}>Skip</Pressable>
+										<Pressable onPress={() => setCurrentStep(currentStep + 1)}>
+											<Text variant='xs'>Skip</Text>										</Pressable>
 									</TouchableOpacity>
 									</View>	
 								</View>	
@@ -117,13 +122,15 @@ const index = () => {
 										</View>
 									)}
 								</View>
-							</View>
-						</View>
+					</View>
+				</View>
+				<ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1,}} 
+				  > 	
 					{/* CONDITIONAL PAGE RENDERING */}
-						<View >
+						<View> 
 							{/* Create New Event */}
 							{currentStep == 1 &&
-							    <View>	
+							    <View style={{}}>	
 									<View style={{height: 250,  width: '100%', display: 'flex', flexDirection: 'row', justifyContent:'center', alignItems:'center',}}>
 										<View style={{width: '80%', height: '80%',  display: 'flex', alignItems: 'center', justifyContent:'center', borderWidth: 1, borderStyle:'solid', borderColor:'lightgrey' }}>
 											<Ionicons name='camera' size={50} color='lightgrey' /> 
@@ -136,7 +143,7 @@ const index = () => {
 									<View style={{display:'flex', flexDirection:'row', justifyContent:'center',}}>
 									  <View style={{width:'80%', backgroundColor: 'white'}}>
 									    <Text variant='header' style={{fontSize: 15, }}>Event Name & Type</Text>
-										<View style={{ marginTop: 10, borderWidth: 1, borderColor:'red', borderStyle: 'solid' }}>
+										<View style={{ marginTop: 10}}>
 										  <TextInput name='eventName' label=''  />
 										</View>
 										<View style={{marginTop:10}}>
@@ -369,12 +376,13 @@ const index = () => {
 									<Text variant='xs' style={{fontSize: 30}}>Step 4</Text>
 								</View>
 							}
-							{/* CONTINUE BUTTON */}
-							
-				        </View>		
-		</View>				
+							{/* CONTINUE BUTTON */}				
+				        </View>	
+				</ScrollView>	
+		        </View>				
 	    </View>
+		
   )
 };
 
-export default index;
+export default Index;
