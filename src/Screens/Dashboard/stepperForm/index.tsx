@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { StyleSheet, Image, TouchableOpacity, Pressable, ScrollView, Dimensions } from 'react-native';
 import {Text, View } from '../../../components';
 import { Ionicons } from '@expo/vector-icons';
@@ -7,22 +7,45 @@ import { CustomButton } from '../../../components';
 import { TextInput } from '../../../components/FormComponents'
 import useForm from '../../../hooks/useForm'
 import { loginSchema } from '../../../Services/validation';
+import {FlatList} from 'react-native';
+
+const DATA = require('../../../../assets/data/vendors.json')
 
 const { height } = Dimensions.get('screen');
 
-const event = ['Single Day Event'] 
+  type ItemProps = {
+	Name: string,
+	handle: string
+
+};
+
+  const Item = ({Name}: ItemProps, {handle}: ItemProps) => (
+	<View style={{ backgroundColor:'pink', height:80}}>
+	  <Text variant='xs' style={{}}>{Name}</Text>
+	  <Text variant='xs' style={{}}>{handle}</Text>
+	</View>
+  );
+
+const event = ['Single Day Event']; 
 
 const Index = () => {
 	const { renderForm } = useForm({
 		defaultValues: {
 			eventName: '',
 			eventType: ''
-			
 		},
 		validationSchema: loginSchema
 	})
 	const [steps, setStep] = useState(['', '', '', '']);
 	const [currentStep, setCurrentStep ] = useState(1);
+	// const [vendors, setVendors] = useState([]);
+
+	// useEffect(() => {
+	// 	setVendors(data);
+	// 	return () => {
+	// 		setVendors([])
+	// 	}
+	// }, [])
 
   return renderForm(
     <View style={Styles.main_Container}>
@@ -30,31 +53,33 @@ const Index = () => {
 				{/* EVENT TITLE  */}
 				<View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', height: '20%',}}>
 					{/* CONDITIONAL HEADER RENDERING */}
-					<View style={[{height: 50}, {marginTop: 20}, {display:'flex'},{flex:1}, {flexDirection: 'row'}, {alignItems:'flex-start'},{justifyContent: 'center'},]}>
+					<View style={[{height: 50}, {marginTop: 20}, {display:'flex'},{flex:1}, {flexDirection: 'row'}, 
+						{alignItems:'flex-start'},{justifyContent: 'center'},]}>
 						<TouchableOpacity style={[Styles.centerElement, {width: 50, height: 40}]} onPress={() => {currentStep > 1 && setCurrentStep(currentStep -1)}}>	
 							  <Ionicons name="arrow-back" size={30} color="#000" />
 						</TouchableOpacity>
 					</View>
 			
-					<View style={[Styles.centerElement, {height: 50}, {marginTop: 20}, {display:'flex'},{flex:5}, {alignItems:'flex-start'},{justifyContent: 'flex-start'}]}>
+					<View style={[Styles.centerElement, {height: 50}, {marginTop: 20}, {display:'flex'},{flex:5}, 
+					{alignItems:'flex-start'},{justifyContent: 'flex-start'}]}>
 						{/* HEADER  */}
 						<View style={{width:'100%'}}>
 							{
 								currentStep == 1 &&		
-								<Text  variant='header' style={{fontSize: 22, color: '#000'}}>Create A New Event</Text>	
-								
+								<Text  variant='header' style={{fontSize: 22, color: '#000'}}>Create A New Event</Text>								
 							}
-
 							{
 								currentStep == 2 &&
 								<View style={{display: 'flex', flexDirection: 'row', width: '100%'}}>
 									<View style={{ width: '50%'}}>
-									<Text variant='header' style={{fontSize: 22, color: '#000'}}>Set Up Tickets</Text>
+										<Text variant='header' style={{fontSize: 22, color: '#000'}}>Set Up Tickets</Text>
 									</View>
-									<View style={{width: '50%', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', }}>
+									<View style={{width: '50%', display: 'flex', flexDirection: 'row', justifyContent: 'center',
+									 alignItems: 'center', }}>
 									<TouchableOpacity style={[Styles.centerElement, 
-										{bottom: 0, left: 15, width: 80, height: 30, 
-										backgroundColor: 'transparent', elevation: 10, borderRadius: 20, borderStyle: 'solid', borderWidth: 1}]} 
+										{left: 15, width: 80, height: 30, 
+										backgroundColor: 'transparent', elevation: 0, borderRadius: 20, borderStyle: 'solid', 
+										borderWidth: 1}]} 
 										onPress={() => {
 										if((currentStep+1) < steps.length){
 										({currentStep: currentStep + 1});
@@ -72,19 +97,20 @@ const Index = () => {
 								currentStep == 3 && 
 								<View style={{display: 'flex', flexDirection: 'row', width: '100%'}}>
 									<View style={{ width: '50%'}}>
-									<Text variant='header' style={{fontSize: 22, color: '#000'}}>Invite Ventors</Text>
+										<Text variant='header' style={{fontSize: 22, color: '#000'}}>Invite Ventors</Text>
 									</View>
 									<View style={{width: '50%', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', }}>
 									<TouchableOpacity style={[Styles.centerElement, 
-										{bottom: 0, left: 15, width: 80, height: 30, 
-										backgroundColor: 'transparent', elevation: 10, borderRadius: 20, borderStyle: 'solid', borderWidth: 1}]} 
+										{left: 15, width: 80, height: 30, 
+										backgroundColor: 'transparent', elevation: 0, borderRadius: 20, borderStyle: 'solid', borderWidth: 1}]} 
 										onPress={() => {
 										if((currentStep+1) < steps.length){
 										({currentStep: currentStep + 1});
 										}
 									}}>
 										<Pressable onPress={() => setCurrentStep(currentStep + 1)}>
-											<Text variant='xs'>Skip</Text>										</Pressable>
+											<Text variant='xs'>Skip</Text>										
+										</Pressable>
 									</TouchableOpacity>
 									</View>	
 								</View>	
@@ -118,7 +144,7 @@ const Index = () => {
 												<View style={{width: 50, height: 8, backgroundColor: '#FF406E',zIndex: 10,}}>
 												</View>
 											}
-											<Text variant='xs' style={{fontSize: 12}}>{label}</Text>
+											{/* <Text variant='xs' style={{fontSize: 12}}>{label}</Text> */}
 										</View>
 									)}
 								</View>
@@ -130,9 +156,10 @@ const Index = () => {
 						<View> 
 							{/* Create New Event */}
 							{currentStep == 1 &&
-							    <View style={{}}>	
+							    <View>	
 									<View style={{height: 250,  width: '100%', display: 'flex', flexDirection: 'row', justifyContent:'center', alignItems:'center',}}>
-										<View style={{width: '80%', height: '80%',  display: 'flex', alignItems: 'center', justifyContent:'center', borderWidth: 1, borderStyle:'solid', borderColor:'lightgrey' }}>
+										<View style={{width: '90%', height: '80%',  display: 'flex', alignItems: 'center', justifyContent:'center', borderWidth: 1, 
+										borderStyle:'solid', borderColor:'lightgrey' }}>
 											<Ionicons name='camera' size={50} color='lightgrey' /> 
 											<View style={{marginTop: 10}}>
 												<Text variant='xs'>TAP TO ADD EVENT COVER PHOTO</Text>
@@ -141,31 +168,32 @@ const Index = () => {
 									</View>
 									{/* Event name & Type */}
 									<View style={{display:'flex', flexDirection:'row', justifyContent:'center',}}>
-									  <View style={{width:'80%', backgroundColor: 'white'}}>
+									  <View style={{width:'90%', backgroundColor: 'white'}}>
 									    <Text variant='header' style={{fontSize: 15, }}>Event Name & Type</Text>
-										<View style={{ marginTop: 10}}>
+										<View style={{ marginTop: -15}}>
 										  <TextInput name='eventName' label=''  />
 										</View>
-										<View style={{marginTop:10}}>
+										<View style={{marginTop:0}}>
 										  <TextInput name='eventType' label='' rightIcon={<Ionicons name='caret-down' size={20} color='black'  />}  />
 										</View>
 									{/* Time & Date */}
-										<View style={{marginTop:15}}>
+										<View style={{marginTop:5}}>
 											<Text variant='header' style={{fontSize: 15, }}>Time & Date</Text>
 										
-											<View style={{ marginTop: 10 }}>
-											<TextInput name='eventType' label='' rightIcon={<Ionicons name='caret-down' size={20} color='black'  />}  />
+											<View style={{ marginTop: -15}}>
+												<TextInput name='eventType' label='' rightIcon={<Ionicons name='caret-down' size={20} color='black'  />}  />
 											</View>
 
 											<View style={{ marginTop: 15 }}>
 												<TouchableOpacity 
 												style={{display:'flex', justifyContent: 'center', alignItems: 'center',
 												borderColor:'#ECECEC', borderWidth: 1, borderRadius:10,  backgroundColor: '#F5F5F5',
-													width:'100%', height:60, elevation: 10}} onPress={() => {console.log('data')}}>
+													width:'100%', height:60, elevation: 0}} onPress={() => {console.log('data')}}>
 													<Pressable style={{display: 'flex', flexDirection: 'row',
 													justifyContent:'center', alignItems:'center', width:'100%' }}>
 													<View style={{ width: '40%',padding: 5, alignItems:'flex-end'}}>
-														<Image source={require('../../../../assets/images/clock.svg')} resizeMode='contain' style={{ width: '30%', height: 30 }} />
+													<Image source={require('../../../../assets/images/clock.png')} resizeMode='contain'  style={{ width: '30%', height: 30 }} />
+														{/* <Image source={require('../../../../assets/images/clock.svg')} resizeMode='contain' style={{ width: '30%', height: 30 }} /> */}
 													</View>
 													<View style={{ width: '60%', padding: 5}}>
 														<Text variant='xs'>Select A Date</Text>
@@ -177,11 +205,11 @@ const Index = () => {
 												<TouchableOpacity 
 												style={{display:'flex', justifyContent: 'center', alignItems: 'center',
 												borderColor:'#ECECEC', borderWidth: 1, borderRadius:10,  backgroundColor: '#F5F5F5',
-													width:'100%', height:60, elevation: 10}} onPress={() => {console.log('data')}}>
+													width:'100%', height:60, elevation: 0}} onPress={() => {console.log('data')}}>
 													<Pressable style={{display: 'flex', flexDirection: 'row',
 													justifyContent:'center', alignItems:'center', width:'100%' }}>
 													<View style={{ width: '40%',padding: 5, alignItems:'flex-end'}}>
-														<Image source={require('../../../../assets/images/calendar.svg')} resizeMode='contain' style={{ width: '30%', height: 30 }} />
+														<Image source={require('../../../../assets/images/calendar.png')} resizeMode='contain' style={{ width: '30%', height: 30 }} />
 													</View>
 													<View style={{ width: '60%', padding: 5}}>
 														<Text variant='xs'>Select A Date</Text>
@@ -197,11 +225,11 @@ const Index = () => {
 												<TouchableOpacity 
 												style={{display:'flex', justifyContent: 'center', alignItems: 'center',
 												borderColor:'#ECECEC', borderWidth: 1, borderRadius:10,  backgroundColor: '#F5F5F5',
-													width:'100%', height:60, elevation: 10}} onPress={() => {console.log('data')}}>
+													width:'100%', height:60, elevation: 0}} onPress={() => {console.log('data')}}>
 													<Pressable style={{display: 'flex', flexDirection: 'row',
 													justifyContent:'center', alignItems:'center', width:'100%' }}>
 													<View style={{ width: '40%',padding: 5, alignItems:'flex-end'}}>
-														<Image source={require('../../../../assets/images/clock.svg')} resizeMode='contain' style={{ width: '30%', height: 30 }} />
+														<Image source={require('../../../../assets/images/calendar.png')} resizeMode='contain' style={{ width: '30%', height: 30 }} />
 													</View>
 													<View style={{ width: '60%', padding: 5}}>
 														<Text variant='xs'>Select Location</Text>
@@ -215,11 +243,12 @@ const Index = () => {
 										{/* Media */}
 										<View style={{marginTop:60}}>
 											<Text variant='header' style={{fontSize: 15, }}>Media</Text>
+											<Text variant='xs' style={{fontSize: 12, marginTop: -15}}>You can add up to 5 pictures</Text>
 											<View style={{ marginTop: 10 }}>
 												<TouchableOpacity 
 												style={{display:'flex', justifyContent: 'center', alignItems: 'center',
 												borderColor:'#ECECEC', borderWidth: 1, borderRadius:10,  backgroundColor: '#F5F5F5',
-													width:'100%', height:60, elevation: 10}} onPress={() => {console.log('data')}}>
+													width:'100%', height:60, elevation: 0}} onPress={() => {console.log('data')}}>
 													<Pressable style={{display: 'flex', flexDirection: 'row',
 													justifyContent:'center', alignItems:'center', width:'100%' }}>
 													<View style={{ width: '40%',padding: 5, alignItems:'flex-end'}}>
@@ -231,7 +260,7 @@ const Index = () => {
 													</Pressable> 
 												</TouchableOpacity> 
 											</View>
-											<Text variant='xs' textAlign='right' style={{fontSize: 15, marginTop:5 }}>+ Add Video</Text>	
+											<Text variant='header' textAlign='right' style={{fontSize: 12, marginTop:5 }}>+ Add Video</Text>	
 										</View> 
 										{/* Event Description */}
 										<View style={{marginTop:40}}>
@@ -242,13 +271,13 @@ const Index = () => {
 											{/* <Text variant='xs' textAlign='right' style={{fontSize: 15, marginTop:5 }}>+ Add Video</Text>	 */}
 										</View> 
 										{/* Additional Settings */}
-										<View style={{marginTop:15}}>
+										<View style={{marginTop:30}}>
 											<Text variant='header' style={{fontSize: 15, }}>Additional Settings</Text>
 											<View style={{ marginTop: 10 }}>
 												<TouchableOpacity 
 												style={{display:'flex', justifyContent: 'center', alignItems: 'center',
 												borderColor:'#ECECEC', borderWidth: 1, borderRadius:10,  backgroundColor: '#F5F5F5',
-													width:'100%', height:60, elevation: 10}} onPress={() => {console.log('data')}}>
+													width:'100%', height:60, elevation: 0}} onPress={() => {console.log('data')}}>
 													<Pressable style={{display: 'flex', flexDirection: 'row',
 													justifyContent:'center', alignItems:'center', width:'100%' }}>
 													<View style={{ width: '40%',padding: 5, alignItems:'flex-end'}}>
@@ -260,84 +289,17 @@ const Index = () => {
 													</Pressable> 
 												</TouchableOpacity> 
 											</View>
-											<Text variant='xs' textAlign='left' style={{fontSize: 15, marginTop:5 }}>Tickets</Text>	
-											<Text variant='xs' textAlign='right' style={{fontSize: 15, marginTop:5 }}>Enabled</Text>	
+											<Text variant='header' textAlign='left' style={{fontSize: 12, marginTop:5 }}>Tickets</Text>	
+											<Text variant='xs' textAlign='right' style={{fontSize: 10, marginTop:5 }}>Enabled</Text>	
 										</View> 
 
 								       <View style={{ position: 'relative', marginTop:10, paddingBottom:40, }}>
 										
-												{
-													(currentStep+1) < steps.length /* add other conditions here */ &&
-														<TouchableOpacity style={[Styles.centerElement, 
-															{bottom: 0, right: 0, width: '100%', height: 80, padding: 10, display:'flex', justifyContent:'center', alignItems: 'center', 
-															 elevation: 10, borderRadius: 0
-															}]} 
-															onPress={() => {
-															if((currentStep+1) < steps.length){
-																({currentStep: currentStep + 1});
-																}
-															}}>
-															<CustomButton  label='Continue'  borderRadius={10} backgroundColor='#FF406E'  color='white'
-															onPress={() => setCurrentStep(currentStep + 1)}
-															/>
-														</TouchableOpacity>	
-													
-												}
-												{(currentStep+1) == steps.length /* add other conditions here */ &&	
-													<TouchableOpacity style={[Styles.centerElement, 
-														{ width: '100%', height: 80, padding: 10, display:'flex', justifyContent:'center', alignItems: 'center', 
-														backgroundColor: '#ccc', elevation: 10, borderRadius: 0
-														}]} 
-														onPress={() => {
-														if((currentStep+1) < steps.length){
-															({currentStep: currentStep + 1});
-															}
-														}}>
-														<CustomButton  label='finish'  borderRadius={10} backgroundColor='#FF406E'  color='white'
-														onPress={() => setCurrentStep(currentStep + 1)}
-														/>
-													</TouchableOpacity>		
-												}
-					                   </View>		   
-									  </View>		 
-									</View>
-								</View>
-							}
-							{/*Set up Tickets  */}
-							{currentStep == 2 &&	
-								<View>	
-									<View style={{ backgroundColor:'blue', padding:30, marginTop:15, display:'flex', 
-									flexDirection:'row', justifyContent:'center',}}>
-										<Text variant='xs' style={{fontSize: 15}}>
-											If your event requires tickets this is where you need to set it up 
-											otherwise you can skip this page
-										</Text>		             
-									</View>							
-									<View style={{display:'flex', flexDirection:'row', justifyContent:'center',}}>
-									<View style={{width:'80%', backgroundColor: 'white'}}>
-										<Text variant='header' style={{fontSize: 15, }}>Ticket 01</Text>
-										<View style={{ marginTop: 15, borderColor:'#ccc', borderWidth: 1, borderRadius:5}}>
-										  <TextInput name='eventName' label=''  />
-										</View>
-										<View style={{ marginTop: 15, borderColor:'#ccc', borderWidth: 1, borderRadius:5}}>
-										   <TextInput name='eventType' label='' leftIcon={<Ionicons name='caret-down' size={20} color='black'  />}  />
-										</View>
-										<View style={{marginTop:15}}>
-											<View style={{marginTop:10, height: 150, backgroundColor: '#F5F5F5', borderRadius: 10, padding: 10}}>
-										       <Text variant='xs'>Give a proper description of this event</Text>
-										    </View>
-											{/* <Text variant='xs' textAlign='right' style={{fontSize: 15, marginTop:5 }}>+ Add Video</Text>	 */}
-										</View> 
-										<View style={{ marginTop: 15, borderColor:'#ccc', borderWidth: 1, borderRadius:5}}>
-										   <TextInput name='eventType' label=''  />
-										</View>
-										<View style={{ position: 'relative', marginTop:10, paddingBottom:40, }}>
-											
-													{
+									   {
 														(currentStep+1) < steps.length /* add other conditions here */ &&
 															<TouchableOpacity style={[Styles.centerElement, 
 																{ width: '100%', height: 80, paddingTop: 10,paddingBottom:10, display:'flex', justifyContent:'center', alignItems: 'center', 
-																 elevation: 10, borderRadius: 0
+																 elevation: 0, borderRadius: 0
 																}]} 
 																onPress={() => {
 																if((currentStep+1) < steps.length){
@@ -350,33 +312,129 @@ const Index = () => {
 															</TouchableOpacity>	
 														
 													}
-													{(currentStep+1) == steps.length /* add other conditions here */ &&	
-														<TouchableOpacity style={[Styles.centerElement, 
-															{ width: '100%', height: 80, paddingTop: 10,paddingBottom:10, display:'flex', justifyContent:'center', alignItems: 'center', 
-															 elevation: 10, borderRadius: 0
-															}]} 
-															onPress={() => {
-															if((currentStep+1) < steps.length){
-																({currentStep: currentStep + 1});
-																}
-															}}>
-															<CustomButton  label='finish'  borderRadius={10} backgroundColor='#FF406E'  color='white'
-															onPress={() => setCurrentStep(currentStep + 1)}
-															/>
-														</TouchableOpacity>		
-													}
-										</View>		   
-									</View>		 
+												
+					                   </View>		   
+									  </View>		 
+									</View>
+								</View>
+							}
+							{/*Set up Tickets  */}
+							{currentStep == 2 &&	
+								<View>	
+									<View style={{ backgroundColor:'transparent', padding:20, marginTop:15, display:'flex', 
+									flexDirection:'row', justifyContent:'center',}}>
+										<Text variant='xs' style={{fontSize: 12}}>
+											If your event requires tickets this is where you need to set it up 
+											otherwise you can skip this page
+										</Text>		             
+									</View>							
+									<View style={{display:'flex', flexDirection:'row', justifyContent:'center',}}>
+									
+										<View style={{width:'90%', backgroundColor: 'white'}}>
+										<Text variant='header' style={{fontSize: 15, }}>Ticket 01</Text>
+											<View style={{ marginTop: -15, borderRadius:5, }}>
+											<TextInput name='eventName' label=''  />
+											</View>
+											<View style={{ marginTop: 0, borderRadius:5}}>
+											<TextInput name='eventType' label='' leftIcon={<Ionicons name='caret-down' size={20} color='black'  />}  />
+											</View>
+											<View style={{marginTop:5}}>
+												<View style={{marginTop:10, height: 150, backgroundColor: '#F5F5F5', borderRadius: 10, padding: 10}}>
+												<Text variant='xs'>
+														Additional Ticket Information - e.g : This ticket gives you access to the VIP lounge & 5 cocktails
+												</Text>
+												</View>
+												{/* <Text variant='xs' textAlign='right' style={{fontSize: 15, marginTop:5 }}>+ Add Video</Text>	 */}
+											</View> 
+											<View style={{ marginTop: 0, borderRadius:5}}>
+											<TextInput name='eventType' label=''  />
+											</View>
+											<Text variant='xs' style={{fontSize: 12, marginTop:5}}>This ticket will become sold out once it gets to this number Maximum number of tickets is 100,000</Text>
+											<Text variant='header' textAlign='right' style={{fontSize: 12, marginTop: 15,}}>+ Add Another Ticket</Text>
+											<View style={{ position: 'relative', marginTop:10, paddingBottom:40, }}>
+												
+														{
+															(currentStep+1) < steps.length /* add other conditions here */ &&
+																<TouchableOpacity style={[Styles.centerElement, 
+																	{ width: '100%', height: 80, paddingTop: 10,paddingBottom:10, display:'flex', justifyContent:'center', alignItems: 'center', 
+																	elevation: 0, borderRadius: 0
+																	}]} 
+																	onPress={() => {
+																	if((currentStep+1) < steps.length){
+																		({currentStep: currentStep + 1});
+																		}
+																	}}>
+																	<CustomButton  label='Continue'  borderRadius={10} backgroundColor='#FF406E'  color='white'
+																	onPress={() => setCurrentStep(currentStep + 1)}
+																	/>
+																</TouchableOpacity>	
+															
+														}
+														
+											</View>		   
+										</View>		 
 									</View>
 							    </View>
 							}	
 							{/* Invite Vendors */}
 							{currentStep == 3 &&	
-								<View style={{height: 200, alignSelf: 'center', backgroundColor: 'green', width: '100%'}}>
-									<Text variant='xs' style={{fontSize: 30}}>Step 4</Text>
+								<View style={{height: '100%', width:'100%', alignSelf: 'center', backgroundColor: 'green',}}>
+									<View style={{ backgroundColor:'transparent', padding:20, marginTop:15, display:'flex', 
+									flexDirection:'row', justifyContent:'center',}}>
+										<Text variant='xs' style={{fontSize: 12}}>
+										This is where you can invite creatives and vendors to your event. Disc Jockeys, MCs, Cinematographers Photographers, Artistes and more.
+										</Text>		             
+									</View>
+									<Text variant='header' textAlign='center' style={{fontSize:15}}>Tap To Invite A Creative Or Vendor</Text>	
+									<View style={{width: '100%', display:'flex', flexDirection:'row', justifyContent:'center'}}>
+										<View style={{width:'90%', backgroundColor:'red'}}>
+											<Text variant='header' textAlign='left' style={{fontSize:15}}>
+											RECOMMENDED FOR YOU	
+											</Text>	
+											<View>
+											<FlatList
+											data={DATA}
+											renderItem={({item}) => 
+											<View style={{height: 200}}>
+												<Image source={item.img} style={{height:100, width:100}}/>
+												<Text variant='xs'>
+											       {item.Name}
+												</Text>
+												<Text variant='xs'>
+											       {item.handle}
+												</Text>
+												<Text variant='xs'>
+											       {item.career}
+												</Text>
+												<Text variant='xs'>
+											       {item.cost}
+												</Text>
+											</View> }
+											keyExtractor={item => item.id}
+										/>
+					
+									</View>
+									    </View>
+									</View>
+									{(currentStep+1) == steps.length /* add other conditions here */ &&	
+													<TouchableOpacity style={[Styles.centerElement, 
+														{ width: '100%', height: 80, padding: 10, display:'flex', justifyContent:'center', alignItems: 'center', 
+														 elevation: 0, borderRadius: 0
+														}]} 
+														onPress={() => {
+														if((currentStep+1) < steps.length){
+															({currentStep: currentStep + 1});
+															}
+														}}>
+														<CustomButton  label='finish'  borderRadius={10} backgroundColor='#FF406E'  color='white'
+														onPress={() => setCurrentStep(currentStep + 1)}
+														/>
+													</TouchableOpacity>		
+									}
+									
 								</View>
 							}
-							{/* CONTINUE BUTTON */}				
+										
 				        </View>	
 				</ScrollView>	
 		        </View>				

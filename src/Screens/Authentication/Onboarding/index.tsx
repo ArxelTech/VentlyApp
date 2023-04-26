@@ -4,7 +4,7 @@ import { CustomButton, Text, View } from '../../../components'
 import { Image } from 'react-native';
 import PagerView from 'react-native-pager-view';
 // import Slider  from 'react-native';
-import data from '../../../data';
+import data from '../../../../assets/data';
 import { useTheme } from '@shopify/restyle';
 import { Theme } from '../../../Theme/theme';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';

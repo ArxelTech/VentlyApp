@@ -1,0 +1,32 @@
+[
+    {
+     "id": 1,
+     "img":"https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/69/2255491/1.jpg?8284",
+     "Name": "Sandra Carson",
+     "Cost": "$1500 Per Event",
+     "handle": "@scarzz",
+     "Career": "Photographer",
+     
+     "Verified": false
+    },
+    { 
+     "id": 2,
+     "img":"https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/69/2255491/1.jpg?8284",
+     "Name": "Cardi B",
+     "Cost": "$1500 Per Event",
+     "handle": "@iamcardib",
+     "Career": "artiste",
+     "Verified": true
+    },
+    {
+     "id": 3,
+     "img":"https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/69/2255491/1.jpg?8284",
+     "Name": "Samuel Kingston",
+     "Cost": "$1.7m Per Event",
+     "handle": "@skingston",
+     "Career": "Photographer",
+    
+     "Verified": true
+    }
+    
+  ]

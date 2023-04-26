@@ -14,6 +14,7 @@ import AccountSetup from '../Screens/Authentication/AccountSetup';
 import Feeds from '../Screens/Dashboard/Feeds';
 import CreateEvent from '../Screens/Dashboard/CreateEvent';
 import stepperForm from '../Screens/Dashboard/stepperForm';
+// import Profile from '../Screens/Dashboard/Profile';
 
 
 const Navigator = createNativeStackNavigator();
@@ -21,6 +22,7 @@ const Navigator = createNativeStackNavigator();
 const Authentication = () => {
   return (
    <Navigator.Navigator screenOptions={{ headerShown: false }}>
+    {/* <Navigator.Screen name='Profile' component={Profile}/> */}
     <Navigator.Screen name='stepperForm' component={stepperForm}/>
     <Navigator.Screen name='createEvent' component={CreateEvent} />
     <Navigator.Screen name='accounts' component={Accounts} /> 
