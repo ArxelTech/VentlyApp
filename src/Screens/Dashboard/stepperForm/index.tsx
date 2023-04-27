@@ -322,7 +322,7 @@ const Index = () => {
 							{currentStep == 2 &&	
 								<View>	
 									<View style={{ backgroundColor:'transparent', padding:20, marginTop:15, display:'flex', 
-									flexDirection:'row', justifyContent:'center',}}>
+									    flexDirection:'row', justifyContent:'center',}}>
 										<Text variant='xs' style={{fontSize: 12}}>
 											If your event requires tickets this is where you need to set it up 
 											otherwise you can skip this page
@@ -333,7 +333,7 @@ const Index = () => {
 										<View style={{width:'90%', backgroundColor: 'white'}}>
 										<Text variant='header' style={{fontSize: 15, }}>Ticket 01</Text>
 											<View style={{ marginTop: -15, borderRadius:5, }}>
-											<TextInput name='eventName' label=''  />
+											<TextInput name='eventName' label='' placeholder='Ticket Type .e.g - Regular, VIP etc' />
 											</View>
 											<View style={{ marginTop: 0, borderRadius:5}}>
 											<TextInput name='eventType' label='' leftIcon={<Ionicons name='caret-down' size={20} color='black'  />}  />
