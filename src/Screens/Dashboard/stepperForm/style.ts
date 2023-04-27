@@ -7,7 +7,7 @@ export const Styles = StyleSheet.create({
         height: '100%',
         // borderWidth: 2,
         // borderStyle: 'solid',
-        backgroundColor: 'white'
+        backgroundColor: '#FCFCFC'
     },
     centerElement: {justifyContent: 'center', alignItems: 'center'}, 
 });

@@ -10,22 +10,7 @@ import { loginSchema } from '../../../Services/validation';
 import {FlatList} from 'react-native';
 
 const DATA = require('../../../../assets/data/vendors.json')
-
 const { height } = Dimensions.get('screen');
-
-  type ItemProps = {
-	Name: string,
-	handle: string
-
-};
-
-  const Item = ({Name}: ItemProps, {handle}: ItemProps) => (
-	<View style={{ backgroundColor:'pink', height:80}}>
-	  <Text variant='xs' style={{}}>{Name}</Text>
-	  <Text variant='xs' style={{}}>{handle}</Text>
-	</View>
-  );
-
 const event = ['Single Day Event']; 
 
 const Index = () => {
@@ -38,15 +23,6 @@ const Index = () => {
 	})
 	const [steps, setStep] = useState(['', '', '', '']);
 	const [currentStep, setCurrentStep ] = useState(1);
-	// const [vendors, setVendors] = useState([]);
-
-	// useEffect(() => {
-	// 	setVendors(data);
-	// 	return () => {
-	// 		setVendors([])
-	// 	}
-	// }, [])
-
   return renderForm(
     <View style={Styles.main_Container}>
 		<View style={{ flex: 1, flexDirection: 'column',}}>
@@ -122,10 +98,10 @@ const Index = () => {
 				</View>
 				
 		        <View>
-					<View style={{width: '100%', height: 8, backgroundColor: '#ccc'}}>
+					<View style={{width: '100%', height: 6, backgroundColor: '#ccc'}}>
 						{/* HORIZONTAL LOADER */}
 								<View style={{alignItems: 'flex-start'}}>
-									<View style={{height: 8, backgroundColor: '#FF406E', width: '20%', position: 'absolute', top: 0, zIndex: 10}} />
+									<View style={{height: 6, backgroundColor: '#FF406E', width: '20%', position: 'absolute', zIndex: 10}} />
 								</View>
 						{/* CONDITIONS TO INCREASE LOADER */}
 								<View style={{flexDirection: 'row', width: '100%', position: 'relative', zIndex: 20}}>
@@ -133,15 +109,15 @@ const Index = () => {
 										<View key={i} style={{ width: 100}}>
 											{i > currentStep && i != currentStep && /* Not selected */
 												<View style={{		
-													width: 160, height: 8, marginLeft: -50, }}>
+													width: 160, height: 6, marginLeft: -50, }}>
 												</View>
 											}
 											{i < currentStep && /* Checked */
-												<View style={{ width: 110, height: 8, backgroundColor: '#FF406E',zIndex: 10}}>
+												<View style={{ width: 110, height: 6, backgroundColor: '#FF406E',zIndex: 10}}>
 												</View>
 											}
 											{i == currentStep && /* Selected */
-												<View style={{width: 50, height: 8, backgroundColor: '#FF406E',zIndex: 10,}}>
+												<View style={{width: 50, height: 6, backgroundColor: '#FF406E',zIndex: 10,}}>
 												</View>
 											}
 											{/* <Text variant='xs' style={{fontSize: 12}}>{label}</Text> */}
@@ -218,7 +194,7 @@ const Index = () => {
 												</TouchableOpacity> 
 											</View>
 										</View> 
-										{/* Location */}
+										 {/* Location */}
 										<View style={{marginTop:15}}>
 											<Text variant='header' style={{fontSize: 15, }}>Location</Text>
 											<View style={{ marginTop: 10 }}>
@@ -378,37 +354,57 @@ const Index = () => {
 							}	
 							{/* Invite Vendors */}
 							{currentStep == 3 &&	
-								<View style={{height: '100%', width:'100%', alignSelf: 'center', backgroundColor: 'green',}}>
-									<View style={{ backgroundColor:'transparent', padding:20, marginTop:15, display:'flex', 
+								<View style={{height: '100%', width:'100%', alignSelf: 'center'}}>
+									<View style={{ padding:20, marginTop:15, display:'flex', 
 									flexDirection:'row', justifyContent:'center',}}>
-										<Text variant='xs' style={{fontSize: 12}}>
-										This is where you can invite creatives and vendors to your event. Disc Jockeys, MCs, Cinematographers Photographers, Artistes and more.
+										<Text variant='xs' style={{fontSize: 15}}>
+										    This is where you can invite creatives and vendors to your event. Disc Jockeys, MCs, Cinematographers Photographers, Artistes and more.
 										</Text>		             
 									</View>
-									<Text variant='header' textAlign='center' style={{fontSize:15}}>Tap To Invite A Creative Or Vendor</Text>	
+									<View style={{height:100, display:'flex', flexDirection:'row', alignItems: 'center', justifyContent:'center' }}>
+										<View style={{backgroundColor:'#FFFFFF', width: '90%', height:'100%', display:'flex', flexDirection:'row', alignItems: 'center', justifyContent:'center'}}>
+											<Text variant='header' textAlign='center' style={{fontSize:15}}>
+												Tap To Invite A Creative Or Vendor
+											</Text>	
+										</View>
+									</View>
 									<View style={{width: '100%', display:'flex', flexDirection:'row', justifyContent:'center'}}>
-										<View style={{width:'90%', backgroundColor:'red'}}>
+										<View style={{width:'90%'}}>
 											<Text variant='header' textAlign='left' style={{fontSize:15}}>
-											RECOMMENDED FOR YOU	
+											  RECOMMENDED FOR YOU	
 											</Text>	
 											<View>
 											<FlatList
 											data={DATA}
 											renderItem={({item}) => 
-											<View style={{height: 200}}>
-												<Image source={item.img} style={{height:100, width:100}}/>
-												<Text variant='xs'>
-											       {item.Name}
-												</Text>
-												<Text variant='xs'>
-											       {item.handle}
-												</Text>
-												<Text variant='xs'>
-											       {item.career}
-												</Text>
-												<Text variant='xs'>
-											       {item.cost}
-												</Text>
+											<View style={{height: 120,width:'100%', display: 'flex',flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+													<View style={{ flex: 1.2, padding: 5}}>
+														<Image source={item.image} style={{height:100, width:100, borderRadius: 100}}/>
+													</View>
+													<View style={{ flex: 1.8, padding:10}}>
+														<View style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
+															<Text variant='header' style={{fontSize: 15}}>
+																{item.user}
+															</Text>
+															<Image source={item.verifyImg} style={{height:15, width:15, borderRadius: 100, marginLeft:5}}/>
+														</View>
+														<View style={{display:'flex', flexDirection:'row', alignItems:'center', flex: 1.5, marginTop:-10}}>
+															<Text variant='xs'>{item.handle}</Text>&#x2022; 
+															<Text variant='xs'>{item.career}</Text>
+														</View>
+														<Text variant='xs'>{item.cost}</Text>
+													</View>
+													<View style={{flex:1.2}}>
+														<Text variant='xs'>
+														<TouchableOpacity style={[Styles.centerElement, 
+														{ width: '100%', height: 60, padding: 10, display:'flex', justifyContent:'center', alignItems: 'center', 
+														}]} 
+														>
+														<CustomButton  onPress={() => {console.log('pressed')}} label='invite'  borderRadius={5} backgroundColor='#FF406E'  color='white'
+																										/>
+													</TouchableOpacity>
+														</Text>
+													</View>
 											</View> }
 											keyExtractor={item => item.id}
 										/>

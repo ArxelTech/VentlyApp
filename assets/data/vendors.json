@@ -1,32 +1,49 @@
-[
-    {
-     "id": 1,
-     "img":"https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/69/2255491/1.jpg?8284",
-     "Name": "Sandra Carson",
-     "Cost": "$1500 Per Event",
-     "handle": "@scarzz",
-     "Career": "Photographer",
-     
-     "Verified": false
-    },
-    { 
-     "id": 2,
-     "img":"https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/69/2255491/1.jpg?8284",
-     "Name": "Cardi B",
-     "Cost": "$1500 Per Event",
-     "handle": "@iamcardib",
-     "Career": "artiste",
-     "Verified": true
-    },
-    {
-     "id": 3,
-     "img":"https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/69/2255491/1.jpg?8284",
-     "Name": "Samuel Kingston",
-     "Cost": "$1.7m Per Event",
-     "handle": "@skingston",
-     "Career": "Photographer",
-    
-     "Verified": true
-    }
-    
-  ]
+[{
+  "_id": {
+    "$oid": "5f15d8852a025143f9593a7c"
+  },
+  "image": "https://res.cloudinary.com/xenxei46/image/upload/v1682521359/sandra_c7ez8u.png",
+  "user": "Sandra Carson",
+  "handle": "@scarzz",
+  "career": "Photographer",
+  "cost": "$1500 Per Event",
+  "isVerified": false,
+  "verifyImg": "https://res.cloudinary.com/xenxei46/image/upload/v1682521835/verify_fywcic.png",
+  "category": {
+    "$oid": "5f15d5cdcb4a6642bddc0fe9"
+  },
+  "countInStock": 25,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f15d92ee520d44421ed8e9b"
+  },
+  "image": "https://res.cloudinary.com/xenxei46/image/upload/v1682521174/cardi_uiwhel.png",
+  "user": "Cardi b",
+  "handle": "@iamcardib",
+  "career": "artiste",
+  "cost": "$1.7m Per Event",
+  "isVerified": false,
+  "verifyImg": "https://res.cloudinary.com/xenxei46/image/upload/v1682521835/verify_fywcic.png",
+  "category": {
+    "$oid": "5f15d5b7cb4a6642bddc0fe8"
+  },
+  "countInStock": 10,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f15d964e520d44421ed8e9c"
+  },
+  "image": "https://res.cloudinary.com/xenxei46/image/upload/v1682521371/samuel_jsd1cj.png",
+  "user": "Sandra Carson",
+  "handle": "@scarzz",
+  "career": "Photographer",
+  "cost": "$1500 Per Event",
+  "isVerified": false,
+  "verifyImg": "https://res.cloudinary.com/xenxei46/image/upload/v1682521835/verify_fywcic.png",
+  "category": {
+    "$oid": "5f15d5b7cb4a6642bddc0fe8"
+  },
+  "countInStock": 10,
+  "__v": 0
+}]
