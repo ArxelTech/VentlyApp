@@ -13,8 +13,8 @@ import BusinessCategory from '../Screens/Authentication/BusinessCategory';
 import AccountSetup from '../Screens/Authentication/AccountSetup';
 import Feeds from '../Screens/Dashboard/Feeds';
 import CreateEvent from '../Screens/Dashboard/CreateEvent';
-import stepperForm from '../Screens/Dashboard/stepperForm';
-// import Profile from '../Screens/Dashboard/Profile';
+import SearchVendors from '../Screens/Dashboard/SearchVendors';
+import Profile from '../Screens/Dashboard/Profile';
 
 
 const Navigator = createNativeStackNavigator();
@@ -23,7 +23,7 @@ const Authentication = () => {
   return (
    <Navigator.Navigator screenOptions={{ headerShown: false }}>
     {/* <Navigator.Screen name='Profile' component={Profile}/> */}
-    <Navigator.Screen name='stepperForm' component={stepperForm}/>
+    {/* <Navigator.Screen name=' SearchVendors ' component={ SearchVendors}/> */}
     <Navigator.Screen name='createEvent' component={CreateEvent} />
     <Navigator.Screen name='accounts' component={Accounts} /> 
     <Navigator.Screen name='businessCategory' component={ BusinessCategory} />
