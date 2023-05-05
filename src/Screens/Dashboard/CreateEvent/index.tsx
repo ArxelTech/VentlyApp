@@ -394,7 +394,7 @@ const CreateEvent = () => {
 								<View>
 								<View>
 									<FlatList
-										data={DATA}
+										data={DATA.slice(0,3)}
 										renderItem={({item}) => 
 										<View style={{height: 120, width:'100%', display: 'flex',flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
 												<View style={{ flex: 1.2, padding: 5}}>

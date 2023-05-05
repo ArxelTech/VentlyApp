@@ -15,6 +15,7 @@ import Feeds from '../Screens/Dashboard/Feeds';
 import CreateEvent from '../Screens/Dashboard/CreateEvent';
 import SearchVendors from '../Screens/Dashboard/SearchVendors';
 import Profile from '../Screens/Dashboard/Profile';
+import Categories from '../Screens/Dashboard/Categories';
 
 
 const Navigator = createNativeStackNavigator();
@@ -23,7 +24,8 @@ const Authentication = () => {
   return (
    <Navigator.Navigator screenOptions={{ headerShown: false }}>
     {/* <Navigator.Screen name='Profile' component={Profile}/> */}
-    {/* <Navigator.Screen name=' SearchVendors ' component={ SearchVendors}/> */}
+    <Navigator.Screen name=' Categories ' component={ Categories}/>
+    <Navigator.Screen name=' SearchVendors ' component={ SearchVendors}/>
     <Navigator.Screen name='createEvent' component={CreateEvent} />
     <Navigator.Screen name='accounts' component={Accounts} /> 
     <Navigator.Screen name='businessCategory' component={ BusinessCategory} />

@@ -9,7 +9,7 @@ export const Styles = StyleSheet.create({
         // flex: 1,
         height: '100%',
         width: '100%',
-        // backgroundColor: '#ff0000'
+        backgroundColor: '#FCFCFC'
     },
     child: {
         height: '100%',
