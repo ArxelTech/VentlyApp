@@ -31,4 +31,5 @@ export const Styles = StyleSheet.create({
         justifyContent: 'space-between',
         paddingTop:40
     },
+    centerElement: {justifyContent: 'center', alignItems: 'center'},
 });
