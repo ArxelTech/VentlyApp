@@ -1,14 +1,27 @@
 import { StyleSheet, FlatList, TouchableOpacity, Image, Pressable} from 'react-native';
 import { Styles } from './style';
 import {CustomButton, Text, View } from '../../../components';
-import React from 'react';
+import React, { useState } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import { ScrollView } from 'react-native-gesture-handler';
-import VendorDetails from './VendorDetails';
+import VendorDetails from './VendorDetails/VendorDetails';
+import SendOffer from './SendOffer/sendOffer';
 
 const DATA = require('../../../../assets/data/vendors.json');
 
 const Categories = () => {
+
+  const handleClick = () => {
+    console.log("click handled");
+    setInvite(true)
+  }
+
+  
+  const [invite, setInvite] = useState(false);
+
+//   const SendOffer = () => {
+//     console.log('send Offer')
+// }
   return (
     <View style={[Styles.parent]}>
       <View style={[Styles.child]}>
@@ -26,11 +39,18 @@ const Categories = () => {
                         </View>
               </View>    
         </View>
+        {/* Send Offer dialog */}
+        {
+            invite === true ? 
+            <SendOffer />
+          : null
+          
+        }
         <View style={{width: '100%', height: 6, backgroundColor: '#ccc'}}></View>
         <View style={{width:'100%',height:'100%', flex:1, alignItems:'center', justifyContent:'center'}}>
             <View style={{width:'90%',height:'90%', marginTop:10}}>
                 <ScrollView showsVerticalScrollIndicator={false} style={{flex:1}}>
-                    {/* <FlatList
+                    <FlatList
                       data={DATA.slice(0,12)}
                       renderItem={({item}) => 
                       <View style={{height: 120, width:'100%', display: 'flex',flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
@@ -62,8 +82,8 @@ const Categories = () => {
                           </View>
                       </View> }
                       keyExtractor={item => item.id}
-                    />		 */}
-                    <VendorDetails />
+                    />		
+                    {/* <VendorDetails handleMyClick={handleClick}  /> */}
                 </ScrollView>
               </View>
         </View>
