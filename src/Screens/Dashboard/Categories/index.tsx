@@ -27,16 +27,18 @@ const Categories = () => {
       <View style={[Styles.child]}>
         <View style={[Styles.main_cont]}>
               <View style={Styles.header}>
-                        <View style={{flex: 1}}>
+                        <View style={{flex: 0.8}}>
                             <Ionicons name='arrow-back-outline' size={25} color='black'/>
                         </View>
-                        <View style={{flex: 3}}>     
-                            <Text variant='subheader'>Photograhers</Text> 
-                        </View> 
-                        <View style={{flex: 1, flexDirection:'row', justifyContent:'space-evenly'}}>
-                            <Ionicons name='grid-outline' size={25} color='black'/>
-                            <Ionicons name='search' size={25} color='black'/>
-                        </View>
+                        <View style={{flex: 4, flexDirection:'row'}}> 
+                            <View style={{flex:1}}>
+                              <Text variant='header' style={{fontSize:18}}>Photograhers</Text> 
+                            </View>    
+                            <View style={{flex: 1, flexDirection:'row',alignItems:'center', justifyContent:'center'}}>
+                              <Ionicons name='list-outline' size={20} color='black' style={{padding:10}}/>
+                              <Ionicons name='search' size={20} color='black'/>
+                           </View>
+                        </View>     
               </View>    
         </View>
         {/* Send Offer dialog */}
@@ -50,7 +52,7 @@ const Categories = () => {
         <View style={{width:'100%',height:'100%', flex:1, alignItems:'center', justifyContent:'center'}}>
             <View style={{width:'90%',height:'90%', marginTop:10}}>
                 <ScrollView showsVerticalScrollIndicator={false} style={{flex:1}}>
-                    <FlatList
+                    {/* <FlatList
                       data={DATA.slice(0,12)}
                       renderItem={({item}) => 
                       <View style={{height: 120, width:'100%', display: 'flex',flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
@@ -82,19 +84,19 @@ const Categories = () => {
                           </View>
                       </View> }
                       keyExtractor={item => item.id}
-                    />		
-                    {/* <VendorDetails handleMyClick={handleClick}  /> */}
+                    />		 */}
+                    <VendorDetails handleMyClick={handleClick}  />
                 </ScrollView>
               </View>
         </View>
         <View style={{display:'flex', alignItems: 'center',justifyContent:'center', height:'10%', width:'100%', backgroundColor:'white', elevation:10, borderTopColor:'grey', borderTopWidth:1, borderStyle:'solid'}}>
           <View style={{ width:'90%', display:'flex',  flexDirection:'row', justifyContent:'space-evenly', alignItems:'center'}}>
-                  <View style={{flex:3, flexDirection:'row', alignItems:'center', justifyContent:'space-evenly'}}>
-                      <Ionicons name='grid-outline' size={20} color='black'/>
-                      <Text variant='subheader' style={{fontSize:15}}>Lagos,Nigeria</Text>
+                  <View style={{flex:3, flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
+                      <Ionicons name='filter-outline' size={20} color='black'/>
+                      <Text variant='subheader' style={{fontSize:12, paddingLeft:10}}>Lagos,Nigeria</Text>
                   </View>
                   <View style={{flex:5, alignItems:'flex-end'}}>
-                    <Pressable style={{padding:10, width:'80%',
+                    <Pressable style={{padding:5, width:'55%',
                       borderWidth:2, borderStyle:'solid', borderRadius:10, borderColor:'#FF406E', flex:1, alignItems:'center'}}>
                         <Text variant='xs' style={{color:'#FF406E'}}>Leave Invite Page</Text>
                     </Pressable>

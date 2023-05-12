@@ -1,72 +1,114 @@
-import { opacity } from '@shopify/restyle';
 import * as React from 'react';
-import { View, StyleSheet, Dimensions, StatusBar, Text, Animated } from 'react-native';
-import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
+import {Text, View } from '../../../components';
+import {
+  Animated,
+  TouchableOpacity,
+  StyleSheet,
+  StatusBar,
+  Pressable,
+} from 'react-native';
+import { TabView, SceneMap } from 'react-native-tab-view';
+import EventDetails from './EventDetails';
+import Discussions from './Discussions';
+import Highlights from './Highlights'
+
+import { Styles } from './style';
+import { Ionicons } from '@expo/vector-icons';
 
 const FirstRoute = () => (
-  <View style={[styles.scene, { backgroundColor: '#ff4081' }]} />
+  <EventDetails />
 );
-
 const SecondRoute = () => (
-  <View style={[styles.scene, { backgroundColor: '#673ab7' }]} />
+  <Discussions />
+);
+const ThirdRoute = () => (
+  <Highlights />
 );
 
-const initialLayout = { width: Dimensions.get('window').width };
+export default class TabViewExample extends React.Component {
+  state = {
+    index: 0,
+    routes: [
+      { key: 'first', title: 'Events Details' },
+      { key: 'second', title: 'Discussions' },
+      { key: 'third', title: 'Highlights' },
+    ],
+  };
 
-export default function TabViewExample() {
-  const [index, setIndex] = React.useState(0);
-  const [routes] = React.useState([
-    { key: 'first', title: 'First' },
-    { key: 'second', title: 'Second' },
-  ]);
+  _handleIndexChange = (index: any) => this.setState({ index });
 
-  const renderScene = SceneMap({
+  _renderTabBar = (props: { navigationState: { routes: any[]; }; position: { interpolate: (arg0: { inputRange: any; outputRange: any; }) => any; }; }) => {
+    const inputRange = props.navigationState.routes.map((x, i) => i);
+
+    return (
+      <View style={Styles.tabBar}>
+        {props.navigationState.routes.map((route, i) => {
+          const opacity = props.position.interpolate({
+            inputRange,
+            outputRange: inputRange.map((inputIndex) =>
+              inputIndex === i ? 1 : 0.5
+            ),
+          });
+
+          return (
+            <TouchableOpacity
+              style={Styles.tabItem}
+              onPress={() => this.setState({ index: i })}>
+              <Animated.Text style={{ opacity }}>{route.title}</Animated.Text>
+            </TouchableOpacity>
+          );
+        })}
+      </View>
+    );
+  };
+
+  _renderScene = SceneMap({
     first: FirstRoute,
     second: SecondRoute,
+    third:  ThirdRoute
   });
 
-  return (
-	
-    <TabView 
-      navigationState={{ index, routes }}
-      renderTabBar={props => (
-        <TabBar
-		  
-          {...props}
-          renderLabel={({ route, color }) => (
-            <Animated.Text >{route.title}</Animated.Text>
-          )}
-          style={{backgroundColor: 'white'}}
-        />
-      )}
-	  
-      renderScene={renderScene}
-      onIndexChange={setIndex}
-      initialLayout={initialLayout}
-      style={styles.container}
-	  
-    />
-  );
+  render() {
+    return (
+      <View style={[Styles.parent]}>
+        <View style={[Styles.child]}>
+          <View style={[Styles.main_cont]}>
+              <View style={Styles.header}>
+                        <View style={{flex: 1}}>
+                            <Ionicons name='arrow-back-outline' size={25} color='black'/>
+                        </View>
+                        <View style={{flex: 3}}>     
+                            <Text variant='subheader'>Preview</Text> 
+                        </View> 
+              </View>   
+          </View>
+          <TabView
+            navigationState={this.state}
+            renderScene={this._renderScene}
+            renderTabBar={this._renderTabBar}
+            onIndexChange={this._handleIndexChange} /> 
+        </View>
+        <View>
+        <View style={{display:'flex', alignItems: 'center',justifyContent:'center', height:'10%', width:'100%', backgroundColor:'white', elevation:10, borderTopColor:'grey', borderTopWidth:1, borderStyle:'solid'}}>
+          <View style={{ width:'90%', display:'flex',  flexDirection:'row', justifyContent:'space-evenly', alignItems:'center'}}>
+                  <View style={{flex:3, flexDirection:'row', alignItems:'center', justifyContent:'space-evenly'}}>
+                      <Ionicons name='grid-outline' size={20} color='black'/>
+                      <Text variant='subheader' style={{fontSize:15}}>Lagos,Nigeria</Text>
+                  </View>
+                  <View style={{flex:5, alignItems:'flex-end'}}>
+                    <Pressable style={{padding:10, width:'80%',
+                      borderWidth:2, borderStyle:'solid', borderRadius:10, borderColor:'#FF406E', flex:1, alignItems:'center'}}>
+                        <Text variant='xs' style={{color:'#FF406E'}}>Leave Invite Page</Text>
+                    </Pressable>
+                  </View>     
+          </View>
+        </View>
+      </View>
+    </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    marginTop: StatusBar.currentHeight,
-  },
-  scene: {
-    flex: 1,
-  },
-  indicatorStyle: {
-    backgroundColor: 'red',
-    padding: 1.5,
-    marginBottom: -2,
-  },
-  divider: {
-    zIndex: 100,
-    position: 'absolute',
-    width: 1,
-    height: 48,
-    backgroundColor: 'black',
-    alignSelf: 'center',
-  },
+  
 });

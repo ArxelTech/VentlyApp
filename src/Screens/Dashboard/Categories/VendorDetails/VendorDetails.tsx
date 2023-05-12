@@ -11,91 +11,88 @@ const VendorDetails = ({handleMyClick}:any) => {
 
   return (
     <View>
-     
-      <View style={{height: 580, borderRadius:20, elevation:20, borderStyle:'solid', borderWidth:1, borderColor:'grey'}}>
-        <View style={{height:'70%', borderWidth:2, borderStyle:'solid', borderColor:'black', borderTopRightRadius:10, borderTopLeftRadius:10,}}>
-            <ImageBackground style={{ height:'80%', borderTopRightRadius:10, borderTopLeftRadius:10, }} resizeMode='cover' source={image}>
-                    <View style={{display:'flex',height:'100%',  borderTopRightRadius:10, borderTopLeftRadius:10, justifyContent:'flex-start', alignItems:'center', backgroundColor:'#000000c0', }}>
-                        <View style={{marginTop:30}}>
-                            <View style={{display:'flex', alignItems:'center'}}>
-                                <Image source={require('../../../../../assets/images/Jeremy.png')}
-                                    style={{height:120, width:120, }}
-                                />
+      <View style={{height: 450, padding:0, borderRadius:20, borderStyle:'solid', borderWidth:1, borderColor:'grey', backgroundColor:'green'}}>
+        <View style={{height:'100%', borderRadius:20, backgroundColor:'white'}}>
+          {/* Profile image session - 40% height */}
+          <View style={{height:'40%', backgroundColor:'#000000c0', borderTopRightRadius:20, borderTopLeftRadius:20}}>
+              {/* Background Image */}
+            <ImageBackground style={{height:'100%', width:'100%'}} imageStyle={{borderTopLeftRadius:20, borderTopRightRadius:20}} resizeMode='cover' source={image}>
+                      <View style={{height:'100%', width:'100%', display:'flex',  borderTopRightRadius:20, borderTopLeftRadius:20, justifyContent:'flex-start', alignItems:'center', backgroundColor:'#000000c0', }}>
+                          <View style={{marginTop:15}}>
+                              <View style={{display:'flex', alignItems:'center'}}>
+                                  <Image source={require('../../../../../assets/images/jeremy.png')}
+                                      style={{height:100, width:100, }}
+                                  />
+                              </View>
+                              <View style={{padding:2, display:'flex', justifyContent:'center',alignItems:'center'}}>
+                              <View style={{display:'flex', flexDirection:'row', padding:2, alignItems:'center',}}>
+                                  <Text style={{fontSize:18, color:'white'}}>Chidi Michaels</Text>
+                                  <View style={{display:'flex',alignItems:'center', justifyContent:'center', padding:4}}>
+                                    <Image source={verifyImg}
+                                      style={{height:10, width:10,}}
+                                    />
+                                  </View>
+                              </View>
+                              <Text style={{ color:'white', fontSize:12}}>@Richcruz . Rating: 4.9</Text> 
                             </View>
-                           
-                            <View style={{display:'flex', flexDirection:'row'}}>
-                                <Text style={{fontSize:20, color:'white'}}>Chidi Michaels</Text>
-                                <Image source={verifyImg}
-                                style={{height:15, width:15}}
-                                />
-                            </View>
-                            <Text style={{ color:'white'}}>@Richcruz . Rating: 4.9</Text> 
-                        </View>   
-                    </View>   
-            </ImageBackground>
-        </View>
-           <View style={{width:'100%', height:'6%', top:'40%', position:'absolute', zIndex:2, display:'flex', flexDirection:'row', justifyContent:'center'}}>
-                <View style={{width:'30%',  display:'flex', flexDirection:'row', justifyContent:'center'}}>
-                        <CustomButton  label='invite'  borderRadius={10} backgroundColor='#FF406E'  color='white'
-                            onPress={handleMyClick}
-                />
+                             
+                          </View>   
+                      </View>   
+              </ImageBackground>
+          </View>
+          {/* Events Session - 60% height */}
+          <View style={{height:'60%', borderBottomRightRadius:10, borderBottomLeftRadius:10,}}>
+              <View style={{height:'30%', display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
+                        <View style={{width:'30%',flex:1, alignItems:'center'}}>
+                            <Text style={{fontSize:20, fontWeight:'500'}}>455</Text>
+                            <Text style={{fontSize:15, fontWeight:'200'}}>Events</Text>
+                      </View>
+                      <View style={{width:'30%',flex:1, alignItems:'center'}}>
+                            <Text style={{fontSize:20, fontWeight:'500'}}>455</Text>
+                            <Text style={{fontSize:15, fontWeight:'200'}}>Events</Text>
+                      </View>
+                      <View style={{width:'30%',flex:1, alignItems:'center'}}>
+                            <Text style={{fontSize:20, fontWeight:'500'}}>455</Text>
+                            <Text style={{fontSize:15, fontWeight:'200'}}>Events</Text>
+                      </View>    
+              </View>
+              <View style={{ height:'30%', padding:4, flex:1, justifyContent:'flex-start', alignItems:'center'}}>
+                  {/* <View> */}
+                    <Text style={{fontSize:14, fontWeight:'500'}}>About</Text>
+                    <Text style={{fontSize:13, fontWeight:'200', width:'90%', textAlign:'center'}}>
+                      I'm a world class photographer based in Lagos, Nigeria. My creative style
+                      of photography is second to none. 
+                      When I'm not taking pictures, I'm reading or making sweaters
+                    </Text>
+                  {/* </View> */}
+              </View>
+            <View style={{height:'35%', display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'center',  borderBottomRightRadius:10, borderBottomLeftRadius:10,}}>
+                <View style={{width:'30%', height:'80%', borderRadius:10, padding:5 }}>
+                  <ImageBackground style={{ height:'100%', borderTopRightRadius:10, borderTopLeftRadius:10, borderRadius:10 }} resizeMode='cover' source={require('../../../../../assets/images/dtlsChild.png')}>   
+                  </ImageBackground>
                 </View>
-           </View>
-
-        <View style={{backgroundColor:'white', borderBottomRightRadius:10, borderBottomLeftRadius:10,height:'50%', marginTop:-160}}>
-           <View style={{ height:'30%', display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
-                   {/* <FlatList
-                     data={data}
-                     renderItem={({item}) => 
-                        <View style={{display:'flex', alignItems:'center', justifyContent:'center', width:'100%',height:'100%'}}>
-                            <View style={{display:'flex', flexDirection:'row'}}>
-                                <Text style={{fontSize:20, fontWeight:'500'}}>{item.number}</Text>
-                                <Text style={{fontSize:15, fontWeight:'200'}}>{item.Events}</Text>
-                            </View>
-                        </View> 
-                    } 
-                    keyExtractor={item => item.id}                    
-                   /> */}
-                    <View style={{width:'30%',flex:1, alignItems:'center'}}>
-                        <Text style={{fontSize:20, fontWeight:'500'}}>455</Text>
-                        <Text style={{fontSize:15, fontWeight:'200'}}>Events</Text>
-                   </View>
-                   <View style={{width:'30%',flex:1, alignItems:'center'}}>
-                        <Text style={{fontSize:20, fontWeight:'500'}}>455</Text>
-                        <Text style={{fontSize:15, fontWeight:'200'}}>Events</Text>
-                   </View>
-                   <View style={{width:'30%',flex:1, alignItems:'center'}}>
-                        <Text style={{fontSize:20, fontWeight:'500'}}>455</Text>
-                        <Text style={{fontSize:15, fontWeight:'200'}}>Events</Text>
-                   </View>
-               
-           </View>
-           <View style={{ height:'40%', flex:1, justifyContent:'flex-start', alignItems:'center'}}>
-              {/* <View> */}
-                <Text style={{fontSize:15, fontWeight:'500'}}>About</Text>
-                <Text style={{fontSize:15, fontWeight:'200', width:'90%', textAlign:'center'}}>
-                I'm a world class photographer based in Lagos, Nigeria. My creative style
-                of photography is second to none. 
-                When I'm not taking pictures, I'm reading or making sweaters
-                </Text>
-              {/* </View> */}
-           </View>
-           <View style={{height:'30%', display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'center',  borderBottomRightRadius:10, borderBottomLeftRadius:10,}}>
-              <View style={{width:'30%', height:'80%', borderRadius:10, padding:5 }}>
-                <ImageBackground style={{ height:'100%', borderTopRightRadius:10, borderTopLeftRadius:10, borderRadius:10 }} resizeMode='cover' source={require('../../../../../assets/images/dtlsChild.png')}>   
-                </ImageBackground>
-              </View>
-              <View style={{width:'30%', height:'80%', borderRadius:10, padding:5  }}>
-                <ImageBackground style={{ height:'100%', borderTopRightRadius:10, borderTopLeftRadius:10, borderRadius:10 }} resizeMode='cover' source={require('../../../../../assets/images/dtlsMarble.png')}>   
-                </ImageBackground>
-              </View>
-              <View style={{width:'30%', height:'80%', borderRadius:10, padding:5  }}>
-                <ImageBackground style={{ height:'100%', borderTopRightRadius:10, borderTopLeftRadius:10, borderRadius:10 }} resizeMode='cover' source={require('../../../../../assets/images/dtlsSplash.png')}>   
-                </ImageBackground>
-              </View>
-           </View>
+                <View style={{width:'30%', height:'80%', borderRadius:10, padding:5  }}>
+                  <ImageBackground style={{ height:'100%', borderTopRightRadius:10, borderTopLeftRadius:10, borderRadius:10 }} resizeMode='cover' source={require('../../../../../assets/images/dtlsMarble.png')}>   
+                  </ImageBackground>
+                </View>
+                <View style={{width:'30%', height:'80%', borderRadius:10, padding:5  }}>
+                  <ImageBackground style={{ height:'100%', borderTopRightRadius:10, borderTopLeftRadius:10, borderRadius:10 }} resizeMode='cover' source={require('../../../../../assets/images/dtlsSplash.png')}>   
+                  </ImageBackground>
+                </View>
+            </View>
+          </View>
         </View>
-      </View>
+        {/* Invite button */}
+            <View style={{width:'100%', height:'5%', top:'38%', position:'absolute', zIndex:2, display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+                  <View style={{width:'30%',  display:'flex', justifyContent:'center', alignItems:'center'}}>
+                          <CustomButton  label='invite'  borderRadius={10} backgroundColor='#FF406E'  color='white'
+                              onPress={handleMyClick}
+                          />
+                  </View>
+            </View>
+
+        
+        </View>
     </View>
   )
 }
