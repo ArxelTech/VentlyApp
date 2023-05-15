@@ -1,4 +1,4 @@
-import React, {useState } from 'react';
+import React, {Key, useState } from 'react';
 import { Image, TouchableOpacity, Pressable, ScrollView, Dimensions, StatusBar } from 'react-native';
 import {Text, View } from '../../../components';
 import { Ionicons } from '@expo/vector-icons';
@@ -392,13 +392,14 @@ const CreateEvent = () => {
 								RECOMMENDED FOR YOU	
 								</Text>	
 								<View>
-								<View>
+								
 									<FlatList
 										data={DATA.slice(0,3)}
 										renderItem={({item}) => 
 										<View style={{height: 120, width:'100%', display: 'flex',flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
 												<View style={{ flex: 1.2, padding: 5}}>
-													<Image source={item.image} style={{height:100, width:100, borderRadius: 100}}/>
+													<Image source={item.image} resizeMode='cover'
+													 style={{height:100, width:100, borderRadius: 100}}/>
 												</View>
 												<View style={{ flex: 1.8, padding:10}}>
 													<View style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
@@ -426,7 +427,7 @@ const CreateEvent = () => {
 										</View> }
 										keyExtractor={item => item.id}
 									/>
-								</View>
+								
 						</View>
 							</View>
 						</View>

@@ -19,9 +19,6 @@ const Categories = () => {
   
   const [invite, setInvite] = useState(false);
 
-//   const SendOffer = () => {
-//     console.log('send Offer')
-// }
   return (
     <View style={[Styles.parent]}>
       <View style={[Styles.child]}>
@@ -52,7 +49,7 @@ const Categories = () => {
         <View style={{width:'100%',height:'100%', flex:1, alignItems:'center', justifyContent:'center'}}>
             <View style={{width:'90%',height:'90%', marginTop:10}}>
                 <ScrollView showsVerticalScrollIndicator={false} style={{flex:1}}>
-                    {/* <FlatList
+                    <FlatList
                       data={DATA.slice(0,12)}
                       renderItem={({item}) => 
                       <View style={{height: 120, width:'100%', display: 'flex',flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
@@ -84,8 +81,8 @@ const Categories = () => {
                           </View>
                       </View> }
                       keyExtractor={item => item.id}
-                    />		 */}
-                    <VendorDetails handleMyClick={handleClick}  />
+                    />		
+                    {/* <VendorDetails handleMyClick={handleClick}  /> */}
                 </ScrollView>
               </View>
         </View>

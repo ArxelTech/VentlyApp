@@ -12,7 +12,7 @@ export const Styles = StyleSheet.create({
             backgroundColor: '#FCFCFC'
         },
         child: {
-            height: '90%',
+            height: '100%',
             width: '100%',
         },
         main_cont: {
@@ -22,28 +22,54 @@ export const Styles = StyleSheet.create({
             flexDirection: 'row',
             alignItems: 'center',
             justifyContent:'center',
-            backgroundColor: 'green'
+            // backgroundColor: 'green',
+            padding:30,
+            
         },
-        header: {
-            display: 'flex',
-            flexDirection: 'row',
-            width: '90%',
-            height: '100%',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            paddingTop:40
+            header: {
+                display: 'flex',
+                flexDirection: 'row',
+                width: '90%',
+                height: '100%',
+                alignItems: 'center',
+                // justifyContent: '',
+                marginTop:20
+            },
+            container: {
+                flex: 1,
+              },
+              tabBar: {
+                flexDirection: 'row',
+                paddingTop: StatusBar.currentHeight,
+              },
+              tabItem: {
+                flex: 1,
+                alignItems: 'center',
+                padding: 16,
+              },
+        
+        tabContainer: {
+          backgroundColor:'yellow',
+          height:'73%'
         },
-        container: {
-            flex: 1,
-          },
-          tabBar: {
-            flexDirection: 'row',
-            paddingTop: StatusBar.currentHeight,
-          },
-          tabItem: {
-            flex: 1,
-            alignItems: 'center',
-            padding: 16,
-          },
-
+        bottomTab: {
+          // backgroundColor:'indigo',
+          height:'12%',
+          display:'flex',
+          flexDirection:'row',
+          alignItems:'center',
+          justifyContent:'space-evenly',
+          shadowColor: '#171717',
+          shadowOffset: {width: -2, height: 4},
+          shadowOpacity: 0.2,
+          shadowRadius: 3,
+        },
+        PostBtn: {
+          height:'60%',
+          width:'35%'
+        },
+        transparentBtn: {
+          height:'60%',
+          width:'35%'
+        }
 });

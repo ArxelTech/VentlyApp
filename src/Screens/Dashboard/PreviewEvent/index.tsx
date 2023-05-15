@@ -1,9 +1,8 @@
 import * as React from 'react';
-import {Text, View } from '../../../components';
+import {CustomButton, Text, View } from '../../../components';
 import {
   Animated,
   TouchableOpacity,
-  StyleSheet,
   StatusBar,
   Pressable,
 } from 'react-native';
@@ -72,43 +71,45 @@ export default class TabViewExample extends React.Component {
     return (
       <View style={[Styles.parent]}>
         <View style={[Styles.child]}>
+          {/* Header */}
           <View style={[Styles.main_cont]}>
-              <View style={Styles.header}>
-                        <View style={{flex: 1}}>
-                            <Ionicons name='arrow-back-outline' size={25} color='black'/>
-                        </View>
-                        <View style={{flex: 3}}>     
-                            <Text variant='subheader'>Preview</Text> 
-                        </View> 
-              </View>   
+            <View style={Styles.header}>
+              <View style={{flex: 0.8}}>
+                <Ionicons name='arrow-back-outline' size={25} color='black'/>
+              </View>
+              <View style={{flex: 6, flexDirection:'row'}}> 
+                  <View style={{flex:1}}>
+                    <Text variant='header' style={{fontSize:18}}>Preview</Text> 
+                  </View>    
+              </View> 
+              </View>
+              
           </View>
-          <TabView
-            navigationState={this.state}
-            renderScene={this._renderScene}
-            renderTabBar={this._renderTabBar}
-            onIndexChange={this._handleIndexChange} /> 
-        </View>
-        <View>
-        <View style={{display:'flex', alignItems: 'center',justifyContent:'center', height:'10%', width:'100%', backgroundColor:'white', elevation:10, borderTopColor:'grey', borderTopWidth:1, borderStyle:'solid'}}>
-          <View style={{ width:'90%', display:'flex',  flexDirection:'row', justifyContent:'space-evenly', alignItems:'center'}}>
-                  <View style={{flex:3, flexDirection:'row', alignItems:'center', justifyContent:'space-evenly'}}>
-                      <Ionicons name='grid-outline' size={20} color='black'/>
-                      <Text variant='subheader' style={{fontSize:15}}>Lagos,Nigeria</Text>
-                  </View>
-                  <View style={{flex:5, alignItems:'flex-end'}}>
-                    <Pressable style={{padding:10, width:'80%',
-                      borderWidth:2, borderStyle:'solid', borderRadius:10, borderColor:'#FF406E', flex:1, alignItems:'center'}}>
-                        <Text variant='xs' style={{color:'#FF406E'}}>Leave Invite Page</Text>
-                    </Pressable>
-                  </View>     
+          {/* Tab details */}
+          <View style={Styles.tabContainer}>
+            <TabView style={{marginTop:-40, paddingLeft:10, paddingRight:10}}
+              navigationState={this.state}
+              renderScene={this._renderScene}
+              renderTabBar={this._renderTabBar}
+              onIndexChange={this._handleIndexChange} 
+              />
           </View>
-        </View>
-      </View>
+          <View style={Styles.bottomTab}>
+             <View style={Styles.PostBtn}>
+              <CustomButton label='Post Event' onPress={()=>console.log('hi')} color='white' />
+             </View>
+             <View style={Styles.transparentBtn}>
+                <View style={{flex:5}}>
+                      <Pressable style={{padding:10 ,
+                        borderWidth:2, borderStyle:'solid', borderRadius:10, borderColor:'#FF406E', flex:1, alignItems:'center'}}>
+                          <Text variant='xs' style={{color:'#FF406E'}}>Save As draft</Text>
+                      </Pressable>
+                </View> 
+             </View>
+          </View>
+        </View> 
     </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  
-});
