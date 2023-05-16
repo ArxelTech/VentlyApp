@@ -21,7 +21,7 @@ const SecondRoute = () => (
   <Discussions />
 );
 const ThirdRoute = () => (
-  <Highlights />
+  <Highlights  />
 );
 
 export default class TabViewExample extends React.Component {

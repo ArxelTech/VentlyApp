@@ -5,49 +5,31 @@ export const Styles = StyleSheet.create({
     main_Container: {
         width: '100%',
         height: '100%',
-        // borderWidth: 2,
-        // borderStyle: 'solid',
-        backgroundColor: '#FCFCFC'
-    },
-    parent: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        overflow: 'hidden',
-        // flex: 1,
-        height: '100%',
-        width: '100%',
-        // backgroundColor: '#ff0000'
+        backgroundColor: '#FCFCFC',
+        paddingRight:20
     },
     child: {
         height: '80%',
-        width: '90%',
-        // marginTop: '10%',
-        // backgroundColor: '#ccc'
+        // width: '90%',
     },
-    details: {
-        backgroundColor:'red'
-
+    image: {
+        borderRadius:5,
     },
     title: {
-        // height:60,
+        height:50,
+        width:'100%',
         display:'flex',
         flexDirection:'row',
         justifyContent:'center',
         alignItems:'center',
-        padding:10
-
     },
     text: {
         flex:5,
-        // backgroundColor:'red'
+        width:'50%',
     },
     button: {
-        height:'100%',
-        // width:'90%',
+        height:30,
         flex:2,
-        // backgroundColor:'blue',
-        padding:5
     },
     icon: {
         height:'100%',
@@ -55,11 +37,11 @@ export const Styles = StyleSheet.create({
         display:'flex',
         justifyContent:'center',
         alignItems:'center',
-        padding:5,
-
     },
     date: {
-     flex:4
+     flex:4,
+     justifyContent:'center',
+     padding:8,
     },
     price: {
         height:'100%',
@@ -69,10 +51,15 @@ export const Styles = StyleSheet.create({
         alignItems:'center',
     },
     description: {
-        padding:20
+        paddingTop:20,
+        paddingBottom:20
     },
     featured: {
         
+    },
+    ftVideo: {
+        paddingTop:20,
+        paddingBottom:20
     }
    
     
