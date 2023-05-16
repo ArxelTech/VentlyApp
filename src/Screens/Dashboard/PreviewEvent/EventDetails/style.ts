@@ -25,5 +25,55 @@ export const Styles = StyleSheet.create({
         // marginTop: '10%',
         // backgroundColor: '#ccc'
     },
+    details: {
+        backgroundColor:'red'
+
+    },
+    title: {
+        // height:60,
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'center',
+        alignItems:'center',
+        padding:10
+
+    },
+    text: {
+        flex:5,
+        // backgroundColor:'red'
+    },
+    button: {
+        height:'100%',
+        // width:'90%',
+        flex:2,
+        // backgroundColor:'blue',
+        padding:5
+    },
+    icon: {
+        height:'100%',
+        flex:0.5,
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center',
+        padding:5,
+
+    },
+    date: {
+     flex:4
+    },
+    price: {
+        height:'100%',
+        flex:2,
+        display:'flex',
+        flexDirection:'row',
+        alignItems:'center',
+    },
+    description: {
+        padding:20
+    },
+    featured: {
+        
+    }
+   
     
 });
