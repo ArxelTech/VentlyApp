@@ -13,7 +13,7 @@ export const Styles = StyleSheet.create({
         // width: '90%',
     },
     image: {
-        borderRadius:5,
+        borderRadius:6,
     },
     title: {
         height:50,
@@ -60,6 +60,56 @@ export const Styles = StyleSheet.create({
     ftVideo: {
         paddingTop:20,
         paddingBottom:20
+    },
+    ftImage: {
+        paddingTop:20,
+        paddingBottom:20,
+        display: 'flex',
+        flexDirection:'row'
+    },
+    location: {
+        paddingTop:20,
+        paddingBottom:20,   
+    },
+    locationImg: {
+        height:300, 
+        width:'100%',
+        display:'flex',
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'center',
+      
+    },
+    locationBtn: {
+        width:'80%',
+        height:50
+    },
+    locationBG: {
+        backgroundColor:'#000000c0', width:'100%', height:'100%',
+        display:'flex',
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'center',
+    },
+    transparentBtn: {
+        height:'20%',
+        width:'90%',
+        display:'flex',
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'center'
+    },
+    centerElement: {justifyContent: 'center', alignItems: 'center'},
+    host: {
+        height: 120, width:'100%', 
+        display: 'flex',flexDirection:'row', 
+        justifyContent:'center', alignItems:'center',
+        backgroundColor:'red'
+    },
+    hostImg: {
+        flex: 1.8, padding:10,
+        backgroundColor: 'green',
+        width: '100%'
     }
    
     

@@ -17,7 +17,7 @@ export default function App() {
   return (
    <NavigationContainer>
      <QueryClientProvider client={queryClient}>
-      <Navigation />
+        <Navigation />
      </QueryClientProvider>
    </NavigationContainer>
   );

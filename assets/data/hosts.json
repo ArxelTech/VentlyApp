@@ -1,0 +1,18 @@
+[{
+    "id":1,
+    "image": "https://res.cloudinary.com/xenxei46/image/upload/v1682521174/cardi_uiwhel.png",
+    "user": "Amanda suarez",
+    "handle": "@scarzz",
+    "career": "Photographer",
+    "isVerified": true,
+    "verifyImg": "https://res.cloudinary.com/xenxei46/image/upload/v1682521835/verify_fywcic.png"
+  },{
+    "id": 2,
+    "image": "https://res.cloudinary.com/xenxei46/image/upload/v1682521174/cardi_uiwhel.png",
+    "user": "Cardi b",
+    "handle": "@iamcardib",
+    "career": "artiste",
+    "cost": "$1.7m Per Event",
+    "isVerified": false,
+    "verifyImg": "https://res.cloudinary.com/xenxei46/image/upload/v1682521835/verify_fywcic.png"
+  }]
