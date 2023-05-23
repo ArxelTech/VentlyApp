@@ -10,8 +10,19 @@ const index = () => {
   return (
     <View style={Styles.main_Container}>
        <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1,}} >
-       <Image style={{height:200, width:'100%'}}  source={image}/>
-
+          <View>
+            <Image style={Styles.image}  source={image}/>
+          </View>
+          <View style={Styles.addComment}>
+                    <View style={Styles.commentIcon}>
+                    </View>
+          </View>
+          <View style={Styles.commentSession}>
+              <View style={Styles.comment}>
+                  <Text variant='header' textAlign='center' fontSize={14}>No Comments Yet</Text>
+                  <Text variant='xs' textAlign='center' fontSize={12}>No comments have been added here yet. Be the first to <Text variant='xs' fontSize={12} style={{color:'#FF406E'}}>add a comment</Text></Text>
+              </View>
+          </View>
        </ScrollView>  
     </View>
   )

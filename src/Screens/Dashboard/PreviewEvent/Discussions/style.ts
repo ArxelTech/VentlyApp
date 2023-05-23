@@ -5,8 +5,7 @@ export const Styles = StyleSheet.create({
     main_Container: {
         width: '100%',
         height: '100%',
-        // borderWidth: 2,
-        // borderStyle: 'solid',
+        paddingRight:20,
         backgroundColor: '#FCFCFC'
     },
     parent: {
@@ -14,16 +13,39 @@ export const Styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         overflow: 'hidden',
-        // flex: 1,
         height: '100%',
         width: '100%',
-        // backgroundColor: '#ff0000'
     },
     child: {
         height: '80%',
         width: '90%',
-        // marginTop: '10%',
-        // backgroundColor: '#ccc'
     },
+    image: {
+        height:200, width:'100%' ,
+        borderRadius:6 
+    },
+    commentSession: {
+        width:'100%',
+    },
+    addComment: {
+        width:'100%',
+        height:'100%',
+        zIndex:6,
+        position:'absolute',
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'center',
+        alignItems:'center',
+    },
+    commentIcon: {
+        width:60,
+        height:60,
+        backgroundColor:'#FF406E',
+        borderRadius:100
+    },
+    comment: {
+        padding:50
+    }
+    
     
 });

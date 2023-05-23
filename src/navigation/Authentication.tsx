@@ -17,6 +17,7 @@ import SearchVendors from '../Screens/Dashboard/SearchVendors';
 import Profile from '../Screens/Dashboard/Profile';
 import Categories from '../Screens/Dashboard/Categories';
 import PreviewEvent from '../Screens/Dashboard/PreviewEvent';
+import activities from '../Screens/Dashboard/CreateEvent/Activities';
 
 const Navigator = createNativeStackNavigator();
 
@@ -24,6 +25,8 @@ const Authentication = () => {
   return (
    <Navigator.Navigator screenOptions={{ headerShown: false }}>
     {/* <Navigator.Screen name='Profile' component={Profile}/> */}
+   
+    {/* <Navigator.Screen name=' activities ' component={ activities }/> */}
     <Navigator.Screen name=' Preview ' component={ PreviewEvent }/>
     {/* <Navigator.Screen name=' Categories ' component={ Categories}/> */}
     {/* <Navigator.Screen name=' SearchVendors ' component={ SearchVendors}/> */}
@@ -37,7 +40,7 @@ const Authentication = () => {
     <Navigator.Screen name='interests' component={Interests} />
     <Navigator.Screen name='verifyEmail' component={verifyEmail} />
     <Navigator.Screen name='method' component={AuthMethod} />
-    <Navigator.Screen name='login' component={Login} />
+   
     <Navigator.Screen name='signup' component={Signup} />
     <Navigator.Screen name='resetPassword' component={resetPassword} />
    </Navigator.Navigator>

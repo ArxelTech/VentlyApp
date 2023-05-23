@@ -49,7 +49,7 @@ export const Styles = StyleSheet.create({
               },
         
         tabContainer: {
-          backgroundColor:'yellow',
+          // backgroundColor:'yellow',
           height:'73%'
         },
         bottomTab: {
