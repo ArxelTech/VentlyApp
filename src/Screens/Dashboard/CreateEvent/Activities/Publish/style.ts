@@ -28,6 +28,7 @@ container: {
 title: {
     height:'40%',
     width:'100%',
+    padding:10,
     paddingTop:70,
 },
 img: {
@@ -39,11 +40,6 @@ text: {
     paddingLeft:20,
     paddingRight:20
 },
-subtext: {
-    
-    paddingLeft:20,
-    paddingRight:20
-},
 image: {
     height:'40%',
     width:'100%',
@@ -51,6 +47,10 @@ image: {
 hugoImg: {
     height:200,
     width:200
+},
+subtext: {
+ paddingLeft:20,
+ paddingRight:20
 },
 btn: {
     height:'30%',
@@ -61,10 +61,6 @@ btnFill: {
     width:'90%',
     padding:10
 }, 
-btnTransparent: {
-    height:70,
-    width:'90%',
-    padding:10,
-}  
+
    
 });

@@ -14,7 +14,7 @@ const DATA = require('../../../../assets/data/vendors.json');
 const { height } = Dimensions.get('screen');
 const event = ['Single Day Event']; 
 
-const CreateEvent = () => {
+const Index = () => {
 	const { renderForm } = useForm({
 		defaultValues: {
 			eventName: '',
@@ -457,4 +457,4 @@ const CreateEvent = () => {
   )
 };
 
-export default CreateEvent;
+export default Index;

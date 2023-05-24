@@ -1,16 +1,24 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react';
-import Draft from './Draft';
-import { Styles } from '../style';
 
-const index = () => {
+import { Styles } from '../style';
+import Draft from './Draft';
+import Publish from './Publish';
+import Ready from './Ready';
+import Vsecure from './Vsecure';
+
+const Index = () => {
   return (
     <View style={Styles.parent}>
-      <Draft/>
+      {/* <Draft/>
+       */}
+       {/* <Publish /> */}
+       {/* <Ready /> */}
+       <Vsecure/>
     </View>
   )
 }
 
-export default index
+export default Index;
 
 const styles = StyleSheet.create({})

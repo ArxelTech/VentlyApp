@@ -12,21 +12,20 @@ import Accounts from '../Screens/Authentication/Accounts';
 import BusinessCategory from '../Screens/Authentication/BusinessCategory';
 import AccountSetup from '../Screens/Authentication/AccountSetup';
 import Feeds from '../Screens/Dashboard/Feeds';
-import CreateEvent from '../Screens/Dashboard/CreateEvent';
+import CreateEvent from '../Screens/Dashboard/CreateEvent/Index';
 import SearchVendors from '../Screens/Dashboard/SearchVendors';
 import Profile from '../Screens/Dashboard/Profile';
 import Categories from '../Screens/Dashboard/Categories';
 import PreviewEvent from '../Screens/Dashboard/PreviewEvent';
-import activities from '../Screens/Dashboard/CreateEvent/Activities';
+import Activities from '../Screens/Dashboard/CreateEvent/Activities';
 
 const Navigator = createNativeStackNavigator();
 
 const Authentication = () => {
   return (
    <Navigator.Navigator screenOptions={{ headerShown: false }}>
-    {/* <Navigator.Screen name='Profile' component={Profile}/> */}
-   
-    <Navigator.Screen name=' activities ' component={ activities }/>
+    <Navigator.Screen name=' Activities ' component={ Activities }/>
+    <Navigator.Screen name='Profile' component={Profile}/>
     <Navigator.Screen name=' Preview ' component={ PreviewEvent }/>
     <Navigator.Screen name=' Categories ' component={ Categories}/>
     <Navigator.Screen name=' SearchVendors ' component={ SearchVendors}/>

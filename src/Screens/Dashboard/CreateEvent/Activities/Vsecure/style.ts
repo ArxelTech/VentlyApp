@@ -28,7 +28,8 @@ container: {
 title: {
     height:'40%',
     width:'100%',
-    paddingTop:70,
+    padding:10,
+    paddingTop:50,
 },
 img: {
   paddingBottom:30,
@@ -40,31 +41,42 @@ text: {
     paddingRight:20
 },
 subtext: {
-    
-    paddingLeft:20,
-    paddingRight:20
+ paddingLeft:5,
+ paddingRight:5
 },
-image: {
-    height:'40%',
+eventID: { 
+    height:'15%',
     width:'100%',
 },
-hugoImg: {
-    height:200,
-    width:200
-},
-btn: {
-    height:'30%',
+team: {
+    height:'15%',
     width:'100%'
 },
-btnFill: {
-    height:70,
+table: {
+    height: '40%',
+    width: '100%',
+    backgroundColor:'red',
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+},
+tableContainer: {
     width:'90%',
-    padding:10
-}, 
-btnTransparent: {
-    height:70,
-    width:'90%',
-    padding:10,
-}  
+    height:'90%',
+},
+subContainer: {
+    backgroundColor: 'green',
+    height:'15%'
+},
+bin: {
+ flex:1
+},
+edit: {
+ flex:1
+}
+
+
+
+
    
 });

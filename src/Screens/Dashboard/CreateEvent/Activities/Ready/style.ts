@@ -28,7 +28,8 @@ container: {
 title: {
     height:'40%',
     width:'100%',
-    paddingTop:70,
+    padding:10,
+    paddingTop:50,
 },
 img: {
   paddingBottom:30,
@@ -40,22 +41,23 @@ text: {
     paddingRight:20
 },
 subtext: {
-    
-    paddingLeft:20,
-    paddingRight:20
+ paddingLeft:5,
+ paddingRight:5
 },
-image: {
+share: {
+    
     height:'40%',
     width:'100%',
-},
-hugoImg: {
-    height:200,
-    width:200
 },
 btn: {
     height:'30%',
     width:'100%'
 },
+sharebtn: {
+    height:70,
+    width:'90%',
+    padding:10,
+}, 
 btnFill: {
     height:70,
     width:'90%',
@@ -65,6 +67,11 @@ btnTransparent: {
     height:70,
     width:'90%',
     padding:10,
+},
+btnBorder: {
+    borderWidth:1,
+     borderRadius:6
 }  
+
    
 });
