@@ -67,7 +67,6 @@ const index = () => {
                   <Text variant='xs'>24k</Text>
                 </View>
             </View>
-
         </View>
         <View style={Styles.description}>
           <Text variant='xs' textAlign='justify'>
