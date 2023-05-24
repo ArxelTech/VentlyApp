@@ -55,7 +55,6 @@ team: {
 table: {
     height: '40%',
     width: '100%',
-    backgroundColor:'red',
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
@@ -65,7 +64,6 @@ tableContainer: {
     height:'90%',
 },
 subContainer: {
-    backgroundColor: 'green',
     height:'15%'
 },
 bin: {
@@ -73,6 +71,35 @@ bin: {
 },
 edit: {
  flex:1
+},
+addUser: {
+    // backgroundColor:'green',
+    height:'40%'
+},
+input: {
+  flex: 4,
+  justifyContent:'center',
+  alignItems:'center',
+  height:'100%',
+  paddingTop:10,
+  paddingBottom:10,
+//   backgroundColor:'yellow'
+},
+doneBtn: {
+    flex:1.5,
+    // backgroundColor:'#ccc',
+    padding:10,
+    paddingTop:20,
+    paddingBottom:20,
+    height:'100%',
+},
+border: {
+    borderRadius:5,
+    borderWidth:1,
+    borderColor:'black',
+    height:52,
+    width:'100%'
+    
 }
 
 
