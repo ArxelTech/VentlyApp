@@ -98,12 +98,6 @@ border: {
     borderWidth:1,
     borderColor:'black',
     height:52,
-    width:'100%'
-    
+    width:'100%' 
 }
-
-
-
-
-   
 });
