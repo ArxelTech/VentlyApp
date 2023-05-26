@@ -3,13 +3,14 @@ import { StatusBar, StyleSheet } from 'react-native';
 export const Styles = StyleSheet.create({
 
         parent: {
-            display: 'flex',
-            alignItems: 'center',
-            overflow: 'hidden',
+            // display: 'flex',
+            // alignItems: 'center',
+            // overflow: 'hidden',
             // flex: 1,
             height: '100%',
             width: '100%',
-            backgroundColor: '#FCFCFC'
+            // backgroundColor: '#FCFCFC'
+            backgroundColor: '#FFFFFF'
         },
         child: {
             height: '100%',
@@ -22,7 +23,7 @@ export const Styles = StyleSheet.create({
             flexDirection: 'row',
             alignItems: 'center',
             justifyContent:'center',
-            // backgroundColor: 'green',
+            // backgroundcolor: '#FFFFFF'
             padding:30,
             
         },

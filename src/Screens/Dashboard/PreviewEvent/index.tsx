@@ -69,82 +69,121 @@
 
 //   render() {
 //     return (
-//       <View style={[Styles.parent]}>
-//         <View style={[Styles.child]}>
-//           {/* Header */}
-//           <View style={[Styles.main_cont]}>
-//             <View style={Styles.header}>
-//               <View style={{flex: 0.8}}>
-//                 <Ionicons name='arrow-back-outline' size={25} color='black'/>
-//               </View>
-//               <View style={{flex: 6, flexDirection:'row'}}> 
-//                   <View style={{flex:1}}>
-//                     <Text variant='header' style={{fontSize:18}}>Preview</Text> 
-//                   </View>    
-//               </View> 
-//               </View>
-              
-//           </View>
-//           {/* Tab details */}
-//           <View style={Styles.tabContainer}>
-//             <TabView style={{marginTop:-40, paddingLeft:10, paddingRight:10}}
-//               navigationState={this.state}
-//               renderScene={this._renderScene}
-//               renderTabBar={this._renderTabBar}
-//               onIndexChange={this._handleIndexChange} 
-//               />
-//           </View>
-//           <View style={Styles.bottomTab}>
-//              <View style={Styles.PostBtn}>
-//               <CustomButton label='Post Event' onPress={()=>console.log('hi')} color='white' />
-//              </View>
-//              <View style={Styles.transparentBtn}>
-//                 <View style={{flex:5}}>
-//                       <Pressable style={{padding:10 ,
-//                         borderWidth:2, borderStyle:'solid', borderRadius:10, borderColor:'#FF406E', flex:1, alignItems:'center'}}>
-//                           <Text variant='xs' style={{color:'#FF406E'}}>Save As draft</Text>
-//                       </Pressable>
-//                 </View> 
-//              </View>
-//           </View>
-//         </View> 
-//     </View>
+
 //     );
 //   }
 // }
 
 
+
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import {CustomButton, Text, View } from '../../../components';
+import {
+  Animated,
+  TouchableOpacity,
+  StatusBar,
+  Pressable,
+} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { Styles } from './style';
+import { Ionicons } from '@expo/vector-icons'
+import EventDetails from './EventDetails';
+import Discussions from './Discussions';
+import Highlights from './Highlights'
 
-function HomeScreen() {
+function Event (){
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
+    <View>
+      <EventDetails/>
     </View>
   );
 }
 
-function SettingsScreen() {
+function Discuss (){
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
+    <View>
+      <Discussions/>
+    </View>
+  );
+}
+function High (){
+  return (
+    <View>
+      <Highlights/>
     </View>
   );
 }
 
 const Tab = createMaterialTopTabNavigator();
 
-export default function App() {
+function App() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
+
+    <View style={[Styles.parent]}>
+        <View style={[Styles.child]}>
+          {/* Header */}
+          <View style={[Styles.main_cont]}>
+            <View style={Styles.header}>
+              <View style={{flex: 0.8}}>
+                <Ionicons name='arrow-back-outline' size={25} color='black'/>
+              </View>
+              <View style={{flex: 6, flexDirection:'row'}}> 
+                  <View style={{flex:1}}>
+                    <Text variant='header' style={{fontSize:18}}>Preview</Text> 
+                  </View>    
+              </View> 
+              </View>
+              
+          </View>
+          {/* Tab details */}
+          <View style={Styles.parent}>
+              <Tab.Navigator
+                screenOptions={{
+                tabBarActiveTintColor:'white',
+                tabBarInactiveTintColor:'red',
+                tabBarIndicatorStyle: {
+                  backgroundColor: '#FF406E',
+                  height: 4,
+                  width: 100,
+                  marginLeft:20
+                },
+                tabBarScrollEnabled: false,
+                tabBarLabelStyle: {fontSize: 15, color:'#FF406E' , textTransform: 'none'},
+                tabBarItemStyle: { width: 120,   },
+                tabBarStyle: {
+                  height: 60,
+                  width: '100%',
+                  paddingTop:10,
+                  paddingBottom:10,
+                  paddingLeft:10,
+                  // marginLeft:10,
+                  backgroundColor: '#FFFFFF',
+                },
+              }}
+              >
+        <Tab.Screen name="Event Details" component={Event} />
+        <Tab.Screen name="Discussions" component={Discuss} />
+        <Tab.Screen name="Highlight" component={High} />
       </Tab.Navigator>
-    </NavigationContainer>
+    </View>
+      
+          <View style={Styles.bottomTab}>
+             <View style={Styles.PostBtn}>
+              <CustomButton label='Post Event' onPress={()=>console.log('hi')} color='white' />
+             </View>
+             <View style={Styles.transparentBtn}>
+                <View style={{flex:5}}>
+                      <Pressable style={{padding:10 ,
+                        borderWidth:2, borderStyle:'solid', borderRadius:10, borderColor:'#FF406E', flex:1, alignItems:'center'}}>
+                          <Text variant='xs' style={{color:'#FF406E'}}>Save As draft</Text>
+                      </Pressable>
+                </View> 
+             </View>
+          </View>
+        </View> 
+    </View>
   );
 }
 
+export default App;
