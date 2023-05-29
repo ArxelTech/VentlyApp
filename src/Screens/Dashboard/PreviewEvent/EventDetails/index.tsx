@@ -133,22 +133,22 @@ const index = () => {
               <View style={Styles.host}>
 												<View style={{ flex: 1, padding: 5}}>
 													<Image source={hostImg} resizeMode='cover'
-													 style={{height:60, width:60, borderRadius: 100}}/>
+													 style={{height:80, width:80, borderRadius: 100}}/>
 												</View>
-												<View style={Styles.hostImg}>
-                            <View style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
-                              <Text variant='header' style={{fontSize: 15}}>
+												<View style={Styles.hostDtls}>
+                            <View style={{display:'flex', flexDirection:'row', alignItems:'center', marginTop:10}}>
+                              <Text variant='header' style={{fontSize: 14}}>
                                 Amanda Suarez
                               </Text>
                               <Image source={VImg} style={{height:15, width:15, borderRadius: 100, marginLeft:5}}/>
                             </View>
-                            <View style={{display:'flex', flexDirection:'row', alignItems:'center', flex: 1.5, marginTop:-10}}>
-                              <Text variant='xs'>@michaelcruz</Text>
-                              <Text variant='xs'>photographer</Text>
+                            <View style={{display:'flex', flexDirection:'row', alignItems:'center', flex: 1.5, marginTop:-30}}>
+                              <Text variant='xs' fontSize={10}>@michaelcruz</Text>
+                              <Text variant='xs' fontSize={10}> photographer</Text>
                             </View>
                             
                           </View>
-                          <View style={{flex:1.2}}>
+                          <View style={{flex:1.3}}>
                           
                             <TouchableOpacity style={[Styles.centerElement, 
                             { width: '100%', height: 60, padding: 10, display:'flex', justifyContent:'center', alignItems: 'center', 
@@ -162,11 +162,11 @@ const index = () => {
         </View>
         <View style={Styles.featured}>
           <Text variant='header' textAlign='left' style={{fontSize:14}}>Creatives & Vendors Attending</Text>
-          <View style={{padding:10}}>
-            <Text variant='subheader' textAlign='left' style={{fontSize:12}}>No creative / vendor has accepted your invitations yet.
-               Once they accept, their profiles would show here</Text>
+          <View style={{padding:5}}>
+            <Text variant='subheader' textAlign='left' style={{fontSize:12}}>No creative / vendor has accepted your invitations yet. Once they accept, their profiles would show here
+               </Text>
             </View>
-        </View>
+          </View>
        </ScrollView>  
     </View>
   )

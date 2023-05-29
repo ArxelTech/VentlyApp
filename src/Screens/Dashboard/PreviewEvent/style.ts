@@ -3,18 +3,19 @@ import { StatusBar, StyleSheet } from 'react-native';
 export const Styles = StyleSheet.create({
 
         parent: {
-            // display: 'flex',
-            // alignItems: 'center',
-            // overflow: 'hidden',
-            // flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            overflow: 'hidden',
+            flex: 1,
             height: '100%',
             width: '100%',
-            // backgroundColor: '#FCFCFC'
-            backgroundColor: '#FFFFFF'
+            backgroundColor: '#FFFFFF',
+            
         },
         child: {
             height: '100%',
             width: '100%',
+            // backgroundColor:'yellow'
         },
         main_cont: {
             width:'100%',
@@ -23,8 +24,8 @@ export const Styles = StyleSheet.create({
             flexDirection: 'row',
             alignItems: 'center',
             justifyContent:'center',
-            // backgroundcolor: '#FFFFFF'
-            padding:30,
+            // backgroundcolor: 'green',
+            // padding:30,
             
         },
             header: {
@@ -32,9 +33,10 @@ export const Styles = StyleSheet.create({
                 flexDirection: 'row',
                 width: '90%',
                 height: '100%',
-                alignItems: 'center',
+                alignItems: 'flex-end',
                 // justifyContent: '',
-                marginTop:20
+                // marginTop:20,
+                // backgroundColor:'red'
             },
             container: {
                 flex: 1,
@@ -51,7 +53,12 @@ export const Styles = StyleSheet.create({
         
         tabContainer: {
           // backgroundColor:'yellow',
-          height:'73%'
+          height:'73%',
+          display:'flex',
+          justifyContent:'center',
+          alignItems:'center',
+          flexDirection:'row',
+          
         },
         bottomTab: {
           // backgroundColor:'indigo',
@@ -65,12 +72,19 @@ export const Styles = StyleSheet.create({
           shadowOpacity: 0.2,
           shadowRadius: 3,
         },
+        btnfill: {
+          padding:10 ,
+          borderRadius:10, backgroundColor:'#FF406E', 
+          flex:1, alignItems:'center'             
+        },
+        btnOutline: {
+          padding:10 ,
+          borderWidth:2, borderStyle:'solid',
+          borderRadius:10, borderColor:'#FF406E', 
+          flex:1, alignItems:'center'             
+        },
         PostBtn: {
           height:'60%',
           width:'35%'
         },
-        transparentBtn: {
-          height:'60%',
-          width:'35%'
-        }
 });

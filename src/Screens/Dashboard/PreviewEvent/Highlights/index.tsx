@@ -3,6 +3,7 @@ import { Text, View, CustomButton } from '../../../../components';
 import { Styles } from './style';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Image } from 'react-native';
+import { TouchableOpacity } from 'react-native-ui-lib';
 
 const image = require('../../../../../assets/images/scott.png');
 
@@ -17,11 +18,9 @@ const index = () => {
                     No photo highlights have been added yet.You can set which highlights are displayed here in 
                     the event settings. Highlights can only be added once an event goes live
                 </Text>
-                <View style={Styles.btn}>
-                  <CustomButton  onPress={() => {console.log('pressed')}} label='Go To Event Settings' 
-                    borderRadius={5} backgroundColor='#E61648'  color='white'
-                  />
-                </View>
+                <TouchableOpacity style={Styles.btn} onPress={() => {console.log('pressed')}}>
+                  <Text variant='xs' color='white'>Go To Event Settings</Text>
+                </TouchableOpacity>
             </View>
         </View>
        </ScrollView>  

@@ -6,7 +6,7 @@ export const Styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         backgroundColor: '#FCFCFC',
-        paddingRight:20
+        padding:10
     },
     child: {
         height: '80%',
@@ -101,15 +101,13 @@ export const Styles = StyleSheet.create({
     },
     centerElement: {justifyContent: 'center', alignItems: 'center'},
     host: {
-        height: 120, width:'100%', 
+        height: 100, width:'100%', 
         display: 'flex',flexDirection:'row', 
         justifyContent:'center', alignItems:'center',
-        backgroundColor:'red'
+        
     },
-    hostImg: {
-        flex: 1.8, padding:10,
-        backgroundColor: 'green',
-        width: '100%'
+    hostDtls: {
+         padding:10, 
     }
    
     

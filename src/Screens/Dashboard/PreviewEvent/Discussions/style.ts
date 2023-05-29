@@ -5,7 +5,7 @@ export const Styles = StyleSheet.create({
     main_Container: {
         width: '100%',
         height: '100%',
-        paddingRight:20,
+        padding:10,
         backgroundColor: '#FCFCFC'
     },
     parent: {
