@@ -10,8 +10,8 @@ import Vsecure from './Vsecure';
 const Index = () => {
   return (
     <View style={Styles.parent}>
-      {/* <Draft/>
-       */}
+      {/* <Draft/> */}
+      
        {/* <Publish /> */}
        {/* <Ready /> */}
        <Vsecure/>

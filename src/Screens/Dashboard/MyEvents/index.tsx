@@ -11,29 +11,37 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { Styles } from './style';
 import { Ionicons } from '@expo/vector-icons'
-import EventDetails from './EventDetails';
-import Discussions from './Discussions';
-import Highlights from './Highlights'
+import Created from './Created';
+import ComingUp from './ComingUp';
+import Ended from './Ended';
+import Live from './Live';
 
-function Event (){
+function CreatedEvents (){
   return (
     <View>
-      <EventDetails/>
+      <Created />
     </View>
   );
 }
 
-function Discuss (){
+function UpComing (){
   return (
     <View>
-      <Discussions/>
+      <ComingUp/>
     </View>
   );
 }
-function High (){
+function ClosedEvents (){
   return (
     <View>
-      <Highlights/>
+      <Ended/>
+    </View>
+  );
+}
+function LiveEvent (){
+  return (
+    <View>
+      <Live/>
     </View>
   );
 }
@@ -58,7 +66,7 @@ function App() {
                     <Text variant='header' style={{fontSize:18}}>Preview</Text>   
               </View> 
               <TouchableOpacity style={{flex: 0.8,padding:5}}>
-                <Ionicons name='ellipsis-vertical' size={25} color='black'/>
+                <Ionicons name='search' size={25} color='black'/>
               </TouchableOpacity>
             </View> 
           </View>
@@ -71,25 +79,29 @@ function App() {
                 tabBarIndicatorStyle: {
                   backgroundColor: '#FF406E',
                   height: 4,
-                  width: 100,
+                  width: 80,
                   marginLeft:10,
                   display:'flex',
                 },
                 tabBarScrollEnabled: false,
                 tabBarLabelStyle: {fontSize: 14, fontWeight:'700' , textTransform: 'none'},
-                tabBarItemStyle: { width: 120,   },
+                tabBarItemStyle: { width: 98   },
                 tabBarStyle: {
                   height: 60,
                   width: '100%',
                   paddingTop:10,
                   paddingBottom:10,
+                  marginLeft:-5,
                   backgroundColor: '#FFFFFF',
+                  
+                  
                 },
               }}
               >
-        <Tab.Screen name="Event Details" component={Event} />
-        <Tab.Screen name="Discussions" component={Discuss} />
-        <Tab.Screen name="Highlights" component={High} />
+        <Tab.Screen name="Created" component={CreatedEvents} />
+        <Tab.Screen name="Coming Up" component={UpComing} />
+        <Tab.Screen name="Ended" component={ClosedEvents} />
+        <Tab.Screen name="Live" component={LiveEvent} />
       </Tab.Navigator>
     </View>
       
