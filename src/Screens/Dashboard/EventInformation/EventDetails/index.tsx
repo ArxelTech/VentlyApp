@@ -27,7 +27,7 @@ const index = () => {
        <View>
             <View style={Styles.title}>
                 <View style={Styles.text}>
-                  <Text variant='header' style={{fontSize:14}}>The Xperience Lagos, 6th Edition</Text>
+                  <Text variant='header' style={{fontSize:14}}>The 62nd Grammy Awards</Text>
                 </View> 
                 <View style={Styles.button}>
                     <CustomButton label='Follow' color='white' onPress={()=> console.log('follow')} />
