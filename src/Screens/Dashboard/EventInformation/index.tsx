@@ -55,7 +55,7 @@ function App() {
                 <Ionicons name='arrow-back-outline' size={25} color='black'/>
               </TouchableOpacity>
               <View style={{flex: 6, flexDirection:'row',}}>          
-                    <Text variant='header' style={{fontSize:18}}>Preview</Text>   
+                    <Text variant='header' style={{fontSize:18}}>Event Information</Text>   
               </View> 
               <TouchableOpacity style={{flex: 0.8,padding:5}}>
                 <Ionicons name='ellipsis-vertical' size={25} color='black'/>
