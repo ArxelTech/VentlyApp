@@ -31,13 +31,13 @@ const Onboarding = ({ navigation }: IProps) => {
       {/* SCROLL CONTAINER */}
 
       <View style={Styles.sliderConatainer}>
-         {/* <PagerView style={{ flex: 1 }} onPageScroll={(e) => handleScroll(e.nativeEvent.position)}> */}
+         <PagerView style={{ flex: 1 }} onPageScroll={(e) => handleScroll(e.nativeEvent.position)}>
           {data.map((item, index) => (
             <View key={index.toString()}>
               <Image  source={item.img} style={{ width: '100%', height: '100%'}} resizeMode='contain'/>
             </View>
           ))}
-        {/* </PagerView>  */}
+        </PagerView> 
       </View>
 
       {/* INDICATORS */}

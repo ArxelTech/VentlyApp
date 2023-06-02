@@ -45,7 +45,7 @@ const Login = ({navigation}: IProps) => {
             <Text variant='xs' marginTop='m' onPress={() => navigation?.navigate('resetPassword') } textAlign='right'>Forgot Password ?</Text>
             
             <View style={{ marginTop: 30 }}>
-            <Text variant='xs' marginTop='m' textAlign='center'>Dont have an account ? Signup</Text>
+            <Text variant='xs' marginTop='m' textAlign='center'>Dont have an account ? <Text variant='xs' onPress={()=> navigation?.navigate('signup')} >Sign up</Text></Text>
             </View>
         </View>
        {/* </ScrollView> */}

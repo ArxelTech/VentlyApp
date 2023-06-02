@@ -13,7 +13,7 @@ export const Styles = StyleSheet.create({
     },
     header: {
         // backgroundColor: '#ff0000',
-        marginTop: 40,
+        marginTop: 60,
         height: '30%'
     },
     imgUpload: {
@@ -38,16 +38,16 @@ export const Styles = StyleSheet.create({
     child: {
         height: '100%',
         width: '80%',
-        marginTop: '30%'
+        marginTop: '10%',
         // backgroundColor: '#ccc'
     },
     dropdown: {
         // position: 'absolute',
         // backgroundColor: 'red',
         // color: 'pink',
-        borderColor: 'grey',
+        borderColor: '#ccc',
         borderStyle: 'solid',
-        borderWidth: 1,
+        borderWidth: 0.2,
         height: '30%',
         width: '100%'
         // top: 50,

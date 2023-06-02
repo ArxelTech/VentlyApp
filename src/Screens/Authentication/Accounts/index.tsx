@@ -45,7 +45,9 @@ const renderDropdown = () => {
           <FlatList
              data={data}
              renderItem={({item}) => 
-              <View style={Styles.listItem}>{item.category}</View>
+              <View style={Styles.listItem}>
+                <Text variant='xs'>{item.category}</Text>
+                </View>
               }
              keyExtractor={item => item.id}
             />
@@ -62,7 +64,7 @@ const unrenderMessage = () => {
         <Text variant='xs' marginTop='m' textAlign='left' fontWeight={'500'}>
               Use this account type if you will just be using Vent.ly for personal use. 
               You can always switch accounts later
-          </Text>
+        </Text>
       </View>
     )
   }
@@ -98,13 +100,15 @@ const unrenderMessage = () => {
               {renderDropdown()}
             {/* Message tip */}
                 {unrenderMessage()}
-            <View style={{ marginTop: 100 }}>
+            <View style={{ marginTop: 5 }}>
               <SubmitButton label='Continue' onPress={(data) => console.log(data)} color='white' />
             </View>
           </View>
+          {/* </ScrollView> */}
         </View>
-       {/* </ScrollView> */}
+      
       </View>
+     
   )
 }
 
