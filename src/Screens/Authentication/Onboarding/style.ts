@@ -30,7 +30,7 @@ export const Styles = StyleSheet.create({
     },
     textContainer: {
         width: '100%',
-        height: '8%',
+        height: '10%',
         alignItems: 'center',
     },
     buttonContainer: {

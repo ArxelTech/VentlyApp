@@ -34,28 +34,28 @@ const Interests = () => {
           </View>
           <View style={Styles.interests}>
             <View style={Styles.childContainer}>
-              <Pressable style={Styles.btn_X} >Animal & Pets</Pressable>
-              <Pressable style={Styles.btn_Y} >Arts & Humanities</Pressable>
+              <Pressable style={Styles.btn_X} ><Text variant='xs'>Animal & Pets</Text></Pressable>
+              <Pressable style={Styles.btn_Y} ><Text variant='xs'>Arts & Humanities</Text></Pressable>
             </View>
             <View style={Styles.childContainer_B}>
-              <Pressable style={Styles.btn_A} >Autos</Pressable>
-              <Pressable style={Styles.btn_B} >Books & literature</Pressable>
-              <Pressable style={Styles.btn_C} >Beauty</Pressable>
+              <Pressable style={Styles.btn_A} ><Text variant='xs'>Autos</Text></Pressable>
+              <Pressable style={Styles.btn_B} ><Text variant='xs'>Books & literature </Text></Pressable>
+              <Pressable style={Styles.btn_C} ><Text variant='xs'>Beauty </Text></Pressable>
             </View>
             <View style={Styles.childContainer_B}>
-              <Pressable style={Styles.btn_A} >Autos</Pressable>
-              <Pressable style={Styles.btn_B} >Books & literature</Pressable>
-              <Pressable style={Styles.btn_C} >Beauty</Pressable>
+              <Pressable style={Styles.btn_A} ><Text variant='xs'>Autos</Text></Pressable>
+              <Pressable style={Styles.btn_B} ><Text variant='xs'>Books & literature</Text></Pressable>
+              <Pressable style={Styles.btn_C} ><Text variant='xs'>Beauty</Text></Pressable>
             </View>
             <View style={Styles.childContainer_B}>
-              <Pressable style={Styles.btn_A} >Autos</Pressable>
-              <Pressable style={Styles.btn_B} >Books & literature</Pressable>
-              <Pressable style={Styles.btn_C} >Beauty</Pressable>
+              <Pressable style={Styles.btn_A} ><Text variant='xs'>Autos</Text></Pressable>
+              <Pressable style={Styles.btn_B} ><Text variant='xs'>Books & literature</Text></Pressable>
+              <Pressable style={Styles.btn_C} ><Text variant='xs'>Beauty</Text></Pressable>
             </View>
             <View style={Styles.childContainer_C}>
-              <Pressable style={Styles.btn_D} >Books & Literature</Pressable>
-              <Pressable style={Styles.btn_E} >Beauty</Pressable>
-              <Pressable style={Styles.btn_F} >Beauty</Pressable>
+              <Pressable style={Styles.btn_D} ><Text variant='xs'>Books & Literature</Text></Pressable>
+              <Pressable style={Styles.btn_E} ><Text variant='xs'>Beauty</Text></Pressable>
+              <Pressable style={Styles.btn_F} ><Text variant='xs'>Beauty</Text></Pressable>
             </View>
           </View>
             <View style={{ marginTop: 100 }}>

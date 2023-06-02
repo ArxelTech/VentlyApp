@@ -3,7 +3,7 @@ import { createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import React from 'react'
 import Feeds from '../Screens/Dashboard/Feeds';
 import Notifications from '../Screens/Dashboard/Notifications';
-import CreateEvent from '../Screens/Dashboard/CreateEvent';
+import CreateEvent from '../Screens/Dashboard/Categories';
 import Profile from '../Screens/Dashboard/Profile';
 import Settings from '../Screens/Dashboard/Settings';
 

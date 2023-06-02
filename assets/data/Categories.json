@@ -1,0 +1,66 @@
+[{
+  "_id": {
+    "$oid": "1"
+  },
+  "name": "Photographers",
+  "image": "https://res.cloudinary.com/xenxei46/image/upload/v1682686746/photo_jockgx.png"
+  },{
+    "_id": {
+      "$oid": "2"
+    },
+    "name": "Disk Jockeys",
+    "image": "https://res.cloudinary.com/xenxei46/image/upload/v1682686741/dj-mixer_ubww35.png"
+    
+  },{
+    "_id": {
+      "$oid": "3"
+    },
+    "name": "Hosts",
+    "image": "https://res.cloudinary.com/xenxei46/image/upload/v1682686746/host_erxddt.png"
+  },
+  {
+    "_id": {
+      "$oid": "4"
+    },
+    "name": "Comedians",
+    "image": "https://res.cloudinary.com/xenxei46/image/upload/v1682686746/laugh_agaht2.png"  
+  },
+  {
+    "_id": {
+      "$oid": "5"
+    },
+    "name": "Dancers",
+    "image": "https://res.cloudinary.com/xenxei46/image/upload/v1682686741/dancer_qszlh7.png"
+  
+  },
+  {
+    "_id": {
+      "$oid": "6"
+    },
+    "name": "Cateres",
+    "image": "https://res.cloudinary.com/xenxei46/image/upload/v1682686746/food_m2nbdr.png"
+  },
+  {
+    "_id": {
+      "$oid": "7"
+    },
+    "name": "Artiste",
+    "image": "https://res.cloudinary.com/xenxei46/image/upload/v1682686746/musician_rfrqya.png"
+  },
+  {
+    "_id": {
+      "$oid": "8"
+    },
+    "name": "cinematographers",
+    "image": "https://res.cloudinary.com/xenxei46/image/upload/v1682686741/cinematographers_axkwoq.png"
+  },
+  {
+    "_id": {
+      "$oid": "9"
+    },
+    "name": "Users",
+    "image": "https://res.cloudinary.com/xenxei46/image/upload/v1682686741/boy_rexp5y.png"
+  }
+
+
+]
