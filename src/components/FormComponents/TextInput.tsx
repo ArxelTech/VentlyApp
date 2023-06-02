@@ -14,7 +14,8 @@ interface IProps {
     label: string;
 }
 
-export const TextInput = ({ name, leftIcon, isPassword = false, rightIcon, label, placeholder, ...rest }: IProps & TextInputProps) => {
+export const TextInput = (props: IProps & TextInputProps) => {
+  const { name, leftIcon, isPassword = false, rightIcon, label, placeholder } = props;
     const theme = useTheme<Theme>();
     const { control, formState: {errors} } = useFormContext()
   return (
@@ -29,7 +30,7 @@ export const TextInput = ({ name, leftIcon, isPassword = false, rightIcon, label
           }}
           name={name}
           render={({ field: { onChange, onBlur, value }}) => (
-              <Input onChangeText={onChange} onBlur={onBlur} value={value} secureTextEntry={isPassword} {...rest} style={{ flex: 1, paddingHorizontal: 10 }} />
+              <Input onChangeText={onChange} onBlur={onBlur} value={value} secureTextEntry={isPassword} {...props} style={{ flex: 1, paddingHorizontal: 10 }} />
           )}
         />
         {rightIcon && rightIcon}
