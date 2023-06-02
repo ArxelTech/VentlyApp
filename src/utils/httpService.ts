@@ -22,7 +22,7 @@ HttpClient.interceptors.request.use(async(config) => {
 // Response Interceptors
 HttpClient.interceptors.response.use((config) => {
     if (config.status === 200 || config.status === 201) {
-        return config.data.message || 'Request Successful';
+        return config.data
     }
     if (config.status === 403 || config.status === 401) {
         return config.data.message || 'Not Authorzied';
