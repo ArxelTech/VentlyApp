@@ -42,7 +42,7 @@ const AuthButton = ({ borderColor, borderWidth = 0, color = 'black', icon, label
         justifyContent: 'center',
         paddingLeft: 20
       }}>
-        <Text variant='xs' color={color ? color: 'black'}>{label}</Text>
+        <Text variant='body' color={color ? color: 'black'}>{label}</Text>
       </View>
     </Pressable>
   )

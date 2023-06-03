@@ -9,6 +9,7 @@ import resetSuccess from '../Screens/Authentication/ResetSuccess';
 import verifyEmail from '../Screens/Authentication/VerifyEmail';
 import Interests from '../Screens/Authentication/Interests';
 import AccountSetup from '../Screens/Authentication/AccountSetup';
+import Accounts from '../Screens/Authentication/Accounts';
 
 // import CreateEvent from '../Screens/Dashboard/CreateEvent/Index';
 
@@ -20,8 +21,8 @@ const Authentication = () => {
     
     <Navigator.Navigator screenOptions={{ headerShown: false }}>
     <Navigator.Screen name='onboarding' component={Onboarding} />
-    <Navigator.Screen name='resetSuccess' component={resetSuccess} />
-    <Navigator.Screen name='accountSetup' component={ AccountSetup  } />
+    <Navigator.Screen name='resetsuccess' component={resetSuccess} />
+    <Navigator.Screen name='accountSetup' component={ Accounts} />
     <Navigator.Screen name='interests' component={Interests} />
     <Navigator.Screen name='verifyEmail' component={verifyEmail} />
     <Navigator.Screen name='method' component={AuthMethod} />

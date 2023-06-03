@@ -10,6 +10,7 @@ export const colorPallette = {
     darkGrey: '#707070',
     deactivatedColor: '#E61648',
     inputBackground: '#F5F5F5',
+    grey: 'grey',
 }
 
 const theme = createTheme({
@@ -24,6 +25,7 @@ const theme = createTheme({
         accentColor: colorPallette.whiteAccentColor,
         deactivatedColor: colorPallette.deactivatedColor,
         textColor: colorPallette.black,
+        grey: colorPallette.grey,
     },
     spacing: {
         s: 8,
@@ -48,30 +50,28 @@ const theme = createTheme({
       color: 'black'
     },
     header: {
-      fontFamily: 'PoppinsBold',
-      fontWeight: 'bold',
+      fontFamily: 'satoshi-bold',
       fontSize: 34,
       lineHeight: 42.5,
       color: 'black',
     },
     subheader: {
-      fontFamily: 'PoppinsRegular',
-      fontWeight: '600',
+      fontFamily: 'satoshi-medium',
       fontSize: 22,
       lineHeight: 36,
       color: 'black',
     },
     body: {
-      fontFamily: 'Heebo',
+      fontFamily: 'satoshi-regular',
       fontSize: 18,
       lineHeight: 24,
-      color: 'black',
+      color: 'grey',
     },
     xs: {
-        fontFamily: 'Heebo',
-        fontSize: 14,
+        fontFamily: 'satoshi-light',
+        fontSize: 16,
         lineHeight: 24,
-        color: 'black',
+        color: 'grey',
       },
   },
 })
@@ -93,27 +93,25 @@ export const darkTheme: Theme = {
         color: 'white',
       },
         header: {
-        fontFamily: 'PoppinsBold',
-        fontWeight: 'bold',
+        fontFamily: 'satoshi-bold',
         fontSize: 34,
         lineHeight: 42.5,
         color: 'white',
         },
         subheader: {
-        fontFamily: 'PoppinsRegular',
-        fontWeight: '600',
+        fontFamily: 'satoshi-medium',
         fontSize: 22,
         lineHeight: 36,
         color: 'white',
         },
         body: {
-        fontFamily: 'Heebo',
+        fontFamily: 'satoshi-regular',
         fontSize: 18,
         lineHeight: 24,
         color: 'white',
         },
         xs: {
-            fontFamily: 'Heebo',
+            fontFamily: 'satoshi-light',
             fontSize: 14,
             lineHeight: 24,
             color: 'white',
@@ -121,5 +119,53 @@ export const darkTheme: Theme = {
   },
 }
 
+
 export default theme;
 export type Theme = typeof theme;
+
+// for react native ui lib
+
+import {Typography, Colors, ThemeManager} from 'react-native-ui-lib';
+
+export function InitFunction() {
+    Colors.loadColors({
+      brandColor: '#FF406E',
+      whiteAccentColor: '#EFEFEF',
+      white: '#ffffff',
+      black: '#1A1A1A',
+      blackAccentColor: '#707070',
+      textInputBackgroundColor: '#F5F5F5',
+      darkGrey: '#707070',
+      deactivatedColor: '#E61648',
+      inputBackground: '#F5F5F5',
+    });
+    Typography.loadTypographies({
+        header: {
+            fontSize: 28,
+            fontWeight: '500',
+            fontFamily: 'satoshi-bold',
+            color: 'black',
+        },
+        light: {
+            fontSize: 17,
+            fontFamily: 'satoshi-light',
+            color: Colors.bodyTextGrey
+        },
+         regular: {
+            fontSize: 18,
+            fontFamily: 'satoshi-regular',
+            color: Colors.bodyTextGrey
+
+        },
+        medium: {
+            fontSize: 20,
+            fontFamily: 'satoshi-medium',
+            color: 'black'
+        },
+         semibold: {
+            fontSize: 20,
+            fontFamily: 'satoshi-medium',
+            color: 'black'
+        },
+    });
+}

@@ -36,7 +36,7 @@ export const SubmitButton = ({
         alignItems: 'center',
       }}>
         {!isLoading && <Text variant='body' style={{ color }}>{label}</Text>}
-        {isLoading && <ActivityIndicator size='large' color={theme.colors.brandColor} />}
+        {isLoading && <ActivityIndicator size='large' color={color} />}
       </Pressable>
  
   );
