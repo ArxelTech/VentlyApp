@@ -6,6 +6,7 @@ export const Styles = StyleSheet.create({
         flex: 1,
         width: '100%',
         height: '100%',
+        padding: 20,
         // backgroundColor: '#fff000'
     },
     header: {
@@ -29,8 +30,8 @@ export const Styles = StyleSheet.create({
         height: '40%',
     },
     button: {
-        width: '90%',
-        height: '20%',
+        width: '100%',
+        height: 55,
         backgroundColor: '#ffff00',
         marginTop: 10
     },

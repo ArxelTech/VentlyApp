@@ -35,8 +35,8 @@ const Login = ({navigation }: IProps) => {
       setIsLoggedIn(true);
     },
     onError: (error: any) => {
-      console.log(error);
-      showToast({ message: 'An error occured while trying to login', preset: 'failure', position: 'bottom' });
+      console.log(`this is the error ${error}`)
+      showToast({ message: error, preset: 'failure', position: 'bottom' });
     }
   });
 
@@ -53,7 +53,7 @@ const Login = ({navigation }: IProps) => {
   });
 
   return renderForm(
-      <View style={Styles.parent}>
+      <View style={Styles.parent} backgroundColor='backgroundColor'>
         <View style={Styles.child}>
           <StatusBar barStyle='dark-content' />
         {/* <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1 }} contentContainerStyle={{ flex: 1, minHeight: height, paddingHorizontal: 20 }}> */}
@@ -62,22 +62,23 @@ const Login = ({navigation }: IProps) => {
             </View>
             <View>
               <Text variant='subheader'>Welcome Back</Text>
-              <Text variant='xs'>Log in to continue using vent.ly</Text>
+              <Text variant='body'>Log in to continue using vent.ly</Text>
             </View>
             <View style={{ marginTop: 20 }}>
               <TextInput name='email' label='Email' placeholder='Email@example.com' leftIcon={<Ionicons name='mail' size={25} color='lightgrey' />}  />
             </View>
 
-            <View style={{ marginTop: 10 }}>
+            <View style={{ marginTop: 20 }}>
               <TextInput name='password' label='Password' placeholder='********' isPassword leftIcon={<Ionicons name='lock-closed' size={25} color='lightgrey' />}  />
             </View>
 
-            <Text variant='xs' marginTop='m' onPress={() => navigation?.navigate('resetPassword') } textAlign='right'>Forgot Password ?</Text>
+            <Text variant='body' marginVertical='l' onPress={() => navigation?.navigate('resetPassword') } textAlign='right'>Forgot Password ?</Text>
+            
               <View marginTop='m' />
             <SubmitButton label='submit' isLoading={isLoading} onPress={handleSubmit} />
             
             <View style={{ marginTop: 30 }}>
-            <Text variant='xs' marginTop='m' textAlign='center'>Dont have an account ? <Text variant='xs' onPress={()=> navigation?.navigate('signup')} >Sign up</Text></Text>
+            <Text variant='body' marginTop='m' textAlign='center'>Dont have an account ? <Text variant='xs' onPress={()=> navigation?.navigate('signup')} >Sign up</Text></Text>
             </View>
         </View>
        {/* </ScrollView> */}

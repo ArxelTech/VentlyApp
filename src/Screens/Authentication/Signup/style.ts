@@ -13,7 +13,8 @@ export const Styles = StyleSheet.create({
     },
     terms: {
        display: 'flex',
-       flexDirection: 'row'
+       flexDirection: 'row',
+       alignItems: 'center'
     },
     icon: {
        display: 'flex',
