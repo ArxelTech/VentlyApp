@@ -22,6 +22,7 @@ export const Styles = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'center',
         alignItems:'center',
+        // marginTop
     },
     text: {
         flex:5,

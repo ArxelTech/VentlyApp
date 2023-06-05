@@ -27,11 +27,11 @@ const Authentication = () => {
   return (
     
     <Navigator.Navigator screenOptions={{ headerShown: false }}>
-    <Navigator.Screen name='onboarding' component={Onboarding} />
+    {/* <Navigator.Screen name='onboarding' component={Onboarding} /> */}
     <Navigator.Screen name=' MyEvents ' component={ MyEvents }/>
-    <Navigator.Screen name=' EventInformation ' component={ EventInformation }/>
+    {/* <Navigator.Screen name=' EventInformation ' component={ EventInformation }/>
     <Navigator.Screen name=' Preview ' component={ PreviewEvent }/>
-    <Navigator.Screen name=' Activities ' component={ Activities }/>
+    <Navigator.Screen name=' Activities ' component={ Activities }/> */}
     <Navigator.Screen name='Profile' component={Profile}/>
     <Navigator.Screen name=' Categories ' component={ Categories}/>
     <Navigator.Screen name=' SearchVendors ' component={ SearchVendors}/>
