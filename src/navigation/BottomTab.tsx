@@ -11,7 +11,7 @@ const { Navigator, Screen } = createBottomTabNavigator();
 
 const BottomTab = () => {
   return (
-    <Navigator>
+    <Navigator >
         <Screen name='feeds' component={Feeds} />
         <Screen name='notifications' component={Notifications} />
         <Screen name='createEvent' component={CreateEvent} />

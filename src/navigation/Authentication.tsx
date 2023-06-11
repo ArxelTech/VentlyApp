@@ -12,7 +12,7 @@ import Accounts from '../Screens/Authentication/Accounts';
 import BusinessCategory from '../Screens/Authentication/BusinessCategory';
 import AccountSetup from '../Screens/Authentication/AccountSetup';
 import Feeds from '../Screens/Dashboard/Feeds';
-import CreateEvent from '../Screens/Dashboard/CreateEvent/Index';
+import CreateEvent from '../Screens/Dashboard/CreateEvent';
 import SearchVendors from '../Screens/Dashboard/SearchVendors';
 import Profile from '../Screens/Dashboard/Profile';
 import Categories from '../Screens/Dashboard/Categories';
@@ -21,21 +21,22 @@ import Activities from '../Screens/Dashboard/CreateEvent/Activities';
 import EventInformation from '../Screens/Dashboard/EventInformation';
 import MyEvents from '../Screens/Dashboard/MyEvents';
 
+
 const Navigator = createNativeStackNavigator();
 
 const Authentication = () => {
   return (
-    
     <Navigator.Navigator screenOptions={{ headerShown: false }}>
-    {/* <Navigator.Screen name='onboarding' component={Onboarding} /> */}
+    {/* <Navigator.Screen name='onboarding' component={Onboarding} />
     <Navigator.Screen name=' MyEvents ' component={ MyEvents }/>
-    {/* <Navigator.Screen name=' EventInformation ' component={ EventInformation }/>
+    <Navigator.Screen name=' EventInformation ' component={ EventInformation }/>
     <Navigator.Screen name=' Preview ' component={ PreviewEvent }/>
-    <Navigator.Screen name=' Activities ' component={ Activities }/> */}
+  <Navigator.Screen name=' Activities ' component={ Activities }/>*/}
     <Navigator.Screen name='Profile' component={Profile}/>
     <Navigator.Screen name=' Categories ' component={ Categories}/>
     <Navigator.Screen name=' SearchVendors ' component={ SearchVendors}/>
-    <Navigator.Screen name='createEvent' component={CreateEvent} />
+    <Navigator.Screen name='createEvent' component={CreateEvent} /> 
+    
     <Navigator.Screen name='accounts' component={Accounts} /> 
     <Navigator.Screen name='businessCategory' component={ BusinessCategory} />
     <Navigator.Screen name='feeds' component={Feeds} />
