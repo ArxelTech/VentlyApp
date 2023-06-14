@@ -1,32 +1,11 @@
-// import { View, Text } from '../../../components'
-// import React from 'react'
-// import {Styles} from './style'
-
-// const Profile = () => {
-//   return (
-//     <>
-//     <View style={Styles.parent}>
-//       <View style={Styles.child}>
-
-//       </View>
-//     </View>
-//      <View style={Styles.bottom}>
-        
-//      </View>
-//      </>
-//   )
-// }
-
-// export default Profile
-
 import * as React from 'react';
-import { View,Image, Text, TouchableOpacity } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { View,Image, Text, TouchableOpacity, Pressable } from 'react-native';
+// import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// import { color, event } from 'react-native-reanimated';
+import {Styles} from './style'
 
-// const img = require('../../../../assets/bottomTabIcons/newsfeed.png');
-
-function feedScreen() {
+function FeedScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>feeds!</Text>
@@ -34,21 +13,21 @@ function feedScreen() {
   );
 }
 
-function notificationsScreen() {
+function NotificationsScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>notifications!</Text>
     </View>
   );
 }
-function createEventScreen() {
+function CreateEventScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>create Event!</Text>
     </View>
   );
 }
-function accountScreen() {
+function AccountScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>account!</Text>
@@ -65,29 +44,94 @@ function SettingsScreen() {
 
 function MyTabBar({ state, descriptors, navigation }:any) {
   return (
-    <View style={{
-       flexDirection: 'row',
-       position: 'absolute',
-       bottom: 5,
-       left:5,
-       right:5,
-       elevation: 0,
-       backgroundColor:'#ccc',
-       borderRadius:15,
-       height: 90,
-    }}>
+    <View style={Styles.tabBar}>
       {state.routes.map((route: { key: string | number; name: any; }, index: any) => {
         const { options } = descriptors[route.key];
-        const label =
-          options.tabBarLabel !== undefined ? options.tabBarLabel : options.title !== undefined ? null : route.name;
-          options.title === false ? null : null;
-          
+
+        const IconFocused = state.index === index;
         const isFocused = state.index === index;
+        const feed =
+          route.name == 'feeds' ? 
+          <View style={Styles.tabBarbtn}>
+              <Image
+                source={require('../../../../assets/bottomTabIcons/newsfeed.png')}
+                resizeMode='contain'
+                style={[Styles.icon,{ tintColor: IconFocused ? '#FF4471': '#B0B1B8',}]}/>
+              <Text 
+                style={{ color: isFocused ? '#FF4471' : '#B0B1B8', fontSize:8}}>
+                Feeds
+              </Text> 
+          </View>
+          : null; 
+          
 
-        // const icon =
-        // options.tabBarIcon !== undefined ? options.tabBarIcon : null;
+        const notify =
+          route.name == 'notifications' ? 
+          <View style={Styles.tabBarbtn}>
+            <Image
+                source={require('../../../../assets/bottomTabIcons/notification.png')}
+                resizeMode='contain'
+                style={[Styles.icon,{ tintColor: IconFocused ? '#FF4471': '#B0B1B8',}]}/>
+              <Text 
+                style={{ color: isFocused ? '#FF4471' : '#B0B1B8', fontSize:8}}>
+                Notifications
+            </Text> 
+          </View> 
+          : null; 
 
-        const icon = require('../../../../assets/data/bottomTabIcons.json')
+        const events =
+          route.name == 'createEvent' ?
+          
+              <View style={Styles.post}>
+                <Pressable style={Styles.postIcon}>
+                  <Image
+                    source={require('../../../../assets/bottomTabIcons/plus.png')}
+                    resizeMode='contain'
+                    style={{
+                    width:15,
+                    height:15,
+                    tintColor: IconFocused ? '#B0B1B8': '#B0B1B8',
+                  }}/>  
+                  </Pressable>    
+              </View>
+             
+            
+          : null; 
+
+        const account =
+          route.name == 'account' ?
+          <View style={Styles.tabBarbtn}>
+              <Image
+                source={require('../../../../assets/bottomTabIcons/user.png')}
+                resizeMode='contain'
+                style={[Styles.icon,{ tintColor: IconFocused ? '#FF4471': '#B0B1B8',}]}
+              /> 
+              <Text 
+                style={{ color: isFocused ? '#FF4471': '#B0B1B8', fontSize:8}}>
+                Accounts
+            </Text> 
+
+          </View>
+          
+          : null; 
+
+        const settings =
+          route.name == 'settings' ? 
+          <View style={Styles.tabBarbtn}>
+            <Image
+              source={require('../../../../assets/bottomTabIcons/settings.png')}
+              resizeMode='contain'
+              style={[Styles.icon,{ tintColor: IconFocused ? '#FF4471': '#B0B1B8',}]}
+            />
+            <Text 
+                style={{ color: isFocused ? '#FF4471' : '#B0B1B8', fontSize:8}}>
+                  Settings
+            </Text>
+            </View>
+          
+          : null; 
+         
+        // const isFocused = state.index === index;
 
         const onPress = () => {
           const event = navigation.emit({
@@ -115,34 +159,10 @@ function MyTabBar({ state, descriptors, navigation }:any) {
             onPress={onPress}
             onLongPress={onLongPress}
           >
-          
-            <View style={{ display:'flex', justifyContent:'center',alignItems:'center', width:'100%',height:'100%',padding:10}}>
-              {/* <Image
-                source={require('../../../../assets/bottomTabIcons/newsfeed.png')}
-                resizeMode='contain'
-                style={{
-                  width:25,
-                  height:25,
-                  tintColor: isFocused ? 'red':'blue'
-                }}
-                /> */}
-                {icon.map((item:any)=>(
-                  <View key={item.id}>
-                     {/* <Image
-                        source={item.icon}
-                        resizeMode='contain'
-                        style={{
-                          width:25,
-                          height:25,
-                          tintColor: isFocused ? 'red':'blue'
-                        }}
-                      /> */}
-                      {/* <Text>{item.name}</Text> */}
-                  </View>
-                ))}
+            <View style={Styles.tabsContainer}>
               <Text 
-                style={{ color: isFocused ? 'red' : 'blue', fontSize:12}}>
-                {label}
+                style={{ color: isFocused ? 'red' : 'blue', height:35, }}>
+                {feed}{notify}{events}{account}{settings}
               </Text>
             </View>
           </TouchableOpacity>
@@ -151,40 +171,22 @@ function MyTabBar({ state, descriptors, navigation }:any) {
     </View>
   );
 }
-
 const Tab = createBottomTabNavigator();
 export default function App() {
   return (
      <>
          <Tab.Navigator  
-      screenOptions={{ headerShown: false}}
-        tabBar={(props) => <MyTabBar {...props} 
-      />}
-      >
-        <Tab.Screen name="feeds" component={feedScreen} 
-        //   options={{
-        //   tabBarIcon: ({focused}) => (
-        //     <View style={{alignItems:'center', justifyContent:'center', top: 10}}>
-        //       <Image
-        //         source={require('')}
-        //         resizeMode='contain'
-        //         style={{
-        //           width:25,
-        //           height:25,
-        //           tintColor: focused ? 'red':'blue'
-        //         }}
-        //         />
-                
-        //     </View>
-        //   )
-
-        // }}
+          screenOptions={{ headerShown: false,}}
+          initialRouteName='account'
+     
+        tabBar={(props) => <MyTabBar {...props}/>}>
+        <Tab.Screen name="feeds" component={FeedScreen} 
         />
-        <Tab.Screen name="notifications" component={notificationsScreen} />
-        <Tab.Screen name="createEvent" component={createEventScreen} />
-        <Tab.Screen name="account" component={accountScreen} />
+        <Tab.Screen name="notifications" component={NotificationsScreen} />
+        <Tab.Screen name="createEvent" component={CreateEventScreen} />
+        <Tab.Screen name="account" component={AccountScreen} />
         <Tab.Screen name="settings" component={SettingsScreen} />
       </Tab.Navigator>
-      </>
+    </>
   );
 }

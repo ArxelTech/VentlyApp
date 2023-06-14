@@ -1,7 +1,10 @@
 import { NavigationContainer } from '@react-navigation/native'
 import Navigation from './src/navigation';
 import { useFonts } from 'expo-font';
-import { QueryClientProvider, QueryClient } from 'react-query'
+import { QueryClientProvider, QueryClient } from 'react-query';
+import { LogBox } from 'react-native';
+
+LogBox.ignoreAllLogs
 
 const queryClient = new QueryClient();
 
