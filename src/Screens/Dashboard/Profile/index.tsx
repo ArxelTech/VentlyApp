@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { View,Image, Text, TouchableOpacity, Pressable } from 'react-native';
-// import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-// import { color, event } from 'react-native-reanimated';
-import {Styles} from './style'
+import {Styles} from './style';
+import MyAccounts from './MyAccount';
+
 
 function FeedScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>feeds!</Text>
-    </View>
+    <Text>feed</Text>
+  </View>
   );
 }
 
@@ -29,9 +29,7 @@ function CreateEventScreen() {
 }
 function AccountScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>account!</Text>
-    </View>
+    <MyAccounts />
   );
 }
 function SettingsScreen() {
@@ -63,8 +61,6 @@ function MyTabBar({ state, descriptors, navigation }:any) {
               </Text> 
           </View>
           : null; 
-          
-
         const notify =
           route.name == 'notifications' ? 
           <View style={Styles.tabBarbtn}>
@@ -82,9 +78,9 @@ function MyTabBar({ state, descriptors, navigation }:any) {
         const events =
           route.name == 'createEvent' ?
           
-              <View style={Styles.post}>
-                <Pressable style={Styles.postIcon}>
-                  <Image
+              <View style={Styles.postIcon}>
+                
+                  {/* <Image
                     source={require('../../../../assets/bottomTabIcons/plus.png')}
                     resizeMode='contain'
                     style={{
@@ -92,10 +88,8 @@ function MyTabBar({ state, descriptors, navigation }:any) {
                     height:15,
                     tintColor: IconFocused ? '#B0B1B8': '#B0B1B8',
                   }}/>  
-                  </Pressable>    
+                       */}
               </View>
-             
-            
           : null; 
 
         const account =
@@ -156,12 +150,13 @@ function MyTabBar({ state, descriptors, navigation }:any) {
             accessibilityState={isFocused ? { selected: true } : {}}
             accessibilityLabel={options.tabBarAccessibilityLabel}
             testID={options.tabBarTestID}
+            key={route.name}
             onPress={onPress}
             onLongPress={onLongPress}
           >
             <View style={Styles.tabsContainer}>
               <Text 
-                style={{ color: isFocused ? 'red' : 'blue', height:35, }}>
+                >
                 {feed}{notify}{events}{account}{settings}
               </Text>
             </View>
@@ -172,7 +167,9 @@ function MyTabBar({ state, descriptors, navigation }:any) {
   );
 }
 const Tab = createBottomTabNavigator();
-export default function App() {
+export default function App({navigation: NativeStackNavigationProp }:any){
+   const navigation = NativeStackNavigationProp;
+
   return (
      <>
          <Tab.Navigator  
@@ -187,6 +184,18 @@ export default function App() {
         <Tab.Screen name="account" component={AccountScreen} />
         <Tab.Screen name="settings" component={SettingsScreen} />
       </Tab.Navigator>
+      <Pressable style={Styles.post} onPress={()=> navigation.navigate('events') }>
+          <View > 
+                <Image
+                      source={require('../../../../assets/bottomTabIcons/plus.png')}
+                      resizeMode='contain'
+                      style={{
+                      width:15,
+                      height:15,
+                      // tintColor: IconFocused ? '#B0B1B8': '#B0B1B8',
+                    }}/>      
+          </View>
+        </Pressable>   
     </>
   );
 }

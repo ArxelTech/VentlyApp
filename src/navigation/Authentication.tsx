@@ -35,7 +35,7 @@ const Authentication = () => {
     <Navigator.Screen name='Profile' component={Profile}/>
     <Navigator.Screen name=' Categories ' component={ Categories}/>
     <Navigator.Screen name=' SearchVendors ' component={ SearchVendors}/>
-    <Navigator.Screen name='createEvent' component={CreateEvent} /> 
+    <Navigator.Screen name='events' component={CreateEvent} /> 
     
     <Navigator.Screen name='accounts' component={Accounts} /> 
     <Navigator.Screen name='businessCategory' component={ BusinessCategory} />

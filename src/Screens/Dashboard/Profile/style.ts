@@ -9,11 +9,17 @@ export const Styles = StyleSheet.create({
        left:5,
        right:5,
        elevation: 4,
-       backgroundColor:'#F9F9F9',
-    //    borderRadius:6,
+      //  backgroundColor:'#F9F9F9',
+       backgroundColor:'#F1F1F3',
+       //borderRadius:6,
        height: 80,
        alignItems:'center',
-       justifyContent:'center'
+       justifyContent:'center',
+       boxShadow: '#0000000D',
+       opacity: 1,
+      // box-shadow: 0px -3px 4px #0000000D;
+      // backdrop-filter: blur(10px);
+      // -webkit-backdrop-filter: blur(10px);
        
    },
    tabBarbtn: {
@@ -34,19 +40,26 @@ export const Styles = StyleSheet.create({
     height:20,
    },
    post: {
-   //  backgroundColor:'blue',
-    width:60, 
-    height:60, 
+    backgroundColor:'#DC5576',
+    width:80, 
+    height:80, 
     position:'absolute', 
     zIndex:999,
     display:'flex',
     flexDirection:'row', 
-    alignItems:'flex-start',
-    justifyContent:'center', 
-   
+    alignItems:'center',
+    justifyContent:'center',
+    borderRadius:100, 
+    top:'84%',
+    left:'39%',
+    borderWidth: 5,
+    borderStyle: 'solid',
+    borderColor: '#FFFFFF',
+    
    },
    postIcon: {
-    backgroundColor:'#FF1C52',
+   //  backgroundColor:'#FF1C52',
+   //  backgroundColor:'#ccc',
     position:'absolute',
     width:60, 
     height:60,  
@@ -54,7 +67,8 @@ export const Styles = StyleSheet.create({
     flexDirection:'row', 
     alignItems:'center',
     justifyContent:'center', 
-    borderRadius:100, 
+   //  borderRadius:100, 
+    paddingTop:40
    }
-
 });
+
