@@ -54,6 +54,11 @@ export const Styles = StyleSheet.create({
         // backgroundColor:'brown',
         // height:50
     },
+    toggle: {
+        flex: 1,
+        alignItems: 'flex-start',
+        justifyContent: 'flex-start',
+    }
    
    
 });

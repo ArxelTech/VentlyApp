@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react';
-import { Image, Dimensions, ScrollView, SafeAreaView, ImageBackground } from 'react-native';
+import { Image, Dimensions, ScrollView, SafeAreaView, ImageBackground,Switch } from 'react-native';
 import { Styles } from './style';
 import { CustomButton, Text, View } from '../../../../components';
 import { Ionicons } from '@expo/vector-icons';
@@ -10,11 +10,18 @@ import { backgroundColor } from '@shopify/restyle';
 const amir = require('../../../../../assets/images/amir.png');
 const verify = require('../../../../../assets/images/verify.png');
 const incognito = require('../../../../../assets/Profile_Images/chat.png');
+const tickets = require('../../../../../assets/Profile_Images/tickets.png');
+const calendar = require('../../../../../assets/Profile_Images/calendar.png');
 
 const { height } = Dimensions.get('screen');
 const Theme = theme;
 
+
 const MyAccounts = () => {
+
+const [isEnabled, setIsEnabled] = useState(false);
+const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
   return (
   <SafeAreaView style={Styles.main_container}>
      <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1,}} >
@@ -60,25 +67,125 @@ const MyAccounts = () => {
               onPress={()=>console.log('data')} />
           </View>
         </View>
-        <View style={{backgroundColor:'#cccc', height:500, width:'100%'}}>
-         <View style={{display:'flex',alignItems:'center', marginTop:40}}>
-            <View style={{backgroundColor:'green', height:'100%', width:'90%'}}>
+        <View style={{ height:500, width:'100%'}}>
+         <View style={{display:'flex',alignItems:'center', marginTop:20}}>
+            <View style={{ height:'100%', width:'90%'}}>
               {/* Mapping goes here */}
-              <View style={{backgroundColor:'red', height:50, display:'flex', flexDirection:'row', justifyContent:'center'}}>
-                <View style={[{backgroundColor:'gold', height:50,  width:'20%'},Styles.flexRow]}>
+              <View style={{  height:80, paddingTop:20, display:'flex', flexDirection:'row', justifyContent:'center'}}>
+                <View style={[{ height:50,  width:'20%'},Styles.flexRow]}>
                   <Image 
                     source={incognito}
                     style={{
-                      width:35,
-                      height:35,
+                      width:40,
+                      height:40,
                     }}
                   />
                 </View>
-                <View style={{backgroundColor:'indigo', height:50, width:'60%'}}>
+                <View style={{ height:50, width:'60%'}}>
+                  <View style={{display:'flex', justifyContent:'flex-start',alignItems:'flex-start'}}>
+                  <Text variant='subheader' style={{marginTop:-5}} fontSize={14}>Private Mode</Text>
+                  </View>
+                  <Text variant='xs' fontSize={10} style={{marginTop:-12}}>Attend all events privately, nobody </Text>
+                  <Text variant='xs' fontSize={10} style={{marginTop:-10}}>would have access to your information</Text>
 
                 </View>
-                <View style={{backgroundColor:'gold', height:50, width:'20%'}}>
-
+                <View style={[{ height:50, width:'20%'}]}>
+                    <View style={Styles.toggle}>
+                      <Switch
+                        trackColor={{false: '#767577', true: '#81b0ff'}}
+                        thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+                        ios_backgroundColor="#3e3e3e"
+                        onValueChange={toggleSwitch}
+                        value={isEnabled}
+                      />
+                    </View>
+                </View>
+              </View>
+              <View style={{ height:80, paddingTop:20,display:'flex', flexDirection:'row', justifyContent:'center'}}>
+                <View style={[{ height:50,  width:'20%'},Styles.flexRow]}>
+                  <Image 
+                    source={incognito}
+                    style={{
+                      width:40,
+                      height:40,
+                    }}
+                  />
+                </View>
+                <View style={{ height:50, width:'60%'}}>
+                  <View style={{display:'flex', justifyContent:'flex-start',alignItems:'flex-start'}}>
+                  <Text variant='subheader' style={{marginTop:-5}} fontSize={14}>Messages</Text>
+                  </View>
+                  <Text variant='xs' fontSize={10} style={{marginTop:-12}}>Read and manage all your conversations</Text>
+                  <Text variant='xs' fontSize={10} style={{marginTop:-10}}> here</Text>
+                </View>
+                <View style={[{ height:50, width:'20%'}]}>
+                    <View style={Styles.toggle}>
+                      <Switch
+                        trackColor={{false: '#767577', true: '#81b0ff'}}
+                        thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+                        ios_backgroundColor="#3e3e3e"
+                        onValueChange={toggleSwitch}
+                        value={isEnabled}
+                      />
+                    </View>
+                </View>
+              </View>
+              <View style={{ height:80, paddingTop:20,display:'flex', flexDirection:'row', justifyContent:'center'}}>
+                <View style={[{ height:50,  width:'20%'},Styles.flexRow]}>
+                  <Image 
+                    source={tickets}
+                    style={{
+                      width:40,
+                      height:40,
+                    }}
+                  />
+                </View>
+                <View style={{ height:50, width:'60%'}}>
+                  <View style={{display:'flex', justifyContent:'flex-start',alignItems:'flex-start'}}>
+                  <Text variant='subheader' style={{marginTop:-5}} fontSize={14}>My Tickets</Text>
+                  </View>
+                  <Text variant='xs' fontSize={10} style={{marginTop:-12}}>Share and manage all your event tickets  </Text>
+                  <Text variant='xs' fontSize={10} style={{marginTop:-10}}>seamlessly</Text>
+                </View>
+                <View style={[{ height:50, width:'20%'}]}>
+                    {/* <View style={Styles.toggle}>
+                      <Switch
+                        trackColor={{false: '#767577', true: '#81b0ff'}}
+                        thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+                        ios_backgroundColor="#3e3e3e"
+                        onValueChange={toggleSwitch}
+                        value={isEnabled}
+                      />
+                    </View> */}
+                </View>
+              </View>
+              <View style={{ height:80, paddingTop:20,display:'flex', flexDirection:'row', justifyContent:'center'}}>
+                <View style={[{ height:50,  width:'20%'},Styles.flexRow]}>
+                  <Image 
+                    source={calendar}
+                    style={{
+                      width:40,
+                      height:40,
+                    }}
+                  />
+                </View>
+                <View style={{ height:50, width:'60%'}}>
+                  <View style={{display:'flex', justifyContent:'flex-start',alignItems:'flex-start'}}>
+                  <Text variant='subheader' style={{marginTop:-5}} fontSize={14}>My Events</Text>
+                  </View>
+                  <Text variant='xs' fontSize={10} style={{marginTop:-12}}>Attend all events privately, nobody </Text>
+                  <Text variant='xs' fontSize={10} style={{marginTop:-10}}>would have access to your information</Text>
+                </View>
+                <View style={[{ height:50, width:'20%'}]}>
+                    <View style={Styles.toggle}>
+                      {/* <Switch
+                        trackColor={{false: '#767577', true: '#81b0ff'}}
+                        thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+                        ios_backgroundColor="#3e3e3e"
+                        onValueChange={toggleSwitch}
+                        value={isEnabled}
+                      /> */}
+                    </View>
                 </View>
               </View>
             </View>
