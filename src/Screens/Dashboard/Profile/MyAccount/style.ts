@@ -60,11 +60,20 @@ export const Styles = StyleSheet.create({
         alignItems: 'flex-start',
         justifyContent: 'flex-start',
     },
+    btn: {
+      display:'flex',
+      justifyContent:'center',
+      alignItems:'center'
+    },
     notification: {
-      borderRadius: 100,
-      width:30,
-      height:30,
-      backgroundColor:'#EF2354'
+      borderRadius: 12,
+      width:40,
+      height:25,
+      backgroundColor:'#EF2354',
+      color:'white',
+      display:'flex',
+      justifyContent:'center',
+      alignItems:'center'
     }
    
    

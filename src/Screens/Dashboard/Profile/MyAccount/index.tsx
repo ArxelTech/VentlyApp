@@ -4,8 +4,15 @@ import { Styles } from './style';
 import { CustomButton, Text, View } from '../../../../components';
 import { Ionicons } from '@expo/vector-icons';
 import theme from '../../../../Theme/theme';
+// import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
 import { backgroundColor } from '@shopify/restyle';
 // import amir from '../../../../../assets/images/amir.png';
+  // const navigation = NativeStackNavigationProp;
+
+// interface IProps {
+//     navigation?: NativeStackNavigationProp<any>
+// }
 
 const amir = require('../../../../../assets/images/amir.png');
 const verify = require('../../../../../assets/images/verify.png');
@@ -16,8 +23,9 @@ const calendar = require('../../../../../assets/Profile_Images/calendar.png');
 const { height } = Dimensions.get('screen');
 const Theme = theme;
 
+const MyAccounts = ({navigation: useNavigation}:any) =>  {
 
-const MyAccounts = () => {
+const navigation = useNavigation;
 
 const [isEnabled, setIsEnabled] = useState(false);
 const toggleSwitch = () => setIsEnabled(previousState => !previousState);
@@ -64,7 +72,7 @@ const toggleSwitch = () => setIsEnabled(previousState => !previousState);
           </View>
           <View style={{ width:'40%',}}>
             <CustomButton label='View Profile' backgroundColor='#00000029'
-              onPress={()=>console.log('data')} />
+             onPress={() => navigation.navigate('resetPassword')} />
           </View>
         </View>
         <View style={{ height:500, width:'100%'}}>
@@ -119,9 +127,9 @@ const toggleSwitch = () => setIsEnabled(previousState => !previousState);
                   <Text variant='xs' fontSize={10} style={{marginTop:-10}}> here</Text>
                 </View>
                 <View style={[{ height:50, width:'20%'}]}>
-                    <View style={Styles.toggle}>
+                    <View style={Styles.btn}>
                       <Pressable style={Styles.notification}>
-                        <Text variant='xs'>10+</Text>
+                        <Text variant='xs' style={{color:'white'}}>10+</Text>
                       </Pressable>
                     </View>
                 </View>

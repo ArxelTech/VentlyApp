@@ -1,6 +1,7 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import BottomTab from './BottomTab'
+import BottomTab from './BottomTab';
+
 
 const { Screen, Navigator } = createNativeStackNavigator()
 
