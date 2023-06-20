@@ -1,3 +1,4 @@
+import { backgroundColor } from '@shopify/restyle';
 import { StyleSheet } from 'react-native';
 
 export const Styles = StyleSheet.create({
@@ -58,6 +59,12 @@ export const Styles = StyleSheet.create({
         flex: 1,
         alignItems: 'flex-start',
         justifyContent: 'flex-start',
+    },
+    notification: {
+      borderRadius: 100,
+      width:30,
+      height:30,
+      backgroundColor:'#EF2354'
     }
    
    

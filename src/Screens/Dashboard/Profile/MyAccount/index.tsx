@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react';
-import { Image, Dimensions, ScrollView, SafeAreaView, ImageBackground,Switch } from 'react-native';
+import { Image, Dimensions, ScrollView, SafeAreaView, ImageBackground,Switch, Button, Pressable } from 'react-native';
 import { Styles } from './style';
 import { CustomButton, Text, View } from '../../../../components';
 import { Ionicons } from '@expo/vector-icons';
@@ -120,13 +120,9 @@ const toggleSwitch = () => setIsEnabled(previousState => !previousState);
                 </View>
                 <View style={[{ height:50, width:'20%'}]}>
                     <View style={Styles.toggle}>
-                      <Switch
-                        trackColor={{false: '#767577', true: '#81b0ff'}}
-                        thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
-                        ios_backgroundColor="#3e3e3e"
-                        onValueChange={toggleSwitch}
-                        value={isEnabled}
-                      />
+                      <Pressable style={Styles.notification}>
+                        <Text variant='xs'>10+</Text>
+                      </Pressable>
                     </View>
                 </View>
               </View>
