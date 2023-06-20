@@ -58,10 +58,24 @@ const details  = [
 
 const Tab = createMaterialTopTabNavigator();
 const MyProfile = () => {
+  const [miniModal, setMiniModal] = React.useState(false);
+
+  const toggleMiniModal= () => setMiniModal(previousState => !previousState);
   return (
     <SafeAreaView style={Styles.main_container}>
      <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1,}} >
         <View style={Styles.header}>
+            { miniModal == true &&
+                <View style={Styles.MiniModal}>
+                <View>
+                    <Text variant='subheader' fontSize={14}>Invite</Text>
+                    <Text variant='subheader' fontSize={14}>Share</Text>
+                    <Text variant='subheader'fontSize={14}>Report</Text>
+                </View>
+            </View>
+            }
+            {/* MiniModal */}
+            
             <View style={Styles.nav}>
                 <Ionicons name="arrow-back" size={20} color="#FFFFFF" />
                 <Ionicons name='ellipsis-vertical' size={20}  color="#FFFFFF"/>
@@ -95,13 +109,14 @@ const MyProfile = () => {
                     </View>
                     <View style={Styles.fill}> 
                         <Pressable  
-                                onPress={()=> console.log('hii')}>
+                                onPress={toggleMiniModal}>
                              <Ionicons name='ellipsis-horizontal' size={20}  color="#000000"/>
                         </Pressable>
                     </View>
                 </View>
               </View>
             </View>
+            
         </View>
         <View style={Styles.profileDtls}>
             <FlatList

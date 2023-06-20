@@ -82,7 +82,8 @@ verifyContainer: {
 },
 profileDtls: { 
     height:60, 
-    width:'100%'
+    width:'100%',
+    zIndex:-10
 },
 bio: {
     height:100,
@@ -109,13 +110,29 @@ tab :{
 },
 tabContainer: {
     // backgroundColor:'yellow',
-    height:'100%',
+    height:'200%',
     width:'100%',
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
     flexDirection:'row',
-  }
+  },
+//   MIniModal
+
+MiniModal: {
+    position:'absolute',
+    zIndex:999,
+    backgroundColor:'#FFFFFF',
+    width:120,
+    height:120,
+    borderRadius:10,
+    top:'95%',
+    left:'62%',
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    elevation:6
+}
 
 
 })
