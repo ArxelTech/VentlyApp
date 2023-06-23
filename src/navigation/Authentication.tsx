@@ -16,26 +16,31 @@ import CreateEvent from '../Screens/Dashboard/CreateEvent';
 import SearchVendors from '../Screens/Dashboard/SearchVendors';
 import Profile from '../Screens/Dashboard/Profile';
 import Categories from '../Screens/Dashboard/Categories';
+import VendorDetails from '../Screens/Dashboard/Categories/VendorDetails/VendorDetails';
 import PreviewEvent from '../Screens/Dashboard/PreviewEvent';
 import Activities from '../Screens/Dashboard/CreateEvent/Activities';
 import EventInformation from '../Screens/Dashboard/EventInformation';
 import MyEvents from '../Screens/Dashboard/MyEvents';
 import MyProfile from '../Screens/Dashboard/Profile/MyProfile';
-
+import EditProfile from '../Screens/Dashboard/Profile/EditProfile';
+import Invite from '../Screens/Dashboard/Profile/MyProfile/Invite';
 
 const Navigator = createNativeStackNavigator();
 
 const Authentication = () => {
   return (
     <Navigator.Navigator screenOptions={{ headerShown: false }}>
-    {/* <Navigator.Screen name='Profile' component={Profile}/> */}
+    <Navigator.Screen name='Profile' component={Profile}/>
     <Navigator.Screen name='MyProfile' component={MyProfile}/>
+    <Navigator.Screen name='EditProfile' component={EditProfile}/>
+    <Navigator.Screen name='Invite' component={Invite}/>
     <Navigator.Screen name='onboarding' component={Onboarding} />
     <Navigator.Screen name=' MyEvents ' component={ MyEvents }/>
     <Navigator.Screen name=' EventInformation ' component={ EventInformation }/>
     <Navigator.Screen name=' Preview ' component={ PreviewEvent }/>
     <Navigator.Screen name=' Activities ' component={ Activities }/>
     <Navigator.Screen name=' Categories ' component={ Categories}/>
+    <Navigator.Screen name=' VendorDetails ' component={ VendorDetails}/>
     <Navigator.Screen name=' SearchVendors ' component={ SearchVendors}/>
     <Navigator.Screen name='events' component={CreateEvent} /> 
     <Navigator.Screen name='accounts' component={Accounts} /> 

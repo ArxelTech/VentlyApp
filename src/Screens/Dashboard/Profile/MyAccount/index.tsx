@@ -4,9 +4,8 @@ import { Styles } from './style';
 import { CustomButton, Text, View } from '../../../../components';
 import { Ionicons } from '@expo/vector-icons';
 import theme from '../../../../Theme/theme';
-// import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { useNavigation } from '@react-navigation/native';
-import { backgroundColor } from '@shopify/restyle';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
 // import amir from '../../../../../assets/images/amir.png';
   // const navigation = NativeStackNavigationProp;
 
@@ -23,9 +22,7 @@ const calendar = require('../../../../../assets/Profile_Images/calendar.png');
 const { height } = Dimensions.get('screen');
 const Theme = theme;
 
-const MyAccounts = ({navigation: useNavigation}:any) =>  {
-
-const navigation = useNavigation;
+const MyAccounts = ({navigation}: { navigation: NativeStackNavigationProp<any> }) =>  {
 
 const [isEnabled, setIsEnabled] = useState(false);
 const toggleSwitch = () => setIsEnabled(previousState => !previousState);
@@ -68,11 +65,12 @@ const toggleSwitch = () => setIsEnabled(previousState => !previousState);
         </View>
         <View style={{width:'100%', height:45, display:'flex',flexDirection:'row',justifyContent:'space-evenly' }}>
           <View style={{ width:'40%',}}>
-            <CustomButton label='Edit Profile' onPress={()=>console.log('data')} color='white' />
+            <CustomButton label='Edit Profile' onPress={()=>navigation.navigate('EditProfile')} color='white' />
           </View>
           <View style={{ width:'40%',}}>
             <CustomButton label='View Profile' backgroundColor='#00000029'
-             onPress={() => navigation.navigate('resetPassword')} />
+               onPress={()=>navigation.navigate('MyProfile')}/>
+           
           </View>
         </View>
         <View style={{ height:500, width:'100%'}}>

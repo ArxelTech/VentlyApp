@@ -31,11 +31,5 @@ export const Styles = StyleSheet.create({
         justifyContent: 'space-between',
         paddingTop:40
     },
-    vendors: {
-        width:'90%',height:'90%', 
-        
-
-  
-    },
     centerElement: {justifyContent: 'center', alignItems: 'center'},
 });

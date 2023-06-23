@@ -19,7 +19,7 @@ export const Styles = StyleSheet.create({
         zIndex:2, backgroundColor:'#000000c0'
     },
     sub_cont : {
-        height:'30%', width:'100%', 
+        height:'55%', width:'100%', 
         backgroundColor:'transparent',
         opacity:10, zIndex:999
     },
@@ -34,7 +34,7 @@ export const Styles = StyleSheet.create({
     },
     centerElement: {justifyContent: 'center', alignItems: 'center'},
     card: {
-        height:'70%', width:'100%', backgroundColor:'#FFFFFF', borderTopLeftRadius: 20, 
+        height:'45%', width:'100%', backgroundColor:'#FFFFFF', borderTopLeftRadius: 20, 
         borderTopRightRadius: 20, padding:5, display:'flex',flexDirection:'row', 
         justifyContent:'center', alignItems:'center'
     },
@@ -47,7 +47,8 @@ export const Styles = StyleSheet.create({
         justifyContent:'center',
     },
     offerInput: {
-        height:'50%', marginTop:-15 
+        height:'50%', marginTop:-10,
+      
     }
 
 });

@@ -1,3 +1,4 @@
+import { backgroundColor } from "@shopify/restyle";
 import { StyleSheet } from "react-native";
 
 export const Styles = StyleSheet.create({
@@ -132,7 +133,17 @@ MiniModal: {
     justifyContent:'center',
     alignItems:'center',
     elevation:6
+},
+// PrivateAccount
+privateAcct: {
+  height:180,
+  display:'flex',
+  justifyContent:'center',
+  alignItems:'center',
+},
+pTitle: {
+  display:'flex',
+  justifyContent:'center',
+  alignItems:'center',
 }
-
-
 })

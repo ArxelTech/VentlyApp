@@ -1,12 +1,16 @@
-import { SafeAreaView, ScrollView, Image, Pressable, ImageBackground } from 'react-native';
+import { SafeAreaView, ScrollView, Image, Pressable, ImageBackground,TouchableOpacity } from 'react-native';
 import React from 'react';
-import { View,Text, CustomButton } from '../../../../components';
+import { View,Text, CustomButton, Modal } from '../../../../components';
 import {Styles } from './style';
 import { Ionicons } from '@expo/vector-icons';
 import {FlatList} from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import ProfileEvents from '../MyProfile/Events/'
 import ProfilePhotos from '../MyProfile/Photos';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useTheme } from '@shopify/restyle';
+import { Theme } from '../../../../Theme/theme';
+import UserSuspended from './UserSuspended';
 
 const dp = require('../../../../../assets/images/divineEffiong2.png');
 const verify = require('../../../../../assets/images/verify.png');
@@ -18,11 +22,6 @@ const map = require('../../../../../assets/images/map.png');
 const amir = require('../../../../../assets/images/amir.png');
 const kelvin = require('../../../../../assets/images/kelvin.png');
 const erik = require('../../../../../assets/images/erik.png');
-
-// interface Iprops {
-//     title:string,
-//     numberOf:number
-// }
 
 function Photos(){
     return (
@@ -57,10 +56,16 @@ const details  = [
 ]
 
 const Tab = createMaterialTopTabNavigator();
-const MyProfile = () => {
-  const [miniModal, setMiniModal] = React.useState(false);
+const MyProfile = ({navigation}: { navigation: NativeStackNavigationProp<any> }) => {
 
-  const toggleMiniModal= () => setMiniModal(previousState => !previousState);
+  const theme = useTheme<Theme>();
+  const [miniModal, setMiniModal] = React.useState(false);
+  const [modal, setModal] = React.useState(false);
+  const [isPrivate, setIsPrivate] = React.useState(true);
+  const [bio, setBio] = React.useState(false)
+
+  const toggleMiniModal = () => setMiniModal(previousState => !previousState);
+  const toggleModal = () => setModal(previousState => !previousState);
   return (
     <SafeAreaView style={Styles.main_container}>
      <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1,}} >
@@ -68,17 +73,29 @@ const MyProfile = () => {
             { miniModal == true &&
                 <View style={Styles.MiniModal}>
                 <View>
-                    <Text variant='subheader' fontSize={14}>Invite</Text>
+                <TouchableOpacity>
+                    <Pressable onPress={()=>navigation.navigate('Invite')}>
+                        <Text variant='subheader' fontSize={14}>Invite</Text>
+                    </Pressable>
+                </TouchableOpacity>
                     <Text variant='subheader' fontSize={14}>Share</Text>
                     <Text variant='subheader'fontSize={14}>Report</Text>
                 </View>
             </View>
             }
-            {/* MiniModal */}
+            {/* {modal == true &&
+              <Text variant='xs'>
+                Modal
+              </Text>
             
+            } */}
             <View style={Styles.nav}>
+              <TouchableOpacity>
                 <Ionicons name="arrow-back" size={20} color="#FFFFFF" />
+              </TouchableOpacity>
+              <TouchableOpacity>
                 <Ionicons name='ellipsis-vertical' size={20}  color="#FFFFFF"/>
+              </TouchableOpacity>
             </View>
             <Image
                 source={dp}
@@ -86,7 +103,7 @@ const MyProfile = () => {
                 width: '100%',
                 height: '100%'
             }}
-            resizeMode='cover'
+              resizeMode='cover'
             />
             <View style={Styles.footer}>
               <View style={Styles.footerContainer}>
@@ -105,7 +122,8 @@ const MyProfile = () => {
                 </View>
                 <View style={Styles.followBtn}>
                     <View style={Styles.outline}>
-                        <CustomButton label='Follow' color='#FFFFFF' backgroundColor='transparent' onPress={()=> console.log('hii')}/>
+                        <CustomButton label='Follow' color='#FFFFFF' backgroundColor='transparent' 
+                        onPress={()=> {toggleModal}}/>
                     </View>
                     <View style={Styles.fill}> 
                         <Pressable  
@@ -135,66 +153,120 @@ const MyProfile = () => {
                 keyExtractor={item => item.title}
             />
         </View>
-        <View style={Styles.bio}>
-            <View style={{width:'90%'}}>
-                <View style={{paddingBottom:5}}>
-                    <Text variant='header' fontSize={16}>Bio</Text>
-                </View>
-               
-                <Text variant='xs' fontSize={12} style={{ marginTop:-13}}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor sed do eiusmod tempor aliquip ex ea..
-                </Text>
+       { isPrivate == false? 
+        <View>
+          <View style={Styles.bio}>
+              <View style={{width:'90%'}}>
+                  <View style={{paddingBottom:5}}>
+                      <Text variant='header' fontSize={16}>Bio</Text>
+                  </View>
+                
+                  <Text variant='xs' fontSize={12} style={{ marginTop:-13}}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor sed do eiusmod tempor aliquip ex ea..
+                  </Text>
+                  {/* <Text variant='xs' fontSize={12} style={{ marginTop:-13}}>
+                  Jessica hasn't added any bio yet
+                  </Text> */}
+              </View>
+          </View> 
+          <View style={Styles.featuredPhotos}>
+            {/* Image carousel goes here */}
+            <Text variant='header' textAlign='left' style={{fontSize:14}}>Featured Photos</Text>
+            <View style={Styles.ftImage}> 
+                <View style={{width:'40%'}}>
+                  <ImageBackground style={{height:150, width:'100%'}} imageStyle={{borderRadius:20}} resizeMode='cover' source={amir}>
+                  </ImageBackground>
+                </View>       
+                <View style={{width:'40%', paddingLeft:10}}>
+                  <ImageBackground style={{height:150, width:'100%'}} imageStyle={{borderRadius:20}} resizeMode='cover' source={kelvin}>
+                  </ImageBackground>
+                </View>       
+                <View style={{width:'40%', marginLeft:10}}>
+                  <ImageBackground style={{height:150, width:'100%'}} imageStyle={{borderRadius:20}} resizeMode='cover' source={erik}>
+                  </ImageBackground>
+                </View> 
+                {/* <Text variant='xs' fontSize={12} style={{ marginTop:-13}}>
+                Jessica hasn't added any featured photos yet
+                </Text>       */}
             </View>
-        </View> 
-        <View style={Styles.featuredPhotos}>
-          {/* Image carousel goes here */}
-          <Text variant='header' textAlign='left' style={{fontSize:14}}>Featured Photos</Text>
-           <View style={Styles.ftImage}> 
-              <View style={{width:'40%'}}>
-                <ImageBackground style={{height:150, width:'100%'}} imageStyle={{borderRadius:20}} resizeMode='cover' source={amir}>
-                </ImageBackground>
-              </View>       
-              <View style={{width:'40%', paddingLeft:10}}>
-                <ImageBackground style={{height:150, width:'100%'}} imageStyle={{borderRadius:20}} resizeMode='cover' source={kelvin}>
-                </ImageBackground>
-              </View>       
-              <View style={{width:'40%', marginLeft:10}}>
-                <ImageBackground style={{height:150, width:'100%'}} imageStyle={{borderRadius:20}} resizeMode='cover' source={erik}>
-                </ImageBackground>
-              </View>       
-           </View>
-        </View> 
-        <View style={Styles.tab}>
-        <View style={Styles.tabContainer}>
-              <Tab.Navigator
-                screenOptions={{
-                tabBarActiveTintColor:'#FF406E',
-                tabBarInactiveTintColor:'#ccc',
-                tabBarIndicatorStyle: {
-                  backgroundColor: '#FF406E',
-                  height: 4,
-                  width: 140,
-                  marginLeft:20,
-                  display:'flex',
-                },
-                tabBarScrollEnabled: false,
-                tabBarLabelStyle: {fontSize: 14, fontWeight:'700' , textTransform: 'none'},
-                tabBarItemStyle: { width: 180,   },
-                tabBarStyle: {
-                  height: 60,
-                  width: '100%',
-                  paddingTop:10,
-                  paddingBottom:10,
-                  backgroundColor: '#FFFFFF',
-                },
-              }}
-              >
-        <Tab.Screen name="Photos" component={Photos} />
-        <Tab.Screen name="Events" component={Events} />
-      </Tab.Navigator>
-    </View>
+          </View> 
+          <View style={Styles.tab}>
+          <View style={Styles.tabContainer}>
+                <Tab.Navigator
+                  screenOptions={{
+                  tabBarActiveTintColor:'#FF406E',
+                  tabBarInactiveTintColor:'#ccc',
+                  tabBarIndicatorStyle: {
+                    backgroundColor: '#FF406E',
+                    height: 4,
+                    width: 140,
+                    marginLeft:20,
+                    display:'flex',
+                  },
+                  tabBarScrollEnabled: false,
+                  tabBarLabelStyle: {fontSize: 14, fontWeight:'700' , textTransform: 'none'},
+                  tabBarItemStyle: { width: 180,   },
+                  tabBarStyle: {
+                    height: 60,
+                    width: '100%',
+                    paddingTop:10,
+                    paddingBottom:10,
+                    backgroundColor: '#FFFFFF',
+                  },
+                }}
+                >
+          <Tab.Screen name="Photos" component={Photos} />
+          <Tab.Screen name="Events" component={Events} />
+        </Tab.Navigator>
+      </View>
 
-        </View>
+          </View>
+        </View> 
+        :
+       isPrivate == true?
+        <View>
+          <View style={Styles.privateAcct}>
+              <View style={{width:'90%', display:'flex', justifyContent:'center', alignItems:'center'}}>
+                  <Image
+                   source={require('../../../../../assets/images/cardi.png')}
+                   style={{width:50, height:50}}
+                  />
+                  <View style={Styles.pTitle}>
+                      <Text variant='header' fontSize={14}>Account is Private</Text>
+                  </View>
+                
+                  <Text variant='xs' fontSize={12} style={{textAlign:'center', marginTop:-5}}>
+                  This account is private. Follow to see their photos and events
+                  </Text>
+              </View>
+          </View> 
+       </View> 
+      //   <View>
+      //     <View style={Styles.privateAcct}>
+      //         <View style={{width:'90%', display:'flex', justifyContent:'center', alignItems:'center'}}>
+      //             <Image
+      //              source={require('../../../../../assets/images/cardi.png')}
+      //              style={{width:50, height:50}}
+      //             />
+      //             <View style={Styles.pTitle}>
+      //                 <Text variant='header' fontSize={14}>You've been blocked by this user</Text>
+      //             </View>
+                
+      //             <Text variant='xs' fontSize={12} style={{textAlign:'center', marginTop:-5}}>
+      //               Sorry you cannot see any content from this user at the moment
+      //             </Text>
+      //         </View>
+      //     </View> 
+      //  </View> 
+       
+       : 
+       
+       <UserSuspended/>
+      }
+      {/* {null && 
+        
+      } */}
+        
     </ScrollView>
     </SafeAreaView>
   )

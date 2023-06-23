@@ -9,7 +9,7 @@ import {Styles} from './style';
 
 const dp = require('../../../../../assets/images/jeremy.png')
 
-const sendOffer = ({props}:any) => {
+const OfferSent = () => {
  
     const {  renderForm } = useForm({
         defaultValues: {
@@ -39,28 +39,20 @@ const sendOffer = ({props}:any) => {
                             <Ionicons name='star' size={15} color='yellow' /> 
                             <Text variant='xs'>5.0</Text>
                         </View> 
-                        <Text variant='header' fontSize={22} style={{marginTop:-10}}>$100,000</Text>   
-                        <Text variant='xs'style={{marginTop:-10}} >Minimum</Text> 
+                        {/* <Text variant='header' fontSize={22} style={{marginTop:-10}}>$100,000</Text>   
+                        <Text variant='xs'style={{marginTop:-10}} >Minimum</Text>  */}
                     </View>
                     <View style={Styles.offerInput}>
-                        <View>
-                            <TextInput name='price' label='' placeholder='price' leftIcon={<Ionicons/>}  />
+                        <View style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+                            <Text variant='xs' fontSize={13} style={{color:'#ccc', width:'80%', justifyContent:'center', textAlign:'center'}}>
+                                Your offer has been sent to Chidi Michaels Go to Account &#62; Messages to keep track of your offers
+                            </Text>
                         </View>
-                        <View style={{ marginTop: 10 }}>
-                            <View style={{height:100, width:'100%', padding:10, borderRadius:10, backgroundColor:'#EFEFEF'}}>
-                                <Text variant='xs' style={{color:'#cccc'}}>Additional message</Text> 
-                            </View>
+                       
+                        <View style={{ marginTop: 15, height:45 }}>
+                            <CustomButton label='Continue' onPress={()=>window.alert('offer Sent')} color='white' />
                         </View>
-                        <View style={{ marginTop: 10, height:45 }}>
-                            <CustomButton label='Send Offer' onPress={props} color='white' />
-                        </View>
-                        <View style={{ marginTop: 10 }}>
-                        {/* <SubmitButton label='Cancel' onPress={(data) => console.log(data)} backgroundColor='#FFFFFF' color='#FF406E' /> */}
-                         <Pressable style={{backgroundColor:'#FFFFFF', display:'flex', justifyContent:'center', alignItems:'center'}}
-                         >
-                            <Text variant='xs' style={{color:'#FF406E'}}>Cancel</Text>
-                         </Pressable>
-                        </View>
+                       
                     </View>
                   </View>
                </View>
@@ -69,6 +61,5 @@ const sendOffer = ({props}:any) => {
   )
 }
 
-export default sendOffer;
+export default OfferSent;
 
-const styles = StyleSheet.create({})

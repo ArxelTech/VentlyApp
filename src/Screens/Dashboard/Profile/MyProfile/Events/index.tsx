@@ -4,6 +4,7 @@ import React from 'react';
 import {Text, View} from'../../../../../components';
 import {Styles} from './style';
 import {Ionicons} from '@expo/vector-icons';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 const image = require('../../../../../../assets/images/scott.png');
 

@@ -1,33 +1,38 @@
 import { StyleSheet,Text, ImageBackground, FlatList, TouchableOpacity, Image, Pressable} from 'react-native';
 import {CustomButton, View } from '../../../../components';
 import React, { useState } from 'react';
+import {Styles } from './style'
 
 const data = require('../../../../../assets/data/details.json');
-const image = require('../../../../../assets/images/jeremybg.png');
+const image = require('../../../../../assets/images/jeremy.png');
 const verifyImg = require('../../../../../assets/images/verify.png');
 
 
 const VendorDetails = ({handleMyClick}:any) => {
 
   return (
-    <View>
-      <View style={{height: 450, padding:0, borderRadius:20, borderStyle:'solid', borderWidth:1, borderColor:'grey', backgroundColor:'green'}}>
-        <View style={{height:'100%', borderRadius:20, backgroundColor:'white'}}>
+    <View style={Styles.parent}>
+      <View style={Styles.child}>
+        <View style={Styles.card}>
           {/* Profile image session - 40% height */}
-          <View style={{height:'40%', backgroundColor:'#000000c0', borderTopRightRadius:20, borderTopLeftRadius:20}}>
+          <View style={Styles.profileImg}>
               {/* Background Image */}
-            <ImageBackground style={{height:'100%', width:'100%'}} imageStyle={{borderTopLeftRadius:20, borderTopRightRadius:20}} resizeMode='cover' source={image}>
-                      <View style={{height:'100%', width:'100%', display:'flex',  borderTopRightRadius:20, borderTopLeftRadius:20, justifyContent:'flex-start', alignItems:'center', backgroundColor:'#000000c0', }}>
+            <ImageBackground style={{height:'100%', width:'100%'}} 
+                    imageStyle={{borderTopLeftRadius:20, borderTopRightRadius:20}}
+                       resizeMode='cover' source={image}>
+                      <View style={Styles.blurBG}>
                           <View style={{marginTop:15}}>
                               <View style={{display:'flex', alignItems:'center'}}>
-                                  <Image source={require('../../../../../assets/images/jeremy.png')}
+                                  <Image 
+                                      source={image}
                                       style={{height:100, width:100, }}
                                   />
                               </View>
-                              <View style={{padding:2, display:'flex', justifyContent:'center',alignItems:'center'}}>
-                              <View style={{display:'flex', flexDirection:'row', padding:2, alignItems:'center',}}>
+                              <View style={Styles.userDtls}>
+                              <View style={Styles.name}>
                                   <Text style={{fontSize:18, color:'white'}}>Chidi Michaels</Text>
-                                  <View style={{display:'flex',alignItems:'center', justifyContent:'center', padding:4}}>
+                                  <View style={{display:'flex',alignItems:'center',
+                                                         justifyContent:'center', padding:4}}>
                                     <Image source={verifyImg}
                                       style={{height:10, width:10,}}
                                     />

@@ -27,9 +27,9 @@ function CreateEventScreen() {
     </View>
   );
 }
-function AccountScreen() {
+function AccountScreen({navigation}:any) {
   return (
-    <MyAccounts />
+    <MyAccounts navigation={navigation} />
   );
 }
 function SettingsScreen() {
