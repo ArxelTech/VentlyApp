@@ -29,7 +29,7 @@ const renderDropdown = () => {
   if (visible) {
     return (
       <View style={Styles.dropdown}>
-        
+      
           <FlatList
              data={data}
              renderItem={({item}) => 

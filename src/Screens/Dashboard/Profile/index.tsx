@@ -3,6 +3,7 @@ import { View,Image, Text, TouchableOpacity, Pressable } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {Styles} from './style';
 import MyAccounts from './MyAccount';
+import Notifications from '../Notifications';
 
 
 function FeedScreen() {
@@ -15,9 +16,7 @@ function FeedScreen() {
 
 function NotificationsScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>notifications!</Text>
-    </View>
+    <Notifications/>
   );
 }
 function CreateEventScreen() {
