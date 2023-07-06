@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 export const Styles = StyleSheet.create({
+   // tabbar
    tabBar: {
     display:'flex',
     flexDirection: 'row',
@@ -20,6 +21,7 @@ export const Styles = StyleSheet.create({
       // box-shadow: 0px -3px 4px #0000000D;
       // backdrop-filter: blur(10px);
       // -webkit-backdrop-filter: blur(10px);
+      zIndex:-99
        
    },
    tabBarbtn: {
@@ -39,12 +41,13 @@ export const Styles = StyleSheet.create({
     width:20,
     height:20,
    },
+   // center create event button
    post: {
     backgroundColor:'#DC5576',
     width:80, 
     height:80, 
     position:'absolute', 
-    zIndex:999,
+    zIndex:-999,
     display:'flex',
     flexDirection:'row', 
     alignItems:'center',

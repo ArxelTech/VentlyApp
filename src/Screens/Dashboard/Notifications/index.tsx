@@ -6,6 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { SubmitButton, TextInput } from '../../../components/FormComponents';
 import useForm from '../../../hooks/useForm';
 import { loginSchema } from '../../../Services/validation';
+import Invitation from './Invitation'
 
 const dp = require('../../../../assets/images/divineEffiong.jpg');
 const data = require('../../../../assets/data/dropdown.json');
@@ -19,6 +20,17 @@ const [visible, setVisible] = useState(false);
 const [list, setList] = useState([]);
 const [isNofify, setisNotify] = useState(true);
 const [isFocused, setIsFocused] = useState(false);
+const [invitation, setInvitaion] = React.useState(false);
+const [offerAccepted, setOfferAccepted ] = React.useState(false);
+
+const viewInvitation = () => {
+  setInvitaion(true)
+}
+
+const toggleOfferAccepted = () => {
+  setInvitaion(nextState => !nextState);
+  setOfferAccepted(previousState => !previousState);
+}
 
 // const isFocused = state.;
 
@@ -51,7 +63,7 @@ let notifications = [
   {
     id: 4,
     icon:require('../../../../assets/Profile_Images/invitation.png'),
-    message:'Congratulations your VIP Ticket for Starboy Fest has been sold out. Tap to see details',
+    message:'Johnson Smith invited you to be a co-host for the live event - DevCon 2020',
     time:'12:00AM',
     isUpdate:false,
     
@@ -68,6 +80,14 @@ let notifications = [
     id: 6,
     icon:require('../../../../assets/Profile_Images/liveRec.png'),
     message:'Your live event is ongoing, Tap here to start your recording!!',
+    time:'12:00AM',
+    isRead:true,
+    isUpdate:true
+  },
+  {
+    id: 6,
+    icon:require('../../../../assets/Profile_Images/purse.png'),
+    message:'Your wallet has been successfully topped up with $100',
     time:'12:00AM',
     isRead:true,
     isUpdate:true
@@ -96,6 +116,11 @@ useEffect(() => {
   return renderForm(
     <View style={Styles.main_cont}>
         <View style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+        {invitation == true && 
+                    <View style={{position:'absolute', zIndex:9999, height:'100%',width:'100%'}}>
+                        <Invitation  /> 
+                    </View>
+         }
           <View style={Styles.child}>
             {/* header */}
             <View>
@@ -131,7 +156,8 @@ useEffect(() => {
                             borderColor: isFocused? '#FF1C52' : '#AAAAAA08', 
                             borderStyle: 'solid'
                             }}
-                            onPress={focus}
+                            onPress={()=> {focus(); viewInvitation();}}
+                            // onPress={}
                            >
                             <View style={Styles.flexBox}>
                                 <View style={[Styles.iconContainer, Styles.flexBox]}>
@@ -165,6 +191,7 @@ useEffect(() => {
                                         width:25, 
                                         height:25}}
                                     />
+                                    
                                   </View>
                                 </View>
                                 <View style={Styles.message}>

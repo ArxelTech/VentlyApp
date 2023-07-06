@@ -51,16 +51,16 @@ const sendOffer = ({props}:any) => {
                                 <Text variant='xs' style={{color:'#cccc'}}>Additional message</Text> 
                             </View>
                         </View>
-                        <View style={{ marginTop: 10, height:45 }}>
-                            <CustomButton label='Send Offer' onPress={props} color='white' />
-                        </View>
-                        <View style={{ marginTop: 10 }}>
-                        {/* <SubmitButton label='Cancel' onPress={(data) => console.log(data)} backgroundColor='#FFFFFF' color='#FF406E' /> */}
-                         <Pressable style={{backgroundColor:'#FFFFFF', display:'flex', justifyContent:'center', alignItems:'center'}}
-                         >
-                            <Text variant='xs' style={{color:'#FF406E'}}>Cancel</Text>
-                         </Pressable>
-                        </View>
+                            <View style={{ marginTop: 10, height:45 }}>
+                                <CustomButton label='Send Offer' onPress={props} color='white' />
+                            </View>
+                            <View style={{ marginTop: 10 }}>
+                            
+                            <Pressable style={{backgroundColor:'#FFFFFF', display:'flex', justifyContent:'center', alignItems:'center'}}
+                            >
+                                <Text variant='xs' style={{color:'#FF406E'}}>Cancel</Text>
+                            </Pressable>
+                            </View>
                     </View>
                   </View>
                </View>

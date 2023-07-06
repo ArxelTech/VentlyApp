@@ -61,7 +61,7 @@ const MyProfile = ({navigation}: { navigation: NativeStackNavigationProp<any> })
   const theme = useTheme<Theme>();
   const [miniModal, setMiniModal] = React.useState(false);
   const [modal, setModal] = React.useState(false);
-  const [isPrivate, setIsPrivate] = React.useState(true);
+  const [isPrivate, setIsPrivate] = React.useState(false);
   const [bio, setBio] = React.useState(false)
 
   const toggleMiniModal = () => setMiniModal(previousState => !previousState);
