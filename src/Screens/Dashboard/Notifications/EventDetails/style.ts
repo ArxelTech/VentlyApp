@@ -16,15 +16,50 @@ export const Styles = StyleSheet.create({
         width: '90%',
         // backgroundColor:'yellow'
     },
+    imageContainer:{
+       backgroundColor:'#000000c0',
+       borderRadius:6, 
+    },
     image: {
         height:220, width:'100%' ,
-        borderRadius:6 
+        borderRadius:6,
+        backgroundColor:'#000000c0',
     },
     commentSession: {
         width:'100%',
         marginTop:30
     },
-   
+    logoContainer: {
+        position:'absolute',
+        zIndex:99,
+        top:'10%',
+        left:'45%',
+        // backgroundColor:'#FFFFFF',opacity:10, 
+        width: 50,
+        height:50
+    },
+    logo: {
+        width: 40,
+        height:40
+    },
+    goBack: {
+        position:'absolute',
+        zIndex:99,
+        top:'5%',
+        left:'5%',
+        // backgroundColor:'#ccc',
+        width: 150,
+        height:30
+    },
+    eventTitle: {
+        position:'absolute',
+        zIndex:99,
+        top:'20%',
+        left:'30%',
+        // backgroundColor:'#ccc',
+        width: 150,
+        height:30
+    },
     commentIcon: {
         position:'absolute',
         zIndex:999,
