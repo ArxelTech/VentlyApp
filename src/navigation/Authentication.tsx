@@ -25,6 +25,8 @@ import MyProfile from '../Screens/Dashboard/Profile/MyProfile';
 import EditProfile from '../Screens/Dashboard/Profile/EditProfile';
 import Invite from '../Screens/Dashboard/Profile/MyProfile/Invite';
 import EventDetails from '../Screens/Dashboard/Notifications/EventDetails';
+import Notice from '../Screens/Dashboard/Notifications/Notice';
+
 
 const Navigator = createNativeStackNavigator();
 
@@ -32,6 +34,7 @@ const Authentication = () => {
   return (
     <Navigator.Navigator screenOptions={{ headerShown: false }}>
     {/* <Navigator.Screen name='Profile' component={Profile}/> */}
+    <Navigator.Screen name='notice' component={Notice}/>
     <Navigator.Screen name='eventDtls' component={ EventDetails}/> 
     <Navigator.Screen name='MyProfile' component={MyProfile}/>
     <Navigator.Screen name='EditProfile' component={EditProfile}/>

@@ -39,7 +39,7 @@ const addTickets = ({props}:any) => {
                             <TextInput name='vip' label='' rightIcon={<Ionicons name='chevron-down' size={20} color='black' />}  />
                           </View>
                           <View style={{ marginTop: -5}}>
-                            <TextInput name='email' label='' leftIcon={<Ionicons name='' size={25} color='lightgrey' />}  />
+                            <TextInput name='email' label='' leftIcon={<Ionicons size={25} color='lightgrey' />}  />
                           </View>
                       </View> 
                       <View style={Styles.button}>
