@@ -118,7 +118,7 @@ useEffect(() => {
         <View style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
         {invitation == true && 
                     <View style={{position:'absolute', zIndex:9999, height:'100%',width:'100%'}}>
-                        <Invitation  /> 
+                        <Invitation /> 
                     </View>
          }
           <View style={Styles.child}>

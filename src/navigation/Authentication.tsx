@@ -26,6 +26,7 @@ import EditProfile from '../Screens/Dashboard/Profile/EditProfile';
 import Invite from '../Screens/Dashboard/Profile/MyProfile/Invite';
 import EventDetails from '../Screens/Dashboard/Notifications/EventDetails';
 import Notice from '../Screens/Dashboard/Notifications/Notice';
+import SupportTicket from '../Screens/Dashboard/Notifications/SupportTicket';
 
 
 const Navigator = createNativeStackNavigator();
@@ -34,19 +35,20 @@ const Authentication = () => {
   return (
     <Navigator.Navigator screenOptions={{ headerShown: false }}>
     {/* <Navigator.Screen name='Profile' component={Profile}/> */}
+    <Navigator.Screen name='supportTicket' component={SupportTicket}/>
     <Navigator.Screen name='notice' component={Notice}/>
     <Navigator.Screen name='eventDtls' component={ EventDetails}/> 
-    <Navigator.Screen name='MyProfile' component={MyProfile}/>
-    <Navigator.Screen name='EditProfile' component={EditProfile}/>
-    <Navigator.Screen name='Invite' component={Invite}/>
+    <Navigator.Screen name='myProfile' component={MyProfile}/>
+    <Navigator.Screen name='editProfile' component={EditProfile}/>
+    <Navigator.Screen name='invite' component={Invite}/>
     <Navigator.Screen name='onboarding' component={Onboarding} />
-    <Navigator.Screen name=' MyEvents ' component={ MyEvents }/>
-    <Navigator.Screen name=' EventInformation ' component={ EventInformation }/>
-    <Navigator.Screen name=' Preview ' component={ PreviewEvent }/>
-    <Navigator.Screen name=' Activities ' component={ Activities }/>
-    <Navigator.Screen name=' Categories ' component={ Categories}/>
-    <Navigator.Screen name=' VendorDetails ' component={ VendorDetails}/>
-    <Navigator.Screen name=' SearchVendors ' component={ SearchVendors}/>
+    <Navigator.Screen name=' myEvents ' component={ MyEvents }/>
+    <Navigator.Screen name=' eventInformation ' component={ EventInformation }/>
+    <Navigator.Screen name=' preview ' component={ PreviewEvent }/>
+    <Navigator.Screen name=' activities ' component={ Activities }/>
+    <Navigator.Screen name=' categories ' component={ Categories}/>
+    <Navigator.Screen name=' vendorDetails ' component={ VendorDetails}/>
+    <Navigator.Screen name=' searchVendors ' component={ SearchVendors}/>
     <Navigator.Screen name='events' component={CreateEvent} /> 
     <Navigator.Screen name='accounts' component={Accounts} /> 
     <Navigator.Screen name='businessCategory' component={ BusinessCategory} />
