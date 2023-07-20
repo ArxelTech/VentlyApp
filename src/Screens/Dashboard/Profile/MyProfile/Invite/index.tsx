@@ -77,7 +77,6 @@ const Invite = () => {
     setSentOffer(previousState => !previousState);
 }
 
-
   return (
     <View style={[Styles.parent]}>
           {invite == true && 
