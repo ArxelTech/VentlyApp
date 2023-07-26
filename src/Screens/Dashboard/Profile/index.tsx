@@ -94,11 +94,11 @@ function MyTabBar({ state, descriptors, navigation }:any) {
         const account =
           route.name == 'account' ?
           <View style={Styles.tabBarbtn}>
-              <Image
+              {/* <Image
                 source={require('../../../../assets/bottomTabIcons/user.png')}
                 resizeMode='contain'
                 style={[Styles.icon,{ tintColor: IconFocused ? '#FF4471': '#B0B1B8',}]}
-              /> 
+              />  */}
               <Text 
                 style={{ color: isFocused ? '#FF4471': '#B0B1B8', fontSize:8}}>
                 Accounts
