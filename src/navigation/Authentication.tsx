@@ -27,14 +27,21 @@ import Invite from '../Screens/Dashboard/Profile/MyProfile/Invite';
 import EventDetails from '../Screens/Dashboard/Notifications/EventDetails';
 import Notice from '../Screens/Dashboard/Notifications/Notice';
 import SupportTicket from '../Screens/Dashboard/Notifications/SupportTicket';
-
+import Settings from '../Screens/Dashboard/Settings';
+import General from '../Screens/Dashboard/Settings/General';
+import EventFeeds from '../Screens/Dashboard/Settings/EventFeeds';
+import SupportSettings from '../Screens/Dashboard/Settings/SupportTickets';
 
 const Navigator = createNativeStackNavigator();
 
 const Authentication = () => {
   return (
     <Navigator.Navigator screenOptions={{ headerShown: false }}>
-    {/* <Navigator.Screen name='Profile' component={Profile}/> */}
+    <Navigator.Screen name='settings' component={Settings}/>
+    <Navigator.Screen name='general' component={General}/>
+    <Navigator.Screen name='eventFeeds' component={EventFeeds}/>
+    <Navigator.Screen name='supportSettings' component={SupportSettings}/>
+    <Navigator.Screen name='Profile' component={Profile}/>
     <Navigator.Screen name='supportTicket' component={SupportTicket}/>
     <Navigator.Screen name='notice' component={Notice}/>
     <Navigator.Screen name='eventDtls' component={ EventDetails}/> 

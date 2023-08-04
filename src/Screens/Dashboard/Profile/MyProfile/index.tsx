@@ -74,7 +74,7 @@ const MyProfile = ({navigation}: { navigation: NativeStackNavigationProp<any> })
                 <View style={Styles.MiniModal}>
                 <View>
                 <TouchableOpacity>
-                    <Pressable onPress={()=>navigation.navigate('Invite')}>
+                    <Pressable onPress={()=>navigation.navigate('invite')}>
                         <Text variant='subheader' fontSize={14}>Invite</Text>
                     </Pressable>
                 </TouchableOpacity>

@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {Styles} from './style';
 import MyAccounts from './MyAccount';
 import Notifications from '../Notifications';
-
+import Settings from '../Settings';
 
 function FeedScreen() {
   return (
@@ -33,9 +33,9 @@ function AccountScreen({navigation}:any) {
 }
 function SettingsScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
-    </View>
+    <>
+    <Settings  />
+    </>
   );
 }
 
@@ -79,7 +79,7 @@ function MyTabBar({ state, descriptors, navigation }:any) {
           
               <View style={Styles.postIcon}>
                 
-                  {/* <Image
+                  <Image
                     source={require('../../../../assets/bottomTabIcons/plus.png')}
                     resizeMode='contain'
                     style={{
@@ -87,18 +87,18 @@ function MyTabBar({ state, descriptors, navigation }:any) {
                     height:15,
                     tintColor: IconFocused ? '#B0B1B8': '#B0B1B8',
                   }}/>  
-                       */}
+                      
               </View>
           : null; 
 
         const account =
           route.name == 'account' ?
           <View style={Styles.tabBarbtn}>
-              {/* <Image
+              <Image
                 source={require('../../../../assets/bottomTabIcons/user.png')}
                 resizeMode='contain'
                 style={[Styles.icon,{ tintColor: IconFocused ? '#FF4471': '#B0B1B8',}]}
-              />  */}
+              /> 
               <Text 
                 style={{ color: isFocused ? '#FF4471': '#B0B1B8', fontSize:8}}>
                 Accounts
@@ -196,5 +196,5 @@ export default function App({navigation: NativeStackNavigationProp }:any){
           </View>
         </Pressable>   
     </>
-  );
+  ); 
 }

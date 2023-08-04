@@ -1,5 +1,4 @@
-import { StyleSheet } from 'react-native';
-
+import { StyleSheet } from "react-native";
 
 export const Styles = StyleSheet.create({
     parent: {
@@ -9,7 +8,6 @@ export const Styles = StyleSheet.create({
         // flex: 1,
         height: '100%',
         width: '100%',
-        backgroundColor: '#FCFCFC'
     },
     child: {
         height: '100%',
@@ -17,7 +15,7 @@ export const Styles = StyleSheet.create({
     },
     main_cont: {
         width:'100%',
-        height:'15%',
+        height:'13%',
         display:'flex',
         flexDirection: 'row',
         alignItems: 'center',
@@ -30,7 +28,8 @@ export const Styles = StyleSheet.create({
         height: '100%',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingTop:20
+        paddingTop:30,
+
     },
     sub_cont: {
         width:'30%',
@@ -40,18 +39,36 @@ export const Styles = StyleSheet.create({
         marginLeft:10,
         display:'flex', alignItems:'center', justifyContent:'center',
     },
-    imageBox: {
-        backgroundColor:'#FFFFFF',borderStyle:'solid',
-        borderWidth: 1, borderColor:'#F2F2F2',
-        height: 100, width:100, display:'flex', 
-        alignItems:'center', justifyContent:'center'
-    },
     body: {
         width:'100%',
         height: '100%',
         display: 'flex',
         flexDirection:'row',
         justifyContent:'center', 
-        paddingTop:50 
-    }
+        borderTopWidth: 2, borderColor:'#ccc',
+        elevation:1
+    },
+    bodyContaner: {
+        width:'90%',
+        height:'100%',
+    },
+    theme: {
+        // backgroundColor:'pink',
+        height:65,
+        paddingTop:5,
+        display:'flex',
+        flexDirection:'row'
+    },
+    settings: {
+        // backgroundColor:'pink',
+        height:68,
+        paddingTop:5,
+        display:'flex',
+        flexDirection:'row'
+    },
+    toggle: {
+        flex: 1,
+        alignItems: 'flex-start',
+        justifyContent: 'flex-start',
+    },
 });

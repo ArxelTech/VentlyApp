@@ -12,10 +12,7 @@ const dp = require('../../../../assets/images/divineEffiong.jpg');
 const data = require('../../../../assets/data/dropdown.json');
 
 const Notifications  = () => {
-
   // const state = useState;
-
-
 const [visible, setVisible] = useState(false);
 const [list, setList] = useState([]);
 const [isNofify, setisNotify] = useState(true);

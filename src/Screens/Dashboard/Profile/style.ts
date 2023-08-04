@@ -21,7 +21,7 @@ export const Styles = StyleSheet.create({
       // box-shadow: 0px -3px 4px #0000000D;
       // backdrop-filter: blur(10px);
       // -webkit-backdrop-filter: blur(10px);
-      zIndex:-99
+      zIndex:99
        
    },
    tabBarbtn: {

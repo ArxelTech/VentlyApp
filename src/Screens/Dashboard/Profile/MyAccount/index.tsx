@@ -65,11 +65,11 @@ const toggleSwitch = () => setIsEnabled(previousState => !previousState);
         </View>
         <View style={{width:'100%', height:45, display:'flex',flexDirection:'row',justifyContent:'space-evenly' }}>
           <View style={{ width:'40%',}}>
-            <CustomButton label='Edit Profile' onPress={()=>navigation.navigate('EditProfile')} color='white' />
+            <CustomButton label='Edit Profile' onPress={()=>navigation.navigate('editProfile')} color='white' />
           </View>
           <View style={{ width:'40%',}}>
             <CustomButton label='View Profile' backgroundColor='#00000029'
-               onPress={()=>navigation.navigate('MyProfile')}/>
+               onPress={()=>navigation.navigate('myProfile')}/>
            
           </View>
         </View>
