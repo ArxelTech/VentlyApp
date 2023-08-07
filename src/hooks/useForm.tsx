@@ -30,7 +30,7 @@ const useForm = ({ validationSchema, defaultValues}: IProps) => {
     formState: methods.formState,
     control: methods.control,
     watch: methods.watch,
-    values: methods.getValues,
+    values: methods.getValues(),
     reset: methods.reset,
     unregister:methods.unregister,
   }

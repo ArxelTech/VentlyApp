@@ -8,8 +8,6 @@ import resetPassword from '../Screens/Authentication/ResetPassword';
 import resetSuccess from '../Screens/Authentication/ResetSuccess';
 import verifyEmail from '../Screens/Authentication/VerifyEmail';
 import Interests from '../Screens/Authentication/Interests';
-import Accounts from '../Screens/Authentication/Accounts';
-import BusinessCategory from '../Screens/Authentication/BusinessCategory';
 import AccountSetup from '../Screens/Authentication/AccountSetup';
 import Feeds from '../Screens/Dashboard/Feeds';
 import CreateEvent from '../Screens/Dashboard/CreateEvent';
@@ -33,11 +31,16 @@ import EventFeeds from '../Screens/Dashboard/Settings/EventFeeds';
 import SupportSettings from '../Screens/Dashboard/Settings/SupportTickets';
 import SetNotifications from '../Screens/Dashboard/Settings/Notifications';
 import Privacy from '../Screens/Dashboard/Settings/Privacy';
+import Accounts from '../Screens/Authentication/Accounts';
+
+// import CreateEvent from '../Screens/Dashboard/CreateEvent/Index';
+
 const Navigator = createNativeStackNavigator();
 
 const Authentication = () => {
   return (
     <Navigator.Navigator screenOptions={{ headerShown: false }}>
+
     <Navigator.Screen name='settings' component={Settings}/>
     <Navigator.Screen name='general' component={General}/>
     <Navigator.Screen name='eventFeeds' component={EventFeeds}/>
@@ -65,6 +68,11 @@ const Authentication = () => {
     <Navigator.Screen name='feeds' component={Feeds} />
     <Navigator.Screen name='resetSuccess' component={resetSuccess} />
     <Navigator.Screen name='accountSetup' component={ AccountSetup  } />
+
+    <Navigator.Screen name='onboarding' component={Onboarding} />
+    <Navigator.Screen name='resetsuccess' component={resetSuccess} />
+    <Navigator.Screen name='accountSetup' component={ Accounts} />
+
     <Navigator.Screen name='interests' component={Interests} />
     <Navigator.Screen name='verifyEmail' component={verifyEmail} />
     <Navigator.Screen name='method' component={AuthMethod} />

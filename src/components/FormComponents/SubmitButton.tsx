@@ -19,7 +19,7 @@ export const SubmitButton = ({
   isLoading = false,
   backgroundColor,
   borderRadius = 5,
-  color,
+  color = 'white',
   onPress,
 }: IProps) => {
   const theme = useTheme<Theme>();
@@ -35,8 +35,8 @@ export const SubmitButton = ({
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-        {!isLoading && <Text variant='xs' style={{ color }}>{label}</Text>}
-        {isLoading && <ActivityIndicator size='large' color={theme.colors.brandColor} />}
+        {!isLoading && <Text variant='body' style={{ color }}>{label}</Text>}
+        {isLoading && <ActivityIndicator size='large' color={color} />}
       </Pressable>
  
   );

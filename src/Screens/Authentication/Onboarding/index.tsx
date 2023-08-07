@@ -23,7 +23,7 @@ const Onboarding = ({ navigation }: IProps) => {
     setIndex(indx);
   }, [])
   return (
-    <View style={Styles.parent}>
+    <View style={Styles.parent} backgroundColor='backgroundColor'>
       <View style={Styles.iconBox}>
         <Image source={require('../../../../assets/images/Logo/ventlyLogo.png')} style={{ width: '100%', height: 50 }} resizeMode='contain' />
       </View>
@@ -49,7 +49,7 @@ const Onboarding = ({ navigation }: IProps) => {
 
       {/* WRITE UP CONTAINER */}
       <View style={Styles.textContainer} paddingHorizontal='m'> 
-        <Text variant='subheader' textAlign='center'>{data[index].title}</Text>
+        <Text variant='body' fontSize={25} lineHeight={35} textAlign='center'>{data[index].title}</Text>
       </View>
 
       {/* BOTTON CONTAINER */}

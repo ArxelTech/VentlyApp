@@ -9,7 +9,7 @@ const HttpClient = Axios.create({
 // Request interceptors
 HttpClient.interceptors.request.use(async(config) => {
     // get the token
-    const token = await AsyncStorage.getItem('token');
+    const token = await AsyncStorage.getItem('accessToken');
     if (token !== null) {
         config.headers['authorization'] = `Bearer ${token}`;
         return config;
@@ -21,14 +21,20 @@ HttpClient.interceptors.request.use(async(config) => {
 
 // Response Interceptors
 HttpClient.interceptors.response.use((config) => {
-    if (config.status === 200 || config.status === 201) {
-        return config.data.message || 'Request Successful';
+    return config;
+}, async(error: AxiosError<any, any>) => {
+     
+    if (!error.response) {
+        return Promise.reject(error.message);
     }
-    if (config.status === 403 || config.status === 401) {
-        return config.data.message || 'Not Authorzied';
+    if (error.response?.data.message instanceof Array) {
+        const msg = error.response?.data.message as Array<any>;        
+        return Promise.reject(JSON.stringify(msg));
+    } 
+    if (error.response?.status === 401 || error.response?.status === 403) {
+        await AsyncStorage.setItem('accessToken', '')
     }
-}, (error: AxiosError<any, any>) => {
-    Promise.reject(error.response?.data.message || 'An error occured')
+    return Promise.reject(error.response.data.message);
 })
 
 export default HttpClient;

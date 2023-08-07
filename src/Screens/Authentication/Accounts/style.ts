@@ -33,11 +33,19 @@ export const Styles = StyleSheet.create({
         width: 100,
         height: 100,
         borderRadius: 100,
-        backgroundColor: 'grey'
+        backgroundColor: 'lightgrey'
+    },
+    profileAvatar: {
+        display: 'flex',
+        width: 100,
+        height: 100,
+        borderRadius: 100,
+        backgroundColor: 'lightgrey',
+        overflow: 'hidden'
     },
     child: {
         height: '100%',
-        width: '80%',
+        width: '100%',
         marginTop: '10%',
         // backgroundColor: '#ccc'
     },
@@ -64,6 +72,14 @@ export const Styles = StyleSheet.create({
         borderStyle: 'solid',
         borderWidth: 1,
         padding: 10
+    },
+    switchContainer: {
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        height: 50,
+        marginVertical: 20,
     }
 
 });

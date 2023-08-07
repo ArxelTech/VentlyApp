@@ -2,13 +2,12 @@ import { StyleSheet } from 'react-native'
 
 export const Styles = StyleSheet.create({
     parent: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        overflow: 'hidden',
-        // flex: 1,
+        flexDirection: 'column',
         height: '100%',
         width: '100%',
+        paddingHorizontal: 20,
+        paddingTop: 100
+
         // backgroundColor: '#ff0000'
     },
     child: {
@@ -25,8 +24,7 @@ export const Styles = StyleSheet.create({
         // backgroundColor: 'red'
     },
     interests: {
-        // backgroundColor: 'blue',
-        height: '45%'
+        flex: 1,
     },
     childContainer: {
         display: 'flex',
@@ -46,90 +44,13 @@ export const Styles = StyleSheet.create({
         marginTop: 10
         // justifyContent: 'space-evenly'
     },
-    btn_X: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '40%',
-        height: 40,
-        backgroundColor: '#FF406E',
-        color: 'white',
-        borderRadius: 6,
-    },
-    btn_Y: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '40%',
-        height: 40,
-        backgroundColor: '#ccc',
-        color: 'black',
-        borderRadius: 6,
-        marginLeft: '5%'
-    },
     btn_A: {
-        display: 'flex',
+        padding: 10,
         alignItems: 'center',
-        justifyContent: 'center',
-        width: '20%',
-        height: 40,
-        backgroundColor: '#ccc',
-        color: 'black',
+        // justifyContent: 'center',
+        // paddingHorizontal: 6,
         borderRadius: 6,
+        marginRight: 20,
+        marginBottom: 20
     },
-    btn_B: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '50%',
-        height: 40,
-        backgroundColor: '#ccc',
-        color: 'black',
-        borderRadius: 6,
-        marginLeft: '5%'
-    },
-    btn_C: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '20%',
-        height: 40,
-        backgroundColor: '#ccc',
-        color: 'black',
-        borderRadius: 6,
-        marginLeft: '5%'
-    },
-    btn_D: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '50%',
-        height: 40,
-        backgroundColor: '#ccc',
-        color: 'black',
-        borderRadius: 6,
-    },
-    btn_E: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '20%',
-        height: 40,
-        backgroundColor: '#ccc',
-        color: 'black',
-        borderRadius: 6,
-        marginLeft: '5%'
-    },
-    btn_F: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '20%',
-        height: 40,
-        backgroundColor: '#ccc',
-        color: 'black',
-        borderRadius: 6,
-        marginLeft: '5%'
-    }
-
 });
