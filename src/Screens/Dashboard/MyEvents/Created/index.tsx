@@ -6,7 +6,7 @@ import { Image, ImageBackground, ImageSourcePropType, Pressable, TouchableOpacit
 import { Ionicons } from '@expo/vector-icons';
 import YoutubePlayer from 'react-native-youtube-iframe';
 
-const image = require('../../../../../assets/images/grmy.png');
+const image = require('../../../../../assets/images/vita.png');
 const featuredV = require('../../../../../assets/images/featuredV.png');
 const hostImg = require('../../../../../assets/images/amanda.png');
 const VImg = require('../../../../../assets/images/verify.png');
@@ -20,35 +20,35 @@ const erik = require('../../../../../assets/images/erik.png');
 const index = () => {
   return (
     <View style={Styles.main_Container}>
-      <TouchableOpacity style={Styles.Icon}>
+      {/* <TouchableOpacity style={Styles.Icon}>
             <Ionicons name='share-social' size={15} color='black'  />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
        <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1,}} >
        <View style={Styles.image}>
-          <Image style={{height:250, width:'100%', borderRadius:5}}  source={image}/>
+          <Image style={{height:200, width:'100%', borderRadius:5}}  source={image}/>
        </View>
        <View>
             <View style={Styles.title}>
                 <View style={Styles.text}>
                   <Text variant='header' style={{fontSize:14}}>The 62nd Grammy Awards</Text>
                 </View> 
-                <View style={Styles.button}>
+                {/* <View style={Styles.button}>
                     <CustomButton label='Follow' color='white' onPress={()=> console.log('follow')} />
-                </View>
+                </View> */}
             </View>
-            <View style={Styles.title}>
-                <View style={Styles.icon}>
+            <View style={[Styles.title, {marginTop:-20}]}>
+                {/* <View style={Styles.icon}>
 									<Image source={require('../../../../../assets/images/clock.png')} resizeMode='cover'  style={{ width: 20, height: 20 }} />
-                </View>
-                <View style={Styles.date}>
-                  <Text variant='subheader' style={{fontSize:12}}>Friday 29 October, 1 am</Text>
+                </View> */}
+                <View style={[Styles.date, {padding:0}]}>
+                  <Text variant='subheader' style={{fontSize:12}}>Friday 29 October 2020, 1 - 7 am </Text>
                 </View> 
-                <View style={Styles.price}>
+                {/* <View style={Styles.price}>
                   <Ionicons name='flower-outline' size={20} color='#FC1055'  />
                   <Text variant='xs'>$100 - $300</Text>
-                </View>
+                </View> */}
             </View>
-            <View style={Styles.title}>
+            {/* <View style={Styles.title}>
                 <View style={Styles.icon}>
 									<Image source={require('../../../../../assets/images/clock.png')} resizeMode='cover'  style={{ width: 20, height: 20 }} />
                 </View>
@@ -59,28 +59,28 @@ const index = () => {
                   <Ionicons name='people' size={20} color='#1EACD1'  />
                   <Text variant='xs'>24k</Text>
                 </View>
-            </View>
+            </View> */}
         </View>
-        <View style={Styles.description}>
+        <View style={[Styles.description, {marginTop:-20}]}>
           <Text variant='xs' textAlign='justify'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          
           </Text>
         </View>
         <View style={Styles.featured}>
           {/* Youtube video component goes here */}
-          <Text variant='header' textAlign='left' style={{fontSize:14}}>Featured Video</Text>
+          {/* <Text variant='header' textAlign='left' style={{fontSize:14}}>Featured Video</Text>
            <View style={Styles.ftVideo}>
                  <ImageBackground style={{height:200, width:'100%'}} imageStyle={{borderRadius:5}} resizeMode='cover' source={featuredV}>
                 <View style={{flex:1, alignItems:'center', justifyContent:'center'}}>
                       <Ionicons name='logo-youtube' size={60} color='red'/> 
                    </View>   
               </ImageBackground>
-           </View>
+           </View> */}
         </View>
         <View style={Styles.featured}>
           {/* Image carousel goes here */}
-          <Text variant='header' textAlign='left' style={{fontSize:14}}>Featured Photos</Text>
+          {/* <Text variant='header' textAlign='left' style={{fontSize:14}}>Featured Photos</Text>
            <View style={Styles.ftImage}> 
               <View style={{width:'45%'}}>
                 <ImageBackground style={{height:150, width:'100%'}} imageStyle={{borderRadius:5}} resizeMode='cover' source={amir}>
@@ -94,20 +94,20 @@ const index = () => {
                 <ImageBackground style={{height:150, width:'100%'}} imageStyle={{borderRadius:5}} resizeMode='cover' source={erik}>
                 </ImageBackground>
               </View>       
-           </View>
+           </View> */}
         </View>
         <View style={Styles.featured}>
-          <Text variant='header' textAlign='left' style={{fontSize:14}}>Location</Text>
-          <View style={Styles.title}>
+          {/* <Text variant='header' textAlign='left' style={{fontSize:14}}>Location</Text> */}
+          {/* <View style={Styles.title}>
                 <View>
 									<Image source={require('../../../../../assets/images/clock.png')} resizeMode='cover'  style={{ width: 20, height: 20 }} />
                 </View>
                 <View style={Styles.date}>
                   <Text variant='subheader' style={{fontSize:12}}>La Cassa Royale, Bronx, NYC</Text>
                 </View>
-          </View> 
+          </View>  */}
            <View style={Styles.location}>
-              <ImageBackground style={Styles.locationImg} imageStyle={{borderRadius:5}} resizeMode='cover' source={map}>
+              {/* <ImageBackground style={Styles.locationImg} imageStyle={{borderRadius:5}} resizeMode='cover' source={map}>
                   <View style={Styles.locationBG}>
                     <View style={Styles.locationBtn}>
                           <Pressable style={{padding:10 ,
@@ -116,7 +116,7 @@ const index = () => {
                           </Pressable>
                     </View>
                   </View>
-              </ImageBackground>
+              </ImageBackground> */}
            </View>
         </View>
         {/* Host */}

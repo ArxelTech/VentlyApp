@@ -8,17 +8,20 @@ import VendorDetails from './VendorDetails/VendorDetails';
 import SendOffer from './SendOffer/sendOffer';
 
 const DATA = require('../../../../assets/data/vendors.json');
+const image = require('../../../../assets/images/cardi.png');
+const verify = require('../../../../assets/images/verify.png');
 
-const Categories = () => {
-
+const Categories = ({item}:any) => {
+  
+  const [invite, setInvite] = useState(false);
+  const [vendors, setVendors]= useState(true);
   const handleClick = () => {
     console.log("click handled");
     setInvite(true)
   }
-
-  
-  const [invite, setInvite] = useState(false);
-
+  const inviteVendor = () => {
+    setVendors(false)
+  }
   return (
     <View style={[Styles.parent]}>
       <View style={[Styles.child]}>
@@ -47,42 +50,51 @@ const Categories = () => {
         }
         <View style={{width: '100%', height: 6, backgroundColor: '#ccc'}}></View>
         <View style={{width:'100%',height:'100%', flex:1, alignItems:'center', justifyContent:'center'}}>
-            <View style={{width:'90%',height:'90%', marginTop:10}}>
+            <View style={Styles.vendors}>
                 <ScrollView showsVerticalScrollIndicator={false} style={{flex:1}}>
-                    <FlatList
-                      data={DATA.slice(0,12)}
-                      renderItem={({item}) => 
-                      <View style={{height: 120, width:'100%', display: 'flex',flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
-                          <View style={{ flex: 1.2, padding: 5}}>
-                            <Image source={item.image} style={{height:100, width:100, borderRadius: 100}}/>
+                    
+                    {vendors === true? 
+                    <>
+                      <View>                 
+                        {DATA.map((item: any) =>{
+                          // (item.slice(0,12))
+                          return(
+                            <View key={item.id} style={{height: 120, width:'100%', display: 'flex',flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+                                <View style={{ flex: 1.2, padding: 5}}>
+                                  <Image source={image} style={{height:80, width:80, borderRadius: 100}}/>
+                                </View>
+                                <View style={{ flex: 1.8, padding:10}}>
+                                  <View style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
+                                    <Text variant='header' style={{fontSize: 15}}>
+                                      {item.user}
+                                    </Text>
+                                    <Image source={verify} style={{height:15, width:15, borderRadius: 100, marginLeft:5}}/>
+                                  </View>
+                                  <View style={{display:'flex', flexDirection:'row', alignItems:'center', flex: 1.5, marginTop:-30}}>
+                                    <Text variant='xs' fontSize={12}>{item.handle}</Text>
+                                    <Text variant='xs' fontSize={12}>{item.career}</Text>
+                                  </View>
+                                  <View style={{marginTop:-20}}>
+                                    <Text variant='xs' fontSize={12}>{item.cost}</Text>
+                                  </View>  
+                                </View>
+                                <View style={{flex:1.2}}>
+                                <TouchableOpacity style={[Styles.centerElement, 
+                              { width: '100%', height: 60, padding: 10, display:'flex', justifyContent:'center', alignItems: 'center', 
+                              }]} 
+                              >
+                              <CustomButton  onPress={inviteVendor} label='invite'  borderRadius={5} backgroundColor='#FF406E'  color='white'
+                              />
+                                </TouchableOpacity>	
                           </View>
-                          <View style={{ flex: 1.8, padding:10}}>
-                            <View style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
-                              <Text variant='header' style={{fontSize: 15}}>
-                                {item.user}
-                              </Text>
-                              <Image source={item.verifyImg} style={{height:15, width:15, borderRadius: 100, marginLeft:5}}/>
-                            </View>
-                            <View style={{display:'flex', flexDirection:'row', alignItems:'center', flex: 1.5, marginTop:-10}}>
-                              <Text variant='xs'>{item.handle}</Text>
-                              <Text variant='xs'>{item.career}</Text>
-                            </View>
-                            <Text variant='xs'>{item.cost}</Text>
-                          </View>
-                          <View style={{flex:1.2}}>
-                          
-                            <TouchableOpacity style={[Styles.centerElement, 
-                            { width: '100%', height: 60, padding: 10, display:'flex', justifyContent:'center', alignItems: 'center', 
-                            }]} 
-                            >
-                            <CustomButton  onPress={() => {console.log('pressed')}} label='invite'  borderRadius={5} backgroundColor='#FF406E'  color='white'
-                            />
-                          </TouchableOpacity>	
-                          </View>
-                      </View> }
-                      keyExtractor={item => item.id}
-                    />		
-                    {/* <VendorDetails handleMyClick={handleClick}  /> */}
+                             </View> 
+                          )
+                        })
+                       } 
+                      </View>
+                    </>
+                    	 :
+                    <VendorDetails handleMyClick={handleClick}  /> }
                 </ScrollView>
               </View>
         </View>
@@ -103,7 +115,7 @@ const Categories = () => {
       </View>
     </View>
   )
-}
+};
 
 export default Categories;
 

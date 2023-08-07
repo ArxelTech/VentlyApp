@@ -1,6 +1,6 @@
 
 import * as React from 'react';
-import {CustomButton, Text, View } from '../../../components';
+import { Text, View } from '../../../components';
 import {
   Animated,
   TouchableOpacity,

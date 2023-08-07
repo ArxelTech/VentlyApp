@@ -1,9 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native'
 import Navigation from './src/navigation';
 import { useFonts } from 'expo-font';
-import { QueryClientProvider, QueryClient } from 'react-query'
 import React from 'react';
-import { InitFunction } from './src/Theme/theme';
+
 
 const queryClient = new QueryClient();
 
