@@ -1,5 +1,6 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+
 import BottomTab from './BottomTab'
 import SearchVendors from '../Screens/Dashboard/SearchVendors';
 import Profile from '../Screens/Dashboard/Profile';
@@ -12,6 +13,7 @@ import Feeds from '../Screens/Dashboard/Feeds';
 import Accounts from '../Screens/Authentication/Accounts';
 import BusinessCategory from '../Screens/Authentication/BusinessCategory';
 import CreateEvent from '../Screens/Dashboard/CreateEvent';
+
 
 const { Screen, Navigator } = createNativeStackNavigator()
 
@@ -34,4 +36,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default Dashboard;

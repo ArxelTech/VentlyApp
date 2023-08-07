@@ -15,12 +15,13 @@ export const Styles = StyleSheet.create({
         width: '100%',
     },
     main_cont: {
-        width:'100%',
-        height:'15%',
-        display:'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent:'center',
+        height:'100%', width:'100%',position:'absolute', 
+        zIndex:2, backgroundColor:'#000000c0'
+    },
+    sub_cont : {
+        height:'30%', width:'100%', 
+        backgroundColor:'transparent',
+        opacity:10, zIndex:999
     },
     header: {
         display: 'flex',
@@ -32,4 +33,21 @@ export const Styles = StyleSheet.create({
         paddingTop:40
     },
     centerElement: {justifyContent: 'center', alignItems: 'center'},
+    card: {
+        height:'70%', width:'100%', backgroundColor:'#FFFFFF', borderTopLeftRadius: 20, 
+        borderTopRightRadius: 20, padding:5, display:'flex',flexDirection:'row', 
+        justifyContent:'center', alignItems:'center'
+    },
+    userImg: {
+        display:'flex', alignItems:'center', position:'absolute', 
+        flexDirection:'row',justifyContent:'center', top:'80%', width:'100%'
+    },
+    userDtls: {
+        height:'40%', display:'flex', alignItems:'center', 
+        justifyContent:'center',
+    },
+    offerInput: {
+        height:'50%', marginTop:-15 
+    }
+
 });

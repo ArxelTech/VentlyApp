@@ -53,7 +53,7 @@ export const Styles = StyleSheet.create({
         
         tabContainer: {
           // backgroundColor:'yellow',
-          height:'75%',
+          height:'80%',
           display:'flex',
           justifyContent:'center',
           alignItems:'center',
@@ -62,7 +62,7 @@ export const Styles = StyleSheet.create({
         },
         bottomTab: {
           // backgroundColor:'indigo',
-          height:'10.5%',
+          height:'5%',
           display:'flex',
           flexDirection:'row',
           alignItems:'center',

@@ -13,10 +13,10 @@ const SearchVendors= () => {
             <View style={[Styles.main_cont]}>
                 <View style={Styles.header}>
                         <View style={{flex: 1}}>
-                            <Ionicons name='arrow-back-outline' size={25} color='black'/>
+                            <Ionicons name='arrow-back-outline' size={20} color='black'/>
                         </View>
                         <View style={{flex: 6}}>     
-                            <Text variant='subheader'>Search For Vendors</Text> 
+                            <Text variant='subheader' fontSize={16}>Search For Vendors</Text> 
                         </View>  
                 </View>
             </View>

@@ -4,7 +4,7 @@ import { Styles } from './style';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Image, ImageBackground, ImageSourcePropType, Pressable, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import YoutubePlayer from 'react-native-youtube-iframe';
+// import YoutubePlayer from 'react-native-youtube-iframe';
 
 const image = require('../../../../../assets/images/scott.png');
 const featuredV = require('../../../../../assets/images/featuredV.png');

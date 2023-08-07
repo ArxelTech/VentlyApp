@@ -63,7 +63,7 @@ function App() {
                 <Ionicons name='arrow-back-outline' size={25} color='black'/>
               </TouchableOpacity>
               <View style={{flex: 6, flexDirection:'row',}}>          
-                    <Text variant='header' style={{fontSize:18}}>Preview</Text>   
+                    <Text variant='header' style={{fontSize:18}}>My Events</Text>   
               </View> 
               <TouchableOpacity style={{flex: 0.8,padding:5}}>
                 <Ionicons name='search' size={25} color='black'/>
@@ -85,16 +85,15 @@ function App() {
                 },
                 tabBarScrollEnabled: false,
                 tabBarLabelStyle: {fontSize: 14, fontWeight:'700' , textTransform: 'none'},
-                tabBarItemStyle: { width: 98   },
+                tabBarItemStyle: { width: 98, display:'flex', justifyContent:'center', flexDirection:'row', alignItems:'center' },
                 tabBarStyle: {
                   height: 60,
                   width: '100%',
                   paddingTop:10,
                   paddingBottom:10,
+                  // padding:30,
                   marginLeft:-5,
-                  backgroundColor: '#FFFFFF',
-                  
-                  
+                  // backgroundColor: 'yellow',
                 },
               }}
               >
@@ -106,13 +105,13 @@ function App() {
     </View>
       
           <View style={Styles.bottomTab}>
-             <View style={Styles.PostBtn}>
+             {/* <View style={Styles.PostBtn}>
                 <View style={{flex:5}}>
                     <TouchableOpacity style={Styles.btnfill}>
                           <Text variant='xs' style={{color:'#FFFFFF'}}>Buy Tickets Now Event</Text>
                     </TouchableOpacity>
                 </View> 
-             </View>
+             </View> */}
           </View>
         </View> 
     </View>

@@ -30,7 +30,7 @@ export const Styles = StyleSheet.create({
         height: '100%',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingTop:40
+        paddingTop:20
     },
     sub_cont: {
         width:'30%',
