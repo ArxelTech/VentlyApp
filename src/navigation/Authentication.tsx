@@ -31,7 +31,8 @@ import Settings from '../Screens/Dashboard/Settings';
 import General from '../Screens/Dashboard/Settings/General';
 import EventFeeds from '../Screens/Dashboard/Settings/EventFeeds';
 import SupportSettings from '../Screens/Dashboard/Settings/SupportTickets';
-
+import SetNotifications from '../Screens/Dashboard/Settings/Notifications';
+import Privacy from '../Screens/Dashboard/Settings/Privacy';
 const Navigator = createNativeStackNavigator();
 
 const Authentication = () => {
@@ -40,6 +41,8 @@ const Authentication = () => {
     <Navigator.Screen name='settings' component={Settings}/>
     <Navigator.Screen name='general' component={General}/>
     <Navigator.Screen name='eventFeeds' component={EventFeeds}/>
+    <Navigator.Screen name='notifications' component={SetNotifications}/>
+    <Navigator.Screen name='privacy' component={Privacy}/>
     <Navigator.Screen name='supportSettings' component={SupportSettings}/>
     <Navigator.Screen name='Profile' component={Profile}/>
     <Navigator.Screen name='supportTicket' component={SupportTicket}/>

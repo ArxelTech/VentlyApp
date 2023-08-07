@@ -33,7 +33,7 @@ const Settings = ({navigation}: { navigation: NativeStackNavigationProp<any> }) 
       id: 4,
       title: 'Notifications',
       description: 'Manage the kind of notifications you receive whether its in app or email notifications',
-      link:''
+      link:'notifications'
     },
     {
       id: 5,
@@ -45,7 +45,7 @@ const Settings = ({navigation}: { navigation: NativeStackNavigationProp<any> }) 
       id: 6,
       title: 'Privacy & Security',
       description: 'Manage important security and privacy features for your account',
-      link:''
+      link:'privacy'
     },
     {
       id: 7,
